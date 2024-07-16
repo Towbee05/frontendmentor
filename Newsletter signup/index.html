@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Newsletter Signup form</title>
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./dict/output.css">
+    <link rel="shortcut icon" href="assets/images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body class="bg-white xs:bg-custom-charcoal-grey ">
+    <main class="container-1 min-h-screen flex justify-center items-center font-custom-family text-custom-normal px-6">
+        <div class="bg-white max-w-[375px] xs:grid grid-cols-2 xs:max-w-[1000px] xs:rounded-[36px] gap-16 justify-items-center">
+            <article class="col-start-2 row-start-1">
+                <img src="./assets/images/illustration-sign-up-mobile.svg" alt="illustration" class="rounded-b-2xl xs:hidden">
+                <img src="./assets/images/illustration-sign-up-desktop.svg" alt="illustration" class="rounded-b-2xl w-full h-full p-6 hidden xs:block ">
+            </article>
+            <article class="px-6 py-10 space-y-10 xs:pl-16 xs:flex justify-center items-center flex-col xs:max-w-[400px] col-start-1">
+                <div class="space-y-8">
+                    <h1 class="text-custom-h1 font-bold">Stay updated!</h1>
+                    <p>
+                        Join 60,000+ product managers receiving monthly updates on:
+                    </p>
+                    <ul class="space-y-[10px]">
+                        <article class="flex items-start gap-4">
+                            <img src="./assets/images/icon-list.svg" alt="">
+                            <li>
+                                Product discovery and building what matters
+                            </li>
+                        </article>
+                        <article class="flex items-start gap-4">
+                            <img src="./assets/images/icon-list.svg" alt="">
+                            <li>
+                                Measuring to ensure updates are a success
+                            </li>
+                        </article>
+                        <article class="flex items-start gap-4">
+                            <img src="./assets/images/icon-list.svg" alt="">
+                            <li>
+                                And much more!
+                            </li>
+                        </article>
+                    </ul>
+                </div>
+                <form class="form px-6 pt-0 space-y-6 xs:px-0" novalidate>
+                    <label for="email">
+                        <p>Email address</p>
+                        <input type="email" name="email" id="email" class="border-custom-grey focus:outline-custom-grey caret-custom-grey pl-6 border-2 w-full h-14 rounded-lg placeholder:text-custom-normal hover:cursor-pointer text-custom-slate-grey" placeholder="email@company.com"/>
+                    </label>
+                    <button type="submit" class="bg-custom-slate-grey w-full text-center py-5 text-white rounded-lg hover:bg-custom-tomato hover:shadow-custom-shadow">
+                        Subscribe to monthly newsletter
+                    </button>
+                </form>
+            </article>
+
+        </div>
+    </main>
+    <div class="container-2 bg-white xs:bg-custom-charcoal-grey px-5 flex justify-center items-center min-h-screen hidden">
+        <div class="bg-white min-h-screen xs: grid items-end justify-center xs:min-h-0 xs:space-y-10 max-w-[500px] xs:px-16 xs:pb-16 xs:pt-12 rounded-[36px]">
+            <div class="">
+                <article class="w-16 pb-10">
+                    <img src="./assets/images/icon-list.svg" alt="marked" class="w-full">
+                </article>
+                <article class="pb-6">
+                    <h1 class="text-custom-h1 font-bold">
+                        Thanks for subscribing
+                    </h1>
+                </article>
+                <article class=""> 
+                    A confirmation email has been sent to <span id="userEmail">  </span> .Please open it and click the button inside to confirm your subscription.
+                </article>
+            </div>
+            <div class=" w-full flex justify-center items-center pb-10 px-6 xs:pb-0">
+                <button type="submit" class="bg-custom-slate-grey w-full text-center py-5 text-white rounded-lg hover:bg-custom-tomato hover:shadow-custom-shadow" id="btn">
+                    Dismiss message
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="./app.js"></script>
+</body>
+</html>
