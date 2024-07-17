@@ -2754,6 +2754,10 @@ input[type=number]{
     margin-top: calc(2.5rem * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(2.5rem * var(--tw-space-y-reverse));
   }
+
+  .xs\:rounded-3xl{
+    border-radius: 1.5rem;
+  }
 }
 
 @media (prefers-color-scheme: dark){
