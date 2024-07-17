@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Tip calculator</title>
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="./dict/output.css">
+</head>
+<body class="bg-custom-light-greyish-cyan">
+    <main class="min-h-screen flex justify-center pt-12">
+        <div class="flex items-center flex-col space-y-10 max-w-[380px] w-full xs:max-w-[900px]">
+            <img src="./assets/images/logo.svg" alt="logo" class="w-20 h-16">
+            <div class="bg-white rounded-t-3xl p-8 space-y-8 w-full xs:grid grid-cols-2 gap-12 xs:space-y-0">
+                <div class="xs:space-y-10">
+                    <article>  
+                        <div class="flex justify-between">
+                            <p class="text-custom-dark-greyish-cyan font-bold">Bill</p>
+                            <p class="text-custom-danger font-bold hidden zero-1">Can't be zero</p>
+
+                        </div>
+                        <input type="number" class="bg-custom-very-light-greyish-cyan bg-custom-dollar bg-no-repeat bg-image-position text-right h-12 w-full rounded-[5px] p-4 focus:border-2 focus:border-custom-strong-cyan outline-none" id="amount">
+                    </article>
+                    <article>
+                        <p class="text-custom-dark-greyish-cyan font-bold"> Select Tip  % </p>
+                        <div class="grid grid-cols-2 gap-4 xs:grid-cols-3">
+                            <button class="btn bg-custom-very-dark-cyan rounded-[5px] text-2xl leading-9 text-white w-full">
+                                5%
+                            </button>
+                            <button class="btn bg-custom-very-dark-cyan rounded-[5px] text-2xl leading-9 text-white w-full">
+                                10%
+                            </button>
+                            <button class="btn bg-custom-strong-cyan rounded-[5px] text-2xl leading-9 text-custom-very-dark-cyan w-full">
+                                15%
+                            </button>
+                            <button class="btn bg-custom-very-dark-cyan rounded-[5px] text-2xl leading-9 text-white w-full">
+                                25%
+                            </button>
+                            <button class="btn bg-custom-very-dark-cyan rounded-[5px] text-2xl leading-9 text-white w-full">
+                                50%
+                            </button>
+                            <input type="number" class="bg-custom-very-light-greyish-cyan text-right h-12 w-full rounded-[5px] p-4 focus:border-2 focus:border-custom-strong-cyan outline-none text-2xl leading-9 cursor-pointer" id="custom" placeholder="Custom">
+                        </div>
+                    </article>
+                    <article>                        
+                        <div class="flex justify-between">
+                            <p class="text-custom-dark-greyish-cyan font-bold">Number of people</p>
+                            <p class="text-custom-danger font-bold hidden zero-2">Can't be zero</p>
+                        </div>
+                        <input type="number" class="bg-custom-very-light-greyish-cyan bg-custom-person bg-no-repeat bg-image-position text-right h-12 w-full rounded-[5px] p-4 focus:border-2 focus:border-custom-strong-cyan outline-none" id="people">
+                    </article>
+                </div>
+                <div class="xs:h-full">
+                    <article class="bg-custom-very-dark-cyan p-6 rounded-2xl space-y-8 xs:h-full xs:flex justify-between flex-col">
+                        <div class="space-y-5">
+                            <div class="flex justify-between items-center">
+                                <p>
+                                    <span class="text-white font-bold"> 
+                                        Tip Amount 
+                                    </span> 
+                                    <span class="text-custom-greyish-cyan text-sm leading-5 block">
+                                        / person 
+                                    </span>
+                                </p>
+                                <p class="text-custom-strong-cyan text-[32px] leading-[48px] font-bold" id="singleAmount"> $0.00 </p>
+                            </div>
+                            
+                            <div class="flex justify-between items-center">
+                                <p>
+                                    <span class="text-white font-bold">
+                                        Total
+                                    </span>
+                                    <span class="text-custom-greyish-cyan text-sm leading-5 block">
+                                        / person
+                                    </span>
+                                </p>
+                                <p class="text-custom-strong-cyan text-[32px] leading-[48px] font-bold" id="totalAmount"> $0.00 </p>
+                            </div>
+                        </div>
+                        <div class="w-full">
+                            <button class="w-full bg-custom-strong-cyan text-[20px] leading-[30px] font-bold rounded-[5px] text-custom-very-dark-cyan py-[10px]" id="reset">
+                                RESET
+                            </button>
+                        </div>
+                    </article>
+                </div>
+            </div>
+        </div>
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>
