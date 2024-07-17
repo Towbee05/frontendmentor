@@ -8,10 +8,10 @@ timeContainer.addEventListener ("click", (e) => {
     btns.forEach((btn) => {
         btn.classList.remove("text-white");
     });
-    e.target.classList.add("text-white");
-
+    
     if (time){
         getData(time)
+        e.target.classList.add("text-white");
     }
     else{
         return
@@ -113,4 +113,8 @@ const getTimeHour = (hr) => {
     };
 } 
 
-addEventListener("DOMContentLoaded", (() => getData("daily")))
+addEventListener("DOMContentLoaded", (() => {
+    getData("weekly");
+    const weekly = getElement(".btn-weekly");
+    weekly.classList.add("text-white")
+}))
