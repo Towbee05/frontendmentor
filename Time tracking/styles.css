@@ -1,0 +1,39 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base{
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    
+    body{
+        font-family: "Rubik", sans-serif;
+        font-size: 18px;
+        line-height: 21px;
+    }
+}
+
+.work{
+    @apply bg-custom-work bg-custom-light-red-work
+}
+
+.exercise{
+    @apply bg-custom-exercise bg-custom-lime-green-exercise
+}
+.play{
+    @apply bg-custom-play bg-custom-soft-blue-play
+}
+.study{
+    @apply bg-custom-study bg-custom-light-red-study
+}
+.self-care{
+    @apply bg-custom-self-care bg-custom-soft-orange-selfCare
+}
+.social{
+    @apply bg-custom-social bg-custom-violet-social
+}

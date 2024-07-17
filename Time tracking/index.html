@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Time tracking dashboard</title>
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles.css">
+    <link rel="stylesheet" href="./dict/output.css">
+</head>
+<body class="bg-custom-very-dark-blue">
+    <main class="min-h-screen flex justify-center items-center p-4">
+        <div class="w-full max-w-[375px] space-y-6 xs:flex xs:gap-6 xs:max-w-[1400px] xs:space-y-0">
+            <article class="bg-custom-dark-blue flex flex-col rounded-2xl">
+                <div class="bg-custom-blue flex items-center gap-5 p-7 rounded-2xl xs:flex-col xs:gap-10 xs:pr-20 xs:items-start">
+                    <img src="./assets/images/image-jeremy.png" alt="user-image" class="w-16 border-4 border-white rounded-full xs:w-[78px]">
+                    <h1 class="text-white xs:text-custom-large-2 font-light"><span class="block text-custom-pale-blue text-custom-2 font-normal"> Report for </span> Jeremy Robson</h1>
+                </div>
+                <div class="timeframe p-6 text-center flex justify-between text-custom-desaturated-blue xs:flex-col xs:items-start xs:gap-5">
+                    <span data-time="daily"  class="btn cursor-pointer"> Daily </span>
+                    <span data-time="weekly" class="btn cursor-pointer"> Weekly </span>
+                    <span data-time="monthly" class="btn cursor-pointer"> Monthly </span>
+                </div>
+            </article>
+            <div class="activities space-y-6 xs:grid grid-rows-2 grid-cols-3 xs:w-full gap-6 xs:space-y-0">
+                <!-- Current work -->
+                
+                <!-- End of current work -->
+            </div>
+        </div>
+    </main>
+    <script src="./apps.js"></script>
+</body>
+</html>
