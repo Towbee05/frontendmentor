@@ -1,0 +1,105 @@
+@import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,100..800;1,100..800&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+@layer base{
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+        transition: .5s ease-in;
+    }
+    body{
+        font-family: "JetBrains Mono", monospace;
+    }
+}
+
+.slider{
+    appearance: none;
+    height: 8px;
+    width: 100%;
+}
+
+.slider::-webkit-slider-thumb{
+    -webkit-appearance: none;
+    appearance: none;
+    background: #E6E5EA;
+    cursor: pointer;
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+}
+
+.slider::-webkit-slider-thumb:hover{
+    border: 3px solid #A4FFAF;
+    background-color: #18171f;
+}
+
+input[type="checkbox"]{
+    appearance: none;
+    position: relative;
+    margin-right: 16px;
+}
+
+input[type="checkbox"]::after{
+    position: absolute;
+    content: "";
+    border: 3px solid #E6E5EA;
+    width: 20px;
+    height: 20px;
+    cursor: pointer;
+
+}
+
+input[type="checkbox"]:checked{
+    appearance: none;
+    position: relative;
+}
+
+input[type="checkbox"]:checked::after{
+    position: absolute;
+    content: "";
+    background: url("/assets/images/icon-check.svg") no-repeat center;
+    background-color: #A4FFAF;
+    border: none;
+}
+
+input[type="checkbox"]:hover::after{
+    border: 3px solid #A4FFAF;
+}
+
+.customise:hover{
+    border: 2px solid #A4FFAF;
+    background: #18171f;
+    color: #A4FFAF;
+}
+
+.customise:hover .img{
+    fill: #A4FFAF ;
+}
+
+.alert-danger {
+    animation: shake .5s linear;
+    animation-iteration-count: 3;
+}
+@keyframes shake {
+    0% { 
+        transform: rotate(5deg);
+    }
+
+    25% { 
+        transform: rotate(-6deg);
+    }
+    50% { 
+        transform: rotate(5deg);
+    }
+    75% { 
+        transform: rotate(-6deg);
+    }
+    100% { 
+        transform: rotate(5deg);
+    }
+}

@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Password generator </title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./dict/output.css">
+</head>
+<body class="bg-custom-body">
+    <main class="min-h-screen flex justify-center items-center text-custom-letters leading-5 text-[16px] p-5 xxs:text-custom-tablet font-bold">
+        <div class="flex flex-col max-w-[375px] w-full gap-4 text-center xxs:max-w-[550px] xxs:gap-0">
+            <h1 class="text-custom-heading xxs:mb-8 xxs:text-2xl"> Password Generator </h1>
+            <article class="bg-custom-dark-grey flex justify-between px-8 py-5 xxs:mb-6">
+                <p class=" text-2xl xs:text-custom-tablet-heading opacity-20" id="password"> P4$5W0rD!</p>
+                <div class="flex gap-2">
+                    <p class="text-custom-neon-green text-lg hidden" id="copiedText">Copied!!</p>
+                        <!-- <img src="./assets/images/icon-copy.svg" alt="copy password" class="cursor-pointer hover:stroke-white" id="copy-btn" > -->
+                    <svg width="21" height="24" xmlns="http://www.w3.org/2000/svg" id="copy-btn" class="cursor-pointer"><path class="hover:fill-white" d="M20.341 3.091 17.909.659A2.25 2.25 0 0 0 16.319 0H8.25A2.25 2.25 0 0 0 6 2.25V4.5H2.25A2.25 2.25 0 0 0 0 6.75v15A2.25 2.25 0 0 0 2.25 24h10.5A2.25 2.25 0 0 0 15 21.75V19.5h3.75A2.25 2.25 0 0 0 21 17.25V4.682a2.25 2.25 0 0 0-.659-1.591ZM12.469 21.75H2.53a.281.281 0 0 1-.281-.281V7.03a.281.281 0 0 1 .281-.281H6v10.5a2.25 2.25 0 0 0 2.25 2.25h4.5v1.969a.282.282 0 0 1-.281.281Zm6-4.5H8.53a.281.281 0 0 1-.281-.281V2.53a.281.281 0 0 1 .281-.281H13.5v4.125c0 .621.504 1.125 1.125 1.125h4.125v9.469a.282.282 0 0 1-.281.281Zm.281-12h-3v-3h.451c.075 0 .147.03.2.082L18.667 4.6a.283.283 0 0 1 .082.199v.451Z" fill="#A4FFAF"/></svg>    
+                    
+                </div>
+            </article>
+            <article class="bg-custom-dark-grey p-4 space-y-8 xxs:p-6">
+                <article class="space-y-2 xxs:space-y-4">
+                    <div class="flex justify-between">
+                        <p> Character length </p>
+                        <p class="text-custom-neon-green text-2xl " id="character-length"> 0 </p>
+                    </div> 
+                    <label>
+                        <input type="range" min="0" max="20" value="0" class="slider bg-custom-strength ">
+                    </label>
+
+                </article>
+                <article class="space-y-4 xxs:space-y-5">
+                    <label class="flex space-x-5">
+                        <input type="checkbox" id="uppercase">
+                        <p class="capitalize"> Include uppercase letters </p>
+                    </label>
+                    <label class="flex space-x-5">
+                        <input type="checkbox" id="lowercase">
+                        <p class="capitalize"> Include lowercase letters </p>
+                    </label>
+                    <label class="flex space-x-5">
+                        <input type="checkbox" id="numbers">
+                        <p class="capitalize"> Include numbers </p>
+                    </label>
+                    <label class="flex space-x-5">
+                        <input type="checkbox" id="symbols">
+                        <p class="capitalize"> Include symbols </p>
+                    </label>
+                </article>
+                <article class="space-y-4 xxs:space-y-8">
+                    <div class="bg-custom-strength flex justify-between items-center p-4">
+                        <p class="uppercase opacity-20"> strength </p>
+                        <div class="flex gap-5 justify-center items-center" id="strength">
+                            <p>  </p>
+                            <article class="space-x-2 flex">
+                                <div class="w-2.5 h-7 border-2 border-custom-letters">  </div>
+                                <div class="w-2.5 h-7 border-2 border-custom-letters">  </div>
+                                <div class="w-2.5 h-7 border-2 border-custom-letters">  </div>
+                                <div class="w-2.5 h-7 border-2 border-custom-letters">  </div>
+                            </article>
+                        </div>
+                    </div> 
+                    <div class="w-full"> 
+                        <button class="bg-custom-neon-green text-custom-dark-grey w-full flex justify-center items-center py-4 gap-4 customise"> 
+                            Generate 
+                            <svg width="12" height="12" xmlns="http://www.w3.org/2000/svg"><path class="img" fill="#24232C" d="m5.106 12 6-6-6-6-1.265 1.265 3.841 3.84H.001v1.79h7.681l-3.841 3.84z"/></svg>
+                        </button>
+                    </div>
+                </article>
+            </article>
+        </div>
+    </main> 
+    <script src="./app.js"></script> 
+</body>
+</html>
