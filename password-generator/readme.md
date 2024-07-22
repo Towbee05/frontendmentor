@@ -14,4 +14,4 @@ This is a solution to the [Password generator app challenge on Frontend Mentor](
 
 
 ## Preview Site 
-👉 
+👉 [preview site](https://dapper-shortbread-1b361d.netlify.app/)
