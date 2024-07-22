@@ -452,7 +452,6 @@ video {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: .5s ease-in;
 }
 
 body{
@@ -1387,16 +1386,16 @@ body{
   justify-items: stretch;
 }
 
+.gap-2{
+  gap: 0.5rem;
+}
+
 .gap-4{
   gap: 1rem;
 }
 
 .gap-5{
   gap: 1.25rem;
-}
-
-.gap-2{
-  gap: 0.5rem;
 }
 
 .space-x-2 > :not([hidden]) ~ :not([hidden]){
@@ -2679,6 +2678,33 @@ input[type="checkbox"]:hover::after{
   fill: #A4FFAF ;
 }
 
+.alert-danger {
+  animation: shake .5s linear;
+  animation-iteration-count: 3;
+}
+
+@keyframes shake {
+  0% {
+    transform: rotate(5deg);
+  }
+
+  25% {
+    transform: rotate(-6deg);
+  }
+
+  50% {
+    transform: rotate(5deg);
+  }
+
+  75% {
+    transform: rotate(-6deg);
+  }
+
+  100% {
+    transform: rotate(5deg);
+  }
+}
+
 @media (min-width: 640px){
   .sm\:container{
     width: 100%;
@@ -2721,17 +2747,8 @@ input[type="checkbox"]:hover::after{
   }
 }
 
-.hover\:bg-white:hover{
-  --tw-bg-opacity: 1;
-  background-color: rgb(255 255 255 / var(--tw-bg-opacity));
-}
-
 .hover\:fill-white:hover{
   fill: #fff;
-}
-
-.hover\:fill-custom-letters:hover{
-  fill: #E6E5EA;
 }
 
 .hover\:stroke-white:hover{
@@ -2740,11 +2757,6 @@ input[type="checkbox"]:hover::after{
 
 .hover\:font-bold:hover{
   font-weight: 700;
-}
-
-.hover\:text-white:hover{
-  --tw-text-opacity: 1;
-  color: rgb(255 255 255 / var(--tw-text-opacity));
 }
 
 .before\:hover\:text-center:hover::before{
