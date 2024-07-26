@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Frontend Quiz App</title>
+    <link rel="stylesheet" href="./style.css">
+    <link rel="stylesheet" href="./dict/output.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body class=" text-custom-black">
+    <!-- Remove "flex-col" -->
+    <main class="bg-mobile-light tablet:bg-tablet-light laptop:bg-desktop-light bg-custom-light-grey bg-no-repeat bg-cover min-h-screen flex justify-center items-center w-full p-6 tablet:p-16 laptop:px-36 break-words flex-col">
+        <p class="font-black text-4xl loading"> Loading... </p>
+        <!-- Welcome page -->
+        <div class="w-full max-w-[375px] tablet:max-w-[750px] laptop:max-w-[1400px] hidden" id="welcome">
+            <!-- heading -->
+            <header class="flex items-center justify-between">
+                <div  class="flex items-center gap-4 laptop:gap-6" id="header">
+
+                </div>
+
+                <ul class="flex gap-2 items-center">
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="cursor-pointer"><path fill="#626C7F" d="M12 1.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0v-1.5A.75.75 0 0 1 12 1.5Zm0 15a4.5 4.5 0 1 0 0-9 4.5 4.5 0 0 0 0 9Zm0-1.5a3 3 0 1 1 0-6 3 3 0 0 1 0 6Zm9.75-2.25a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 1 0 0 1.5h1.5ZM12 19.5a.75.75 0 0 1 .75.75v1.5a.75.75 0 1 1-1.5 0v-1.5a.75.75 0 0 1 .75-.75Zm-8.25-6.75a.75.75 0 1 0 0-1.5h-1.5a.75.75 0 1 0 0 1.5h1.5Zm.969-8.031a.75.75 0 0 1 1.062 0l1.5 1.5a.751.751 0 0 1-1.062 1.062l-1.5-1.5a.75.75 0 0 1 0-1.062Zm1.062 14.562a.75.75 0 1 1-1.062-1.06l1.5-1.5a.75.75 0 1 1 1.062 1.06l-1.5 1.5Zm13.5-14.562a.75.75 0 0 0-1.062 0l-1.5 1.5a.751.751 0 0 0 1.062 1.062l1.5-1.5a.75.75 0 0 0 0-1.062Zm-1.062 14.562a.75.75 0 0 0 1.062-1.06l-1.5-1.5a.75.75 0 0 0-1.062 1.06l1.5 1.5Z"/></svg>
+                    </li>
+                    <li class="switch">
+                    </li>
+                    <li>
+                        <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24" class="cursor-pointer"><path fill="#626C7F" d="M11.775 4.522A7.5 7.5 0 1 1 4.898 16.09c2.104-.57 4.974-1.953 6.24-5.326.828-2.211.876-4.408.637-6.241ZM20.184 12a8.997 8.997 0 0 0-9.315-8.994.75.75 0 0 0-.713.888c.345 1.821.42 4.092-.424 6.342-1.2 3.201-4.203 4.26-6.115 4.606a.75.75 0 0 0-.542 1.066A9 9 0 0 0 20.184 12Z"/></svg>
+                    </li>
+                </ul>
+                
+            </header>
+            <!-- End of heading -->
+            <!-- <section class="pt-8 space-y-10 tablet:pt-16 laptop:pt-[100px] tablet:space-y-16 laptop:grid grid-cols-2 laptop:space-y-0" id="container"> -->
+            <section class="pt-8 tablet:pt-16 laptop:pt-[100px] tablet:space-y-16 laptop:grid grid-cols-2 laptop:space-y-0 w-full max-w-[375px] tablet:max-w-[750px] laptop:max-w-[1400px] space-y-8 laptop:text-[28px]"  id="container">
+                
+                <!-- End of select quiz -->
+            </section>
+        </div>
+        <!-- End of welcome page -->
+
+        <!-- Quiz page -->
+        <div class="w-full max-w-[375px] tablet:max-w-[750px] laptop:max-w-[1400px] space-y-8 laptop:text-[28px] " id="quiz" >
+            
+            <!-- Quiz question -->
+            <!-- <div id="quiz-question" class="laptop:grid grid-cols-2 laptop:pt-[84px]">
+                <div class="space-y-6 tablet:space-y-10 laptop:max-w-[452px] laptop:space-y-40" id="questions">
+                    <article class="space-y-3 tablet:space-y-7">
+                        <p class="italic text-sm text-custom-grey-navy"> Question 6 of 10 </p>
+                        <p class="font-medium text-xl laptop:text-4xl"> 
+                            Which of these color contrast ratios defines the minimum WCAG 2.1 Level AA requirement for normal text?
+                        </p>
+                    </article>
+                    <article>
+                        <div class="bg-white p-1 w-full relative h-4 rounded-[999px]">
+                            <div class="bg-custom-purple w-4/5 absolute inline h-2 rounded-[999px]"></div>
+                        </div>
+                    </article>
+                </div>
+                <div class="space-y-4 pt-10 tablet:space-y-8 tablet:pt-16 laptop:pt-0">
+                    <div class="space-y-4 tablet:space-y-8  laptop:pt-0" id="answers">
+                        <article class="flex gap-4 p-3 laptop:gap-8 laptop:p-5 rounded-xl items-center bg-white cursor-pointer" id="answer">
+                            <span class="w-10 h-10 bg-custom-grey rounded-md laptop:w-14 laptop:h-14 flex justify-center items-center font-medium text-custom-grey-navy laptop:text-[28px]">
+                                A
+                            </span>
+                            <p class="font-medium">
+                                4.5:1
+                            </p>
+                        </article>
+                        <article class="flex gap-4 p-3 laptop:gap-8 laptop:p-5 rounded-xl items-center bg-white cursor-pointer" id="answer">
+                            <span class="w-10 h-10 bg-custom-grey rounded-md laptop:w-14 laptop:h-14 flex justify-center items-center font-medium text-custom-grey-navy laptop:text-[28px]">
+                                B
+                            </span>
+                            <p class="font-medium">
+                                3:1
+                            </p>
+                        </article>
+                        <article class="flex gap-4 p-3 laptop:gap-8 laptop:p-5 rounded-xl items-center bg-white cursor-pointer" id="answer">
+                            <span class="w-10 h-10 bg-custom-grey rounded-md laptop:w-14 laptop:h-14 flex justify-center items-center font-medium text-custom-grey-navy laptop:text-[28px]">
+                                C
+                            </span>
+                            <p class="font-medium">
+                                2.5:1
+                            </p>
+                        </article>
+                        <article class="flex gap-4 laptop:gap-8 laptop:p-5 p-3 rounded-xl items-center bg-white cursor-pointer">
+                            <span class="w-10 h-10 bg-custom-grey rounded-md laptop:w-14 laptop:h-14 flex justify-center items-center font-medium text-custom-grey-navy laptop:text-[28px]">
+                                D
+                            </span>
+                            <p class="font-medium">
+                                5:1
+                            </p>
+                        </article> -->
+                    <!-- </div>
+
+                    <button class="bg-custom-purple p-5 text-white w-full text-center rounded-xl" id="submit-btn">
+                        Submit Answer
+                    </button>
+                    <button class="bg-custom-purple p-5 text-white w-full text-center rounded-xl " id="next-btn">
+                        Next Question
+                    </button>
+                    <p class="text-custom-red flex items-center gap-2 w-full justify-center " id="message-danger">
+                        <span>
+                            <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#EE5454" d="M20 5a15 15 0 1 1 0 30 15 15 0 0 1 0-30Zm0 2.5a12.5 12.5 0 1 0 0 25 12.5 12.5 0 0 0 0-25Zm-5.402 7.415.142-.175a1.25 1.25 0 0 1 1.595-.143l.175.143L20 18.233l3.49-3.493a1.25 1.25 0 0 1 1.595-.143l.175.143a1.25 1.25 0 0 1 .142 1.595l-.142.175L21.767 20l3.493 3.49a1.25 1.25 0 0 1 .142 1.595l-.142.175a1.25 1.25 0 0 1-1.595.142l-.175-.142L20 21.767l-3.49 3.493a1.25 1.25 0 0 1-1.595.142l-.175-.142a1.25 1.25 0 0 1-.143-1.595l.143-.175L18.233 20l-3.493-3.49a1.25 1.25 0 0 1-.143-1.595Z"/></svg>
+                        </span> 
+                        <span>
+                            Please select an answer
+                        </span>
+                    </p> -->
+                </div>
+            </div>
+            <!-- End of quiz question -->
+            <button class="bg-custom-purple text-white rounded-xl mt-3 tablet:mt-8 laptop:mt-8 p-3 tablet:p-8 laptop:p-8 w-full hidden" id="play-again">
+                Play Again
+            </button>
+        </div>
+        <!-- End of quiz page -->
+        <!-- Score page -->
+        <div class="w-full max-w-[375px] tablet:max-w-[750px] laptop:max-w-[1400px] space-y-8 tablet:space-y-[50px] laptop:space-y-[85px] tablet:text-[28px] laptop:text-[28px] " id="scoreboard" >
+        
+            <!-- score -->
+            <!-- <div class="laptop:grid grid-cols-2 laptop:pt-[84px] pt-8 space-y-10 tablet:space-y-16 laptop:space-y-0">
+                <article class="text-[40px] tablet:text-[64px] laptop:text-[64px] ">
+                    <p class="font-light"> Quiz Completed </p>
+                    <p class="font-medium"> You scored ... </p>
+                </article>
+                <article class="w-full">
+                    <div class="w-full space-y-4 p-8 tablet:p-12 laptop:p-12 laptop:space-y-10 bg-white grid place-items-center rounded-xl" id="display-score" >
+                        <article class="flex items-center gap-4 laptop:gap-6">
+                            <span class="bg-custom-Accessibility p-2 grid place-items-center rounded-lg">
+                                <svg xmlns="http://www.w3.org/2000/svg" width="40" height="40" fill="none" viewBox="0 0 40 40"><path fill="#A729F5" d="M16.875 8.125a3.125 3.125 0 1 1 6.25 0 3.125 3.125 0 0 1-6.25 0ZM20 2.5a5.625 5.625 0 0 0-5.475 6.915l-4.03-1.625a4 4 0 0 0-5.19 2.18 3.95 3.95 0 0 0 2.175 5.175l5.02 2.027v5.96l-4.532 8.525a3.98 3.98 0 0 0 7.024 3.738L20 25.975l5.01 9.42a3.978 3.978 0 0 0 7.025-3.735L27.5 23.13v-5.957l5.02-2.028a3.95 3.95 0 0 0 2.175-5.175 4 4 0 0 0-5.19-2.183l-4.027 1.628A5.626 5.626 0 0 0 20 2.5ZM7.618 10.922a1.5 1.5 0 0 1 1.94-.817l8.57 3.463a5 5 0 0 0 3.744 0l8.57-3.463a1.5 1.5 0 0 1 1.94.817 1.45 1.45 0 0 1-.8 1.905l-5.02 2.025A2.5 2.5 0 0 0 25 17.175v5.957c0 .41.1.814.293 1.175l4.535 8.528a1.48 1.48 0 0 1-2.61 1.39l-5.01-9.425a2.5 2.5 0 0 0-4.415 0l-5.008 9.418a1.477 1.477 0 1 1-2.61-1.388l4.532-8.525A2.5 2.5 0 0 0 15 23.133v-5.96a2.5 2.5 0 0 0-1.563-2.318l-5.02-2.03a1.45 1.45 0 0 1-.8-1.902Z"/></svg>
+                            </span>
+        
+                            <p class="font-medium">Accessibility</p>
+                        </article>
+                        <article class="space-y-4">
+                            <p class="text-[88px] font-medium w-full text-center"> 8 </p>
+                            <p class="text-custom-grey-navy w-full text-center"> out of 10 </p>
+                        </article>
+                    </div>
+                    <button class="bg-custom-purple text-white rounded-xl mt-3 tablet:mt-8 laptop:mt-8 p-3 tablet:p-8 laptop:p-8 w-full" id="play-again">
+                        Play Again
+                    </button>
+                </article>
+            </div> -->
+            <!-- Score end -->
+        <!-- End of score page -->
+    </main>
+    <script src="./app.js"></script>
+</body>
+</html>

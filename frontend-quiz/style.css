@@ -1,0 +1,132 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root{
+    --switched : translateX(0);
+}
+
+@layer base {
+    *{
+        margin: 0;
+        padding: 0;
+        box-sizing: border-box;
+    }
+    body {
+        font-family: "Rubik", 'sans-serif';
+        font-size: 18px;
+    }
+}
+
+.switch, #switch{
+    position: relative;
+    width: 32px;
+    height: 20px;
+    background: #A729F5;
+    padding: 4px;
+    border-radius: 999px;
+    transition: .5s;
+    cursor: pointer;
+    @apply tablet:w-12 tablet:h-7 laptop:w-12 laptop:h-7
+}
+
+.switch::before, #switch::before{
+    position: absolute;
+    content: "";
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background: #FFF;
+    transform: var(--switched);
+    @apply tablet:w-5 tablet:h-5 laptop:w-5 laptop:h-5
+}
+#progress{
+    width: 99%;
+}
+
+.dark-mode .progress-container{
+    background-color: #3B4D66;
+}
+.selected{
+    @apply border-4 border-custom-purple
+}
+
+.selected #label{
+    @apply bg-custom-purple text-white
+}
+
+#correct-img{
+    display: none;
+}
+
+
+#incorrect-img{
+    display: none;
+}
+.correct{
+    @apply border-4 border-custom-green
+}
+
+.correct div #label{
+    @apply bg-custom-green text-white
+}
+
+.correct div #correct-img{
+    display: block;
+}
+
+.incorrect{
+    @apply border-4 border-custom-red
+}
+
+.incorrect div #label{
+    @apply bg-custom-red text-white
+}
+
+.incorrect div #incorrect-img{
+    display: block;
+}
+
+.correct-answer #correct-img{
+    display: block;
+}
+
+.dark-mode{
+    @apply bg-mobile-dark tablet:bg-tablet-dark laptop:bg-desktop-dark bg-custom-black text-white;
+    /* @apply bg-mobile-dark tablet:bg-tablet-dark laptop:bg-desktop-dark; */
+}
+
+.dark-mode .inner-welcome{
+    @apply text-cusom-light-bluish
+}
+
+.dark-mode #btn, .dark-mode #answer{
+    @apply bg-custom-navy text-white 
+}
+
+.dark-mode #label{
+    @apply bg-custom-light-grey
+}
+
+.dark-mode #progress-container{
+    @apply bg-custom-navy
+}
+
+.dark-mode .score-title{
+    @apply text-custom-grey-navy
+}
+
+.dark-mode #progress{
+    width: 98%;
+    @apply m-auto bg-custom-black
+}
+
+.dark-mode .selected #label{
+    @apply bg-custom-purple text-white
+}
+
+.dark-mode .score-container{
+    @apply bg-custom-navy
+}
