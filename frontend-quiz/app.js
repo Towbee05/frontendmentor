@@ -7,7 +7,6 @@ const welcome = getSelection("#welcome");
 const optionsLabel = ["A", "B", "C", "D"];
 const messageDanger = getSelection("#message-danger");
 const main = getSelection("main");
-const playAgain = getSelection("#play-again");
 const header = getSelection("#header");
 const container = getSelection("#container");
 
@@ -192,28 +191,32 @@ const convertTextToHTML = (text) => {
 const showScores = (data, score) => {
     const {title, icon, questions}  = data;
     container.innerHTML = `
-        <div class="laptop:grid grid-cols-2 laptop:pt-[84px] pt-8 space-y-10 tablet:space-y-16 laptop:space-y-0">
-                <article class="text-[40px] tablet:text-[64px] laptop:text-[64px] ">
-                    <p class="font-light"> Quiz Completed </p>
-                    <p class="font-medium"> You scored ... </p>
-                </article>
-                <article class="w-full">
-                    <div class="w-full space-y-4 p-8 tablet:p-12 laptop:p-12 laptop:space-y-10 bg-white grid place-items-center rounded-xl" id="display-score" >
-                        <article class="flex items-center gap-4 laptop:gap-6">
-                            <span class="bg-custom-Accessibility p-2 grid place-items-center rounded-lg">
-                                <img src="${icon}" alt = "${title} quiz icon"/>
-                            </span>
-        
-                            <p class="font-medium score-title">${title}</p>
-                        </article>
-                        <article class="space-y-4">
-                            <p class="text-[88px] font-medium w-full text-center score-title"> ${score} </p>
-                            <p class="text-custom-grey-navy w-full text-center"> out of ${questions.length} </p>
-                        </article>
-                    </div>
-                </article>
-            </div> 
+            <article class="text-[40px] tablet:text-[64px] laptop:text-[64px] ">
+                <p class="font-light"> Quiz Completed </p>
+                <p class="font-medium"> You scored ... </p>
+            </article>
+            <article class="w-full">
+                <div class="w-full space-y-4 p-8 tablet:p-12 laptop:p-12 laptop:space-y-10 bg-white grid place-items-center rounded-xl" id="display-score" >
+                    <article class="flex items-center gap-4 laptop:gap-6">
+                        <span class="bg-custom-Accessibility p-2 grid place-items-center rounded-lg">
+                            <img src="${icon}" alt = "${title} quiz icon"/>
+                        </span>
+    
+                        <p class="font-medium score-title">${title}</p>
+                    </article>
+                    <article class="space-y-4">
+                        <p class="text-[88px] font-medium w-full text-center score-title"> ${score} </p>
+                        <p class="text-custom-grey-navy w-full text-center"> out of ${questions.length} </p>
+                    </article>
+                </div>
+                <button class="bg-custom-purple text-white rounded-xl mt-3 tablet:mt-8 laptop:mt-8 p-3 tablet:p-8 laptop:p-8 w-full hidden" id="play-again">
+                    Play Again
+                </button>
+            </article>
     `
+    
+    const playAgain = getSelection("#play-again");
+    playAgain.addEventListener("click", () => startQuiz());
     playAgain.classList.remove("hidden");
 };
 
@@ -277,7 +280,7 @@ btns.forEach((btn) => {
 
 
 });
-playAgain.classList.add("hidden");
+// playAgain.classList.add("hidden");
 }
 
 const loading = getSelection(".loading");
@@ -289,7 +292,6 @@ addEventListener("load", () => {
     loading.classList.add("hidden");
     welcome.classList.remove("hidden");
 })
-playAgain.addEventListener("click", () => startQuiz());
 
 const switchProgressBar = (progress, counter, questions) => {
     if (main.classList.contains("dark-mode")) progress.style.background = `linear-gradient(to right, #A729f5 ${((counter + 1) / questions.length) * 100}%, #3b4d66 ${((counter + 1) / questions.length) * 100}%)`;
