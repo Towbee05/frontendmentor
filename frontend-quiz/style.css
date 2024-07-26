@@ -102,7 +102,7 @@
     @apply text-cusom-light-bluish
 }
 
-.dark-mode #btn, .dark-mode #answer{
+.dark-mode .course-btn, .dark-mode #answer{
     @apply bg-custom-navy text-white 
 }
 

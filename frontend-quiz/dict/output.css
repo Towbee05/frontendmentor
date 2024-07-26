@@ -698,18 +698,6 @@ body {
   isolation: auto;
 }
 
-.col-span-2{
-  grid-column: span 2 / span 2;
-}
-
-.col-start-2{
-  grid-column-start: 2;
-}
-
-.col-start-1{
-  grid-column-start: 1;
-}
-
 .float-start{
   float: inline-start;
 }
@@ -1257,10 +1245,6 @@ body {
 
 .grid-cols-2{
   grid-template-columns: repeat(2, minmax(0, 1fr));
-}
-
-.grid-cols-1{
-  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .flex-row{
@@ -2870,7 +2854,7 @@ body {
   color: rgb(171 193 225 / var(--tw-text-opacity));
 }
 
-.dark-mode #btn, .dark-mode #answer{
+.dark-mode .course-btn, .dark-mode #answer{
   --tw-bg-opacity: 1;
   background-color: rgb(59 77 102 / var(--tw-bg-opacity));
   --tw-text-opacity: 1;
@@ -3008,10 +2992,6 @@ body {
 }
 
 @media (min-width: 600px) and (max-width: 1200px){
-  .tablet\:col-start-2{
-    grid-column-start: 2;
-  }
-
   .tablet\:mt-8{
     margin-top: 2rem;
   }
@@ -3022,10 +3002,6 @@ body {
 
   .tablet\:max-w-\[750px\]{
     max-width: 750px;
-  }
-
-  .tablet\:grid-cols-2{
-    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .tablet\:space-y-10 > :not([hidden]) ~ :not([hidden]){
@@ -3103,10 +3079,6 @@ body {
 }
 
 @media (min-width: 1200px){
-  .laptop\:col-start-2{
-    grid-column-start: 2;
-  }
-
   .laptop\:mt-8{
     margin-top: 2rem;
   }
