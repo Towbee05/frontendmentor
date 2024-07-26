@@ -10,6 +10,8 @@ const main = getSelection("main");
 const header = getSelection("#header");
 const container = getSelection("#container");
 
+const darkIcons = [...document.querySelectorAll(".dark-moon")];
+const lightIcons = [...document.querySelectorAll(".light-moon")];
 let score = 0;
 
 const fetchData = async () => {
@@ -43,9 +45,14 @@ const switchLightDarkMode = (btn) => {
         main.classList.add("tablet:bg-tablet-dark")
         main.classList.add("laptop:bg-desktop-dark");
         main.classList.add("dark-mode");
+        darkIcons.forEach((icon) => icon.classList.remove("hidden"))
+        lightIcons.forEach((icon) => icon.classList.add("hidden"));
+        
         // progress.style.background = `linear-gradient(to right, #a729f5 ${progressPercentage}%, #fff ${progressPercentage}%`;
     }
     else{
+        darkIcons.forEach((icon) => icon.classList.add("hidden"));
+        lightIcons.forEach((icon) => icon.classList.remove("hidden"));
         btn.classList.remove("switched");
         btn.style.setProperty('--switched', 'translateX(0%)');
         main.classList.add("tablet:bg-tablet-light");
