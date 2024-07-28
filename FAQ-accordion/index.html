@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>FAQ accordion page with accessibility</title>
+    <link rel="stylesheet" href="./css/dict/output.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body class="bg-custom-light-pink">
+    <article class="min-h-screen flex justify-center items-center text-custom-body-mobile desktop:text-custom-body-desktop text-custom-dark-purple font-custom-family bg-custom-mobile-background desktop:bg-custom-desktop-background bg-no-repeat bg-contain p-7">
+        <main class="max-w-[375px] desktop:max-w-[600px] bg-white p-6 desktop:p-10 rounded-lg space-y-6 desktop:space-y-8">
+            <header class="flex gap-6 items-center">  
+                <img src="./assets/images/icon-star.svg" alt="star icon as logo" class="size-6">
+                <h1 class="text-[32px] font-bold desktop:text-[56px]"> FAQs </h1>
+            </header>   
+            <div class="space-y-5 desktop:space-y-6">
+                <section class="space-y-6">
+                    <header class="flex justify-between items-center">
+                        <h2 class="text-base font-semibold desktop:text-lg"> What is Frontend Mentor, and how will it help me? </h2>
+                        <div>
+                            <button class="open-tab">
+                                <img src="./assets/images/icon-plus.svg" alt="click to open text">
+                            </button>
+                            <button class="hidden close-tab">
+                                <img src="./assets/images/icon-minus.svg" alt="click to close text">
+                            </button>
+                        </div>
+                    </header>
+                    <p class="paragraph text-custom-greyish-purple hidden">
+                        Frontend Mentor offers realistic coding challenges to help developers improve their 
+                        frontend coding skills with projects in HTML, CSS, and JavaScript. It's suitable for 
+                        all levels and ideal for portfolio building.                  
+                    </p>
+                </section>
+                <hr>
+                <section class="space-y-6">
+                    <header class="flex justify-between items-center">
+                        <h2 class="text-base font-semibold desktop:text-lg"> Is Frontend Mentor free? </h2>
+                        <div>
+                            <button class="open-tab">
+                                <img src="./assets/images/icon-plus.svg" alt="click to open text">
+                            </button>
+                            <button class="hidden close-tab">
+                                <img src="./assets/images/icon-minus.svg" alt="click to close text">
+                            </button>
+                        </div>
+                    </header>
+                    <p class="paragraph text-custom-greyish-purple hidden">
+                        Yes, Frontend Mentor offers both free and premium coding challenges, with the free 
+                        option providing access to a range of projects suitable for all skill levels.                  
+                    </p>
+                </section>
+                <hr>
+                <section class="space-y-6">
+                    <header class="flex justify-between items-center">
+                        <h2 class="text-base font-semibold desktop:text-lg"> Can I use Frontend Mentor projects in my portfolio? </h2>
+                        <div>
+                            <button class="open-tab">
+                                <img src="./assets/images/icon-plus.svg" alt="click to open text">
+                            </button>
+                            <button class="hidden close-tab">
+                                <img src="./assets/images/icon-minus.svg" alt="click to close text">
+                            </button>
+                        </div>
+                    </header>
+                    <p class="paragraph text-custom-greyish-purple hidden">
+                        Yes, you can use projects completed on Frontend Mentor in your portfolio. It's an excellent
+                        way to showcase your skills to potential employers!                  
+                    </p>
+                </section>
+                <hr>
+                <section class="space-y-6">
+                    <header class="flex justify-between items-center">
+                        <h2 class="text-base font-semibold desktop:text-lg"> How can I get help if I'm stuck on a Frontend Mentor challenge? </h2>
+                        <div>
+                            <button class="open-tab">
+                                <img src="./assets/images/icon-plus.svg" alt="click to open text">
+                            </button>
+                            <button class="hidden close-tab">
+                                <img src="./assets/images/icon-minus.svg" alt="click to close text">
+                            </button>
+                        </div>
+                    </header>
+                    <p class="paragraph text-custom-greyish-purple hidden">
+                        The best place to get help is inside Frontend Mentor's Discord community. There's a help 
+                        channel where you can ask questions and seek support from other community members.                  
+                    </p>
+                </section>
+            </div>
+        </main>
+    </article>
+    <script defer src="./js/app.js"></script>
+</body>
+</html>
