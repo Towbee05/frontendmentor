@@ -9,73 +9,75 @@
 </head>
 <body>
     <div class="body-content">
-        <article class="message-success">
-            <div>
-                <img src="./assets/images/icon-success-check.svg" alt="success check icon">
-                <p>Message Sent!</p>
-            </div>
-            <p>Thank you for completing the form. We'll be in touch soon!</p>
-        </article>
-        <article class="container">
-            <header>
-                <h1> contact us </h1>
-            </header>
-            <form action="#">
-                <div class="name">
+        <main>
+            <article class="message-success">
+                <div>
+                    <img src="./assets/images/icon-success-check.svg" alt="success check icon">
+                    <p>Message Sent!</p>
+                </div>
+                <p>Thank you for completing the form. We'll be in touch soon!</p>
+            </article>
+            <article class="container">
+                <header>
+                    <h1> contact us </h1>
+                </header>
+                <form action="#">
+                    <div class="name">
+                        <div class="label-container">
+                            <label for="first-name"> first name <span class="asterisk"> * </span></label>
+                            <input type="text" name="first-name" id="first-name" autocomplete="name" aria-describedby="firstname-instruction">
+                            <p id="firstname-instruction" class="error-message">
+                                This field is required
+                            </p>
+                        </div>
+                        
+                        <div class="label-container">
+                            <label for="last-name"> last name <span class="asterisk"> * </span></label>
+                            <input type="text" name="last-name" id="last-name" autocomplete="name" aria-describedby="lastname-instruction" >
+                            <p id="lastname-instruction" class="error-message">This field is required</p>
+                        </div>
+                    </div>
+    
                     <div class="label-container">
-                        <label for="first-name"> first name <span class="asterisk"> * </span></label>
-                        <input type="text" name="first-name" id="first-name" autocomplete="name" aria-describedby="firstname-instruction">
-                        <p id="firstname-instruction" class="error-message">
-                            This field is required
-                        </p>
+                        <label for="email"> email address <span class="asterisk"> * </span></label>
+                        <input type="email" name="email" id="email" autocomplete="email" aria-describedby="email-error" >
+                        <p id="email-error" class="error-message">Please enter a valid email address</p>
                     </div>
                     
+                    <fieldset>
+                        <legend style="margin-bottom: 16px;"> query type <span class="asterisk"> * </span></legend>
+                        <div class="radio-container">
+                            <input type="radio" aria-describedby="query-error" name="general-enquiry" id="general-enquiry">
+                            <label for="general-enquiry" >general enquiry </label>
+                        </div>
+                        <div class="radio-container">
+                            <input type="radio" name="general-enquiry" aria-describedby="query-error" id="support-request">
+                            <label for="support-request">support request</label>
+                        </div>
+    
+                        <p id="query-error" class="error-message">Please select a query</p>
+                    </fieldset>
+                    
                     <div class="label-container">
-                        <label for="last-name"> last name <span class="asterisk"> * </span></label>
-                        <input type="text" name="last-name" id="last-name" autocomplete="name" aria-describedby="lastname-instruction" >
-                        <p id="lastname-instruction" class="error-message">This field is required</p>
+                        <label for="message"> message <span class="asterisk"> * </span></label>
+                        <textarea name="message" aria-describedby="message-error" id="message" rows="8"> </textarea>
+                        <p id="message-error" class="error-message">This field is required</p>
                     </div>
-                </div>
-
-                <div class="label-container">
-                    <label for="email"> email address <span class="asterisk"> * </span></label>
-                    <input type="email" name="email" id="email" autocomplete="email" aria-describedby="email-error" >
-                    <p id="email-error" class="error-message">Please enter a valid email address</p>
-                </div>
-                
-                <fieldset>
-                    <legend style="margin-bottom: 16px;"> query type <span class="asterisk"> * </span></legend>
-                    <div class="radio-container">
-                        <input type="radio" aria-describedby="query-error" name="general-enquiry" id="general-enquiry">
-                        <label for="general-enquiry" >general enquiry </label>
+                    
+                    <div class="consult-container">
+                        <div>
+                            <input type="checkbox" name="consult" id="consult" aria-describedby="consult-error" >
+                            <label for="consult" style="margin-left: 16px;"> I consult to being contacted by the team <span class="asterisk">*</span></label>
+                        </div>
+    
+                        <p id="consult-error" class="error-message">
+                            To submit this form, please consent to being contacted
+                        </p>
                     </div>
-                    <div class="radio-container">
-                        <input type="radio" name="general-enquiry" aria-describedby="query-error" id="support-request">
-                        <label for="support-request">support request</label>
-                    </div>
-
-                    <p id="query-error" class="error-message">Please select a query</p>
-                </fieldset>
-                
-                <div class="label-container">
-                    <label for="message"> message <span class="asterisk"> * </span></label>
-                    <textarea name="message" aria-describedby="message-error" id="message" rows="8"> </textarea>
-                    <p id="message-error" class="error-message">This field is required</p>
-                </div>
-                
-                <div class="consult-container">
-                    <div>
-                        <input type="checkbox" name="consult" id="consult" aria-describedby="consult-error" >
-                        <label for="consult" style="margin-left: 16px;"> I consult to being contacted by the team <span class="asterisk">*</span></label>
-                    </div>
-
-                    <p id="consult-error" class="error-message">
-                        To submit this form, please consent to being contacted
-                    </p>
-                </div>
-                <input type="submit" value="Submit" class="btn">
-            </form>
-        </article>
+                    <input type="submit" value="Submit" class="btn">
+                </form>
+            </article>
+        </main>
     </div>
     <script src="./app.js"></script>
 </body>
