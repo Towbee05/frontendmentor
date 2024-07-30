@@ -12,7 +12,9 @@
         <header class="w-full">
             <nav class="w-full flex justify-between items-center">
                 <img src="./assets/images/logo.svg" alt="news page logo">
-                <img src="./assets/images/icon-menu.svg" alt="open menu icon" class="desktop:hidden">
+                <button class="desktop:hidden open-btn">
+                    <img src="./assets/images/icon-menu.svg" alt="open menu icon">
+                </button>
 
                 <ul class="hidden desktop:flex gap-10 text-15">
                     <li><a href="" class="hover:text-custom-soft-red"> Home </a></li>
@@ -24,16 +26,16 @@
             </nav>
         </header>
         <main class="mt-8 desktop:grid grid-cols-grid-custom gap-8">
-            <aside class="bg-white fixed right-0 top-0 w-4/5 h-screen p-6 translate-x-full desktop:hidden">
-                <figure class="float-right">
+            <aside class="bg-white fixed right-0 top-0 w-4/5 max-w-[350px] h-screen p-6 translate-x-full duration-[1500ms] side-bar">
+                <button class="float-right close-btn">
                     <img src="./assets/images/icon-menu-close.svg" alt="close menu icon">
-                </figure>
+                </button>
                 <ul class="mt-24 space-y-6">
-                    <li><a href=""> Home </a></li>
-                    <li><a href=""> New </a></li>
-                    <li><a href=""> Popular </a></li>
-                    <li><a href=""> Trending </a></li>
-                    <li><a href=""> Categories </a></li>
+                    <li><a href="#"> Home </a></li>
+                    <li><a href="#"> New </a></li>
+                    <li><a href="#"> Popular </a></li>
+                    <li><a href="#"> Trending </a></li>
+                    <li><a href="#"> Categories </a></li>
                 </ul>
             </aside>
             
