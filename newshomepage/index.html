@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>News homepage</title>
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/dict/output.css">
+</head>
+<body class="bg-custom-off-white grid place-items-center">
+    <div class="min-h-screen flex justify-center items-center flex-col font-custom-inter text-lg px-4 pt-7 pb-20 max-w-[400px] desktop:max-w-[1140px]">
+        <header class="w-full">
+            <nav class="w-full flex justify-between items-center">
+                <img src="./assets/images/logo.svg" alt="news page logo">
+                <img src="./assets/images/icon-menu.svg" alt="open menu icon" class="desktop:hidden">
+
+                <ul class="hidden desktop:flex gap-10 text-15">
+                    <li><a href="" class="hover:text-custom-soft-red"> Home </a></li>
+                    <li><a href="" class="hover:text-custom-soft-red"> New </a></li>
+                    <li><a href="" class="hover:text-custom-soft-red"> Popular </a></li>
+                    <li><a href="" class="hover:text-custom-soft-red"> Trending </a></li>
+                    <li><a href="" class="hover:text-custom-soft-red"> Categories </a></li>
+                </ul>
+            </nav>
+        </header>
+        <main class="mt-8 desktop:grid grid-cols-grid-custom gap-8">
+            <aside class="bg-white fixed right-0 top-0 w-4/5 h-screen p-6 translate-x-full desktop:hidden">
+                <figure class="float-right">
+                    <img src="./assets/images/icon-menu-close.svg" alt="close menu icon">
+                </figure>
+                <ul class="mt-24 space-y-6">
+                    <li><a href=""> Home </a></li>
+                    <li><a href=""> New </a></li>
+                    <li><a href=""> Popular </a></li>
+                    <li><a href=""> Trending </a></li>
+                    <li><a href=""> Categories </a></li>
+                </ul>
+            </aside>
+            
+            <article class="desktop:grid grid-cols-2 gap-8">
+                <img src="./assets/images/image-web-3-mobile.jpg" alt="Web3 image" class="desktop:hidden">
+                <img src="./assets/images/image-web-3-desktop.jpg" alt="Web3 image" class="hidden desktop:block col-span-2">
+                <h1 class="text-[40px] leading-10 font-extrabold mt-6 desktop:text-[56px] desktop:leading-[56px]">The Bright Future of Web 3.0?</h1>
+                <div class="space-y-6 desktop:space-y-7 mt-4">
+                    <p class="text-15 text-custom-greyish-blue">                      
+                        We dive into the next evolution of the web that claims to put the power of the platforms back into the hands of the people. 
+                        But is it really fulfilling its promise?
+                    </p>
+                    <button class="bg-custom-soft-red px-8 font-bold text-sm uppercase h-12 mt-2 hover:bg-custom-very-dark-blue hover:text-white">
+                        read more
+                    </button>
+                </div>
+            </article>
+
+            <article class="bg-custom-very-dark-blue text-white mt-16 py-6 px-5 desktop:mt-0 w-full desktop:max-w-[350px]">
+                <h1 class="text-custom-soft-orange font-bold text-[32px] leading-8 desktop:text-[40px] desktop:leading-10">New</h1>
+                <section class="mt-9 space-y-2">
+                    <h2 class="text-xl font-extrabold hover:text-custom-soft-orange cursor-pointer">Hydrogen VS Electric Cars</h2>
+                    <p class="text-custom-greyish-blue text-15">Will hydrogen-fueled cars ever catch up to EVs?</p>
+                </section>
+                <hr class="bg-custom-dark-greyish-blue mt-[30px] mb-[30px]">
+                <section class="space-y-2">
+                    <h2 class="text-xl font-extrabold hover:text-custom-soft-orange cursor-pointer">The Downsides of AI Artistry</h2>
+                    <p class="text-custom-greyish-blue text-15">What are the possible adverse effects of on-demand AI image generation?</p>
+                </section>
+                <hr class="bg-custom-dark-greyish-blue mt-[30px] mb-[30px]">
+                <section class="space-y-2">
+                    <h2 class="text-xl font-extrabold hover:text-custom-soft-orange cursor-pointer">Is VC Funding Drying Up?</h2>
+                    <p class="text-custom-greyish-blue text-15">Private funding by VC firms is down 50% YOY. We take a look at what that means.</p>
+                </section>
+            </article>
+        
+            <article class="mt-16 w-full grid grid-cols-1 space-y-5 col-span-2 desktop:grid-cols-3 gap-8 desktop:space-y-0">
+                <section class="flex gap-6">
+                    <img src="./assets/images/image-retro-pcs.jpg" alt="rectro PCs image" class="w-[100px]">
+                    <div>
+                        <h2 class="text-custom-soft-red text-[32px] font-bold">01</h2>
+                        <h3 class="hover:text-custom-soft-red cursor-pointer font-extrabold">Reviving Retro PCs</h3>
+                        <p class="text-custom-greyish-blue text-15">What happens when old PCs are given modern upgrades?</p>
+                    </div>
+                </section>
+
+                <section class="flex gap-6">
+                    <img src="./assets/images/image-top-laptops.jpg" alt="top 10 laptops section image" class="w-[100px]">
+                    <div>
+                        <h2 class="text-custom-soft-red text-[32px] font-bold">02</h2>
+                        <h3 class=" hover:text-custom-soft-red cursor-pointer font-extrabold">Top 10 Laptops of 2022</h3>
+                        <p class="text-custom-greyish-blue text-15">Our best picks for various needs and budgets.</p>
+                    </div>
+                </section>
+                
+                <section class="flex gap-6">
+                    <img src="./assets/images/image-gaming-growth.jpg" alt="gaming growth section image" class="w-[100px]">
+                    <div>
+                        <h2 class="text-custom-soft-red text-[32px] font-bold">03</h2>
+                        <h3 class=" hover:text-custom-soft-red cursor-pointer font-extrabold">The Growth of Gaming</h3>
+                        <p class="text-custom-greyish-blue text-15">How the pandemic has sparked fresh opportunities.</p>
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+    <script src="./app.js"></script>
+</body>
+</html>
