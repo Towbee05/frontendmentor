@@ -572,9 +572,9 @@ video {
   }
 }
 
-@media (min-width: 1000px){
+@media (min-width: 900px){
   .container{
-    max-width: 1000px;
+    max-width: 900px;
   }
 }
 
@@ -1266,7 +1266,7 @@ video {
 }
 
 .grid-cols-grid-custom{
-  grid-template-columns: repeat(auto-fit);
+  grid-template-columns: repeat(2, auto-fit);
 }
 
 .flex-row{
@@ -2610,14 +2610,6 @@ video {
   transition-duration: 150ms;
 }
 
-.duration-1000{
-  transition-duration: 1000ms;
-}
-
-.duration-\[15000ms\]{
-  transition-duration: 15000ms;
-}
-
 .duration-\[1500ms\]{
   transition-duration: 1500ms;
 }
@@ -2701,9 +2693,9 @@ video {
     }
   }
 
-  @media (min-width: 1000px){
+  @media (min-width: 900px){
     .sm\:container{
-      max-width: 1000px;
+      max-width: 900px;
     }
   }
 
@@ -2774,7 +2766,7 @@ video {
   }
 }
 
-@media (min-width: 1000px){
+@media (min-width: 900px){
   .desktop\:mt-0{
     margin-top: 0px;
   }

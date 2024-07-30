@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       screens:{
         "desktop" : {
-          "min" :"1000px"
+          "min" :"900px"
         }
       },
 
@@ -28,7 +28,7 @@ module.exports = {
         "15" : ["15px", "26px"]
       },
       gridTemplateColumns:{
-        "grid-custom" : "repeat(auto-fit)"
+        "grid-custom" : "repeat(2, auto-fit)"
       }
     },
   },
