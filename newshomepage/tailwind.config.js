@@ -7,7 +7,7 @@ module.exports = {
     extend: {
       screens:{
         "desktop" : {
-          "min" :"700px"
+          "min" :"1000px"
         }
       },
 
