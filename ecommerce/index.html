@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ecomerce page</title>
+    <link rel="shortcut icon" href="./images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./css/output.css">
+    <!-- <link rel="stylesheet" href="./css/style.css"> -->
+</head>
+<body class="flex justify-center items-center font-custom-family">
+    <div class="min-h-screen w-full text-custom-very-dark-blue desktop:max-w-[1200px] relative">
+        <header class="w-full py-5 px-6 desktop:py-7">
+            <nav class="w-full flex justify-between h-6">
+                <div class="flex justify-center items-center gap-4">
+                    <button class="desktop:hidden">
+                        <img src="./images/icon-menu.svg" alt="open menu icon" class="open-sidebar">
+                    </button>
+                    <img src="./images/logo.svg" alt="website logo icon">
+                </div>
+                <ul class="hidden desktop:flex gap-8 text-custom-dark-greyish-blue text-custom-paragraph" id="links-container">
+                    <li class="link"><a href="" class="hover:border-b-4 border-custom-orange pb-8"> Collections </a></li>
+                    <li class="link"><a href="" class="hover:border-b-4 border-custom-orange pb-8"> Men </a></li>
+                    <li class="link"><a href="" class="hover:border-b-4 border-custom-orange pb-8"> Women </a></li>
+                    <li class="link"><a href="" class="hover:border-b-4 border-custom-orange pb-8"> About </a></li>
+                    <li class="link"><a href="" class="hover:border-b-4 border-custom-orange pb-8"> Contact </a></li>
+                </ul>
+                <div class="flex items-center gap-5 self-end h-full">
+                    <button class="relative cart-btn">
+                        <svg width="22" height="20" xmlns="http://www.w3.org/2000/svg" class="hover:fill-custom-very-dark-blue fill-custom-dark-greyish-blue mr-2" alt="view cart icon"><path d="M20.925 3.641H3.863L3.61.816A.896.896 0 0 0 2.717 0H.897a.896.896 0 1 0 0 1.792h1l1.031 11.483c.073.828.52 1.726 1.291 2.336C2.83 17.385 4.099 20 6.359 20c1.875 0 3.197-1.87 2.554-3.642h4.905c-.642 1.77.677 3.642 2.555 3.642a2.72 2.72 0 0 0 2.717-2.717 2.72 2.72 0 0 0-2.717-2.717H6.365c-.681 0-1.274-.41-1.53-1.009l14.321-.842a.896.896 0 0 0 .817-.677l1.821-7.283a.897.897 0 0 0-.87-1.114ZM6.358 18.208a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm10.015 0a.926.926 0 0 1 0-1.85.926.926 0 0 1 0 1.85Zm2.021-7.243-13.8.81-.57-6.341h15.753l-1.383 5.53Z" fill-rule="nonzero"/></svg>
+
+                        <span class="absolute -top-2 -right-1 px-2 grid place-items-center text-white text-[10px] font-bold rounded-[999px] bg-custom-orange" id="cart-amount">0</span>
+                    </button>
+                    <img src="./images/image-avatar.png" alt="user's avatar" class="h-full desktop:size-[50px] hover:border-2 hover:border-custom-orange cursor-pointer rounded-full">
+                </div>
+            </nav>
+
+            <hr class="hidden desktop:block mt-8 hr">
+        </header>
+        <main class="w-full">
+            <aside class="bg-white w-4/5 fixed top-0 h-full p-7 text-lg font-bold max-w-[350px] -translate-x-full desktop:hidden" id="sidebar">
+                <button>
+                    <img src="./images/icon-close.svg" alt="close menu icon" class="close-sidebar">
+                </button>
+                <ul class="mt-14 space-y-5">
+                    <li><a href=""> Collections </a></li>
+                    <li><a href=""> Men </a></li>
+                    <li><a href=""> Women </a></li>
+                    <li><a href=""> About </a></li>
+                    <li><a href=""> Contact </a></li>
+                </ul>
+            </aside>
+            <!-- Cart -->
+            <section class="bg-white shadow-2xl desktop:shadow-xl absolute p-6 m-2 w-[96%] space-y-6 top-10 right-0 z-10 text-custom-dark-greyish-blue rounded-[10px] max-w-[360px] desktop:top-14 
+            min-h-[260px] h-auto hidden" id="cart-container">
+                <h1 class="uppercase font-bold text-base">cart</h1>
+                <hr class="mt-2">
+                <div class="w-full space-y-6">
+                    <section class="flex justify-center text-base cart-container flex-col gap-8">
+                        <p class="h-full absolute top-1/2 left-0 w-full m-auto text-center">Your cart is empty</p>
+                        <!-- <img src="./images/image-product-1.jpg" alt="cart item image" class="size-[50px] rounded-[4px]">
+                        
+                        <div>
+                            <h2>   
+                                Fall Limited Edition Sneakers
+                            </h2>
+                            <p>
+                                $125.00 x 3 &nbsp; 
+                                <span class="text-custom-very-dark-blue font-bold">
+                                    $375.00
+                                </span>
+                            </p>
+                        </div>
+                        <button class="text-custom-very-dark-blue font-bold">
+                            <img src="./images/icon-delete.svg" alt="remove item from cart">
+                        </button> -->
+                    </section>
+                    <button class="bg-custom-orange w-full py-5 font-bold rounded-md hidden checkout">
+                        Checkout
+                    </button>
+                </div>
+            </section>
+            <!-- Main page -->
+            <article class="desktop:grid gap-[125px] grid-cols-2 w-full desktop:p-12">
+                <section class="w-full relative">
+                    <div class="w-full space-y-8">
+                        <div class="image-container w-full desktop:hidden">
+                            <!-- <img src="./images/image-product-1.jpg" alt="" class="w-full desktop:rounded-2xl"> -->
+                        </div>
+                        <div class="larger-image hidden desktop:block w-full">
+                            <img src="./images/image-product-1.jpg" alt="" class="w-full desktop:rounded-2xl">
+                        </div>
+                        
+                        <div class="inner-image-container hidden desktop:grid grid-cols-4 gap-8">
+                            <button class="image-btn hover:opacity-50 rounded-[10px] current">
+                                <img src="./images/image-product-1.jpg" alt="" class="rounded-[10px]">
+                            </button>
+                            <button class="image-btn hover:opacity-50 rounded-[10px]">
+                                <img src="./images/image-product-2.jpg" alt="" class="rounded-[10px]">
+                            </button>
+                            <button class="image-btn hover:opacity-50 rounded-[10px]">
+                                <img src="./images/image-product-3.jpg" alt="" class="rounded-[10px]">
+                            </button>
+                            <button class="image-btn hover:opacity-50 rounded-[10px]">
+                                <img src="./images/image-product-4.jpg" alt="" class="rounded-[10px]">
+                            </button>
+                        </div>
+                    </div>
+                    <div class="absolute top-1/2 flex justify-between w-full px-4 desktop:hidden">
+                        <button class="bg-white grid place-items-center size-10 rounded-full previous-btn btn">
+                            <img src="./images/icon-previous.svg" alt="previous product button">
+                        </button>
+                        <button class="bg-white grid place-items-center size-10 rounded-full next-btn btn">
+                            <img src="./images/icon-next.svg" alt="next product button">
+                        </button>
+                    </div>
+                </section>
+                <section class="p-6 space-y-4 desktop:place-self-center desktop:space-y-8 ">
+                    <header class="space-y-4">
+                        <h1 class="uppercase tracking-[1.85px] font-bold desktop:text-[13px]">sneaker company</h1>
+                        <h2 class="capitalize text-custom-heading font-bold desktop:text-custom-desktop-heading name">fall limited edition sneakers</h2>
+                    </header>
+                    <div class="space-y-6">
+                        <p class="text-custom-dark-greyish-blue">
+                            These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they’ll withstand everything the weather can offer.
+                        </p>
+                        <div class="flex justify-between items-center desktop:flex-col desktop:items-start">
+                            <p class="font-bold text-[28px] flex items-center">
+                                $<span class="price">125.00</span>
+                                <span class="bg-custom-very-dark-blue text-white ml-8 my-auto px-2 rounded-md text-base">
+                                    50%
+                                </span>
+                            </p>
+                            <p class="line-through text-base leading-[26px] font-bold text-custom-dark-greyish-blue">
+                                $250.00
+                            </p>
+                        </div>
+                        <div class="space-y-4 mt-2 desktop:grid grid-cols-custom-grid w-full gap-4 desktop:space-y-0 desktop:h-14">
+                            <div class="bg-custom-light-greyish-blue rounded-[10px] font-bold flex justify-between p-6 w-full amount-container">
+                                <button class="decrease-product-amount">
+                                    <img src="./images/icon-minus.svg" alt="increase number of products to pruchase" class="hover:opacity-50">
+                                </button>
+                                <p class="inner-amount"> 
+                                    0
+                                </p>
+                                <button class="increase-product-amount">
+                                    <img src="./images/icon-plus.svg" alt="increase number of products to pruchase" class="hover:opacity-50">
+                                </button>
+                            </div>
+                            <button class="bg-custom-orange flex gap-4 justify-center w-full rounded-[10px] items-center py-5 desktop:w-[270px] hover:bg-opacity-70 font-bold add-to-cart">
+                                <img src="./images/icon-cart.svg" alt="cart icon" class="desktop:size-4">
+                                <p>
+                                    Add to cart
+                                </p>
+                            </button>
+                        </div>
+                    </div>
+                </section>
+            </article>
+        </main>
+    </div>
+    <div class="bg-black bg-opacity-80 z-10 w-full min-h-screen fixed top-0 grid place-items-center hidden preview-image">
+        <section class="space-y-10 w-[600px]">
+            <button class="w-full close-preview-image">
+                <svg width="14" height="15" xmlns="http://www.w3.org/2000/svg" class="float-right fill-white size-5 hover:fill-custom-orange"><path d="m11.596.782 2.122 2.122L9.12 7.499l4.597 4.597-2.122 2.122L7 9.62l-4.595 4.597-2.122-2.122L4.878 7.5.282 2.904 2.404.782l4.595 4.596L11.596.782Z" fill-rule="evenodd"/></svg>
+            </button>
+            <div class="w-full grid place-items-center">
+                <div class="flex justify-between absolute w-[650px] bigger-image-btns">
+                    <button class="bg-white group size-14 grid place-items-center rounded-full prev-btn">
+                        <svg width="12" height="18" xmlns="http://www.w3.org/2000/svg" class="stroke-custom-very-dark-blue group-hover:stroke-custom-orange"><path d="M11 1 3 9l8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                    </button>
+                    <button class="bg-white size-14 grid place-items-center rounded-full group next-btn">
+                        <svg width="13" height="18" xmlns="http://www.w3.org/2000/svg" class="stroke-[#1D2026] group-hover:stroke-custom-orange"><path d="m2 1 8 8-8 8" stroke-width="3" fill="none" fill-rule="evenodd"/></svg>
+                    </button>
+                </div>
+                <img src="./images/image-product-1.jpg" alt="product image" id="big-thumbnail" class="size-full rounded-2xl">
+            </div>
+            <div class="grid grid-cols-4 place-items-center w-full gap-8">
+                <img src="./images/image-product-1-thumbnail.jpg" alt="" id="thumbnail-image" class="current rounded-[10px] bg-opacity-80">
+                <img src="./images/image-product-2-thumbnail.jpg" alt="" id="thumbnail-image" class="rounded-[10px]">
+                <img src="./images/image-product-3-thumbnail.jpg" alt="" id="thumbnail-image" class="rounded-[10px]">
+                <img src="./images/image-product-4-thumbnail.jpg" alt="" id="thumbnail-image" class="rounded-[10px]">
+            </div>
+        </section>
+    </div>
+    <script src="./js/app.js"></script>
+</body>
+</html>
