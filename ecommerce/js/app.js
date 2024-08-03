@@ -165,6 +165,7 @@ addtoCart.addEventListener('click', (e) => {
                     innerCart.textContent = "Your cart is empty";
                     cartContainer.querySelector(".checkout").classList.add("hidden")
                 };
+                numberOfItemsInCart.textContent = data.length - 1;
             });
         });
 
@@ -177,7 +178,8 @@ checkout.addEventListener("click", () => {
     innerCart.textContent = "Your cart is empty";  
     checkout.classList.add("hidden");
     localStorage.clear();
-    localStorageItems = []
+    localStorageItems = [];
+    numberOfItemsInCart.textContent = 0;
 });
 
 const innerImages = [...document.querySelectorAll(".image-btn")];
