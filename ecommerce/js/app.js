@@ -195,13 +195,14 @@ innerImages.forEach((image) => {
     });
 });
 
+
 biggerImage.addEventListener("click", () => {
     previewImage.classList.remove("hidden");
     const nextBtn = previewImage.querySelector(".next-btn");
     const prevBtn = previewImage.querySelector(".prev-btn");
 
     let index = 0;
-    const allImages = [...document.querySelectorAll("#thumbnail-image")];
+    const allImages = [...document.querySelectorAll(".thumbnail-image")];
     const biggerThumbnailImage = getElement("#big-thumbnail");
 
     nextBtn.addEventListener("click", ()=> {
