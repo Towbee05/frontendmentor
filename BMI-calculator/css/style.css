@@ -1,0 +1,43 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="radio"]{
+    position: relative;
+    appearance: none;
+}
+input[type="radio"]:checked{
+    position: relative;
+    appearance: none;
+}
+
+input[type="radio"]::after{
+    position: absolute;
+    content: "";
+    width: 32px;
+    height: 32px;
+    border: 2px solid #000;
+    margin-top: -16px;
+    border-radius: 999px;
+}
+
+input[type="radio"]:checked::after{
+    position: absolute;
+    content: "";
+    width: 16px;
+    height: 16px;
+    margin-top: -8px;
+    box-shadow: 0px 0px 16px 5px rgba(52, 95, 246, 0.15);
+    border: none;
+    margin-left: 2px;
+    border-radius: 999px;
+    @apply bg-custom-blue;
+}
+
+input[type="number"]::-webkit-outer-spin-button,
+input[type="number"]::-webkit-inner-spin-button
+{
+    appearance: none;
+}
