@@ -18,9 +18,16 @@ input[type="radio"]::after{
     content: "";
     width: 32px;
     height: 32px;
-    border: 2px solid #000;
+    border: 1px solid #000;
     margin-top: -16px;
     border-radius: 999px;
+}
+
+input[type="radio"]:hover:after{
+    border: 3px solid #000;
+    margin-top: -16px;
+    border-radius: 999px;
+    cursor: pointer;
 }
 
 input[type="radio"]:checked::after{
@@ -40,4 +47,22 @@ input[type="number"]::-webkit-outer-spin-button,
 input[type="number"]::-webkit-inner-spin-button
 {
     appearance: none;
+};
+
+@layer components{
+    .imperial div .height-cm{
+        display: none;
+    }
+    
+    .imperial div .height-not-cm{ 
+        display: grid;
+    }
+
+    .imperial div .weight-kg{
+        display: none;
+    }
+
+    .imperial div .weight-not-kg{
+        display: grid;
+    }
 }

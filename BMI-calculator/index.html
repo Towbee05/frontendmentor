@@ -7,13 +7,13 @@
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="./css/output.css">
 </head>
-<body class="w-full grid place-items-center py-20">
-    <div class="min-h-screen w-full text-custom-gunmetal space-y-[72px] max-w-[372px] tablet:max-w-[695px] laptop:max-w-[1440px] overflow-x-hidden">
+<body class="w-full grid place-items-center">
+    <div class="min-h-screen w-full text-custom-gunmetal space-y-[72px] max-w-[372px] tablet:max-w-[695px] laptop:max-w-[1440px] mb-20">
         <section class="laptop:grid grid-cols-custom-grid relative">
             <header class="bg-gradient-to-l from-[#D6E6FE] to-[#D6FCFE] space-y-6 laptop:mr-8 p-6 laptop:pl-[160px] h-[640px] rounded-b-[36px]">
                 <div class="laptop:max-w-[440px] text-center laptop:text-left">
                     <span class="w-full grid place-items-center laptop:place-items-start"> 
-                        <img src="./assets/images/logo.svg" alt="BMI calculator image">
+                        <img src="./assets/images/logo.svg" alt="BMI calculator logo">
                     </span>
                     <h1 class="text-5xl font-semibold laptop:mt-32"> Body Mass Index Calculator</h1>
                     <p class="text-custom-electric-blue laptop:mt-9">
@@ -21,13 +21,13 @@
                     </p>
                 </div>
             </header>
-            <section class="bg-white rounded-2xl -mt-[170px] p-6 space-y-6 mx-6 ">
+            <section class="bg-white rounded-2xl -mt-[170px] p-6 space-y-6 mx-6 laptop:mt-20 laptop:absolute right-0 laptop:w-[40%] laptop:max-w-[50%] laptop:shadow-2xl">
                 <h1 class="text-2xl font-semibold">
                     Enter your details below
                 </h1>
                 <div class="flex justify-between">
                     <div class="flex justify-between items-center space-x-7 gap-[18px]">
-                        <input type="radio" name="metric" id="metric">
+                        <input type="radio" name="metric" id="metric" checked="checked">
                         <label for="metric" class="capitalize font-semibold"> metric </label>
                     </div>
                     <div class="flex justify-between items-center space-x-7 gap-[18px]">
@@ -35,17 +35,17 @@
                         <label for="imperial" class="capitalize font-semibold"> imperial </label>
                     </div>
                 </div>
-                <div class="space-y-4 tablet:grid grid-cols-2 tablet:space-y-0 gap-6">
-                    <div>
+                <form class="space-y-4 gap-6">
+                    <div class="">
                         <h2 class="capitalize text-sm text-custom-electric-blue">height</h2>
-                        <div class="relative inline-block w-full">
+                        <div class="relative inline-block w-full height-cm">
                             <input type="number" name="height-cm" id="height-cm" class="border-2 border-custom-electric-blue p-5 rounded-xl w-full">
                             <span class="absolute right-6 my-5 font-semibold text-2xl leading-[24px] text-custom-blue">
                                 cm
                             </span>
                             <label for="height-cm"></label>
                         </div>
-                        <div class="flex justify-between items-center w-full gap-4 hidden">
+                        <div class="place-items-center grid-cols-2 w-full gap-4 hidden height-not-cm">
                             <div class="relative inline-block w-full">
                                 <input type="number" name="height-ft" id="height-ft" class="border-2 border-custom-electric-blue p-5 rounded-xl w-full">
                                 <span class="absolute right-6 my-5 text-2xl leading-6 font-semibold text-custom-blue">
@@ -64,14 +64,14 @@
                     </div>
                     <div>
                         <h2 class="capitalize text-sm text-custom-electric-blue">weight</h2>
-                        <div class="relative inline-block w-full">
+                        <div class="relative inline-block w-full weight-kg">
                             <input type="number" name="weight-kg" id="weight-kg" class="border-2 border-custom-electric-blue p-5 rounded-xl w-full">
                             <span class="absolute right-6 my-5 font-semibold text-2xl leading-[24px] text-custom-blue">
                                 kg
                             </span>
                             <label for="weight-kg"></label>
                         </div>
-                        <div class="flex justify-between items-center w-full gap-4 hidden">
+                        <div class="place-items-center grid-cols-2 w-full gap-4 hidden weight-not-kg">
                             <div class="relative inline-block w-full">
                                 <input type="number" name="weight-st" id="weight-st" class="border-2 border-custom-electric-blue p-5 rounded-xl w-full">
                                 <span class="absolute right-6 my-5 text-2xl leading-6 font-semibold text-custom-blue">
@@ -88,19 +88,23 @@
                             </div>
                         </div>
                     </div>
-                </div>
+                </form>
 
-                <div class="bg-custom-blue w-full rounded-2xl p-8 text-white font-semibold space-y-6 tablet:rounded-r-[999px] tablet:grid grid-cols-2">
+                <div class="bg-custom-blue w-full rounded-2xl p-8 text-white font-semibold space-y-6 tablet:rounded-r-[999px] laptop:rounded-r-[999px] tablet:grid grid-cols-2">
                     <div class="space-y-2">
                         <p>
                             Your BMI is...
                         </p>
-                        <p class="text-[48px]">
-                            22.0
-                        </p>
+                        <span class="text-[48px] bmi">
+                            0.00
+                        </span>
                     </div>
                     <p class="text-sm font-normal"> 
-                        Your BMI suggests you’re a healthy weight. Your ideal weight is between 
+                        Your BMI suggests you’re 
+                        <span class="weight-class">
+                            nothing yet
+                        </span>
+                        . Your ideal weight is between 
                         <span class="font-bold">
                             9st 6lbs - 12st 10lbs.
                         </span>
@@ -108,11 +112,12 @@
                 </div>
             </section>
         </section>
-        <section class="tablet:grid grid-cols-2 tablet:-ml-20 gap-[74px]">
-            <div>
-                <img src="./assets/images/image-man-eating.webp" alt="">
+        <section class="tablet:grid grid-cols-2 tablet:-ml-20 gap-[74px] laptop:grid laptop:mt-20 laptop:gap-[130px] relative">
+            <img src="./assets/images/pattern-curved-line-left.svg" alt="left curved line" class="hidden laptop:block float-right absolute right-20">
+            <div class="mt-10">
+                <img src="./assets/images/image-man-eating.webp" alt="Man eating image" class="laptop:w-[465px]">
             </div>
-            <div class="p-6 space-y-8">
+            <div class="p-6 space-y-8 place-content-end laptop:max-w-[475px]">
                 <h1 class="text-[32px] font-semibold leading-[110%]">
                     What your BMI result means
                 </h1>
@@ -121,9 +126,9 @@
                 </p>
             </div>
         </section>
-        <section class="bg-gradient-to-br from-[rgb(214,230,254,0)] to-[rgba(214,252,254,0.6)] bg-opacity-50 px-6 py-14 space-y-10">
+        <section class="bg-gradient-to-br from-[rgb(214,230,254,0)] to-[rgba(214,252,254,0.6)] bg-opacity-50 px-6 py-14 space-y-10 laptop:grid grid-cols-3 laptop:space-y-0 gap-8 laptop:p-[120px]">
             <div class="space-y-8">
-                <img src="./assets/images/icon-eating.svg" alt="">
+                <img src="./assets/images/icon-eating.svg" alt="eating section icon">
                 <div class="space-y-6">
                     <h1 class="text-2xl font-semibold">
                         Healthy eating
@@ -134,7 +139,7 @@
                 </div>
             </div>
             <div class="space-y-8">
-                <img src="./assets/images/icon-exercise.svg" alt="">
+                <img src="./assets/images/icon-exercise.svg" alt="exercise section icon">
                 <div class="space-y-6">
                     <h1 class="text-2xl font-semibold">
                         Regular exercise
@@ -145,7 +150,7 @@
                 </div>
             </div>
             <div class="space-y-8">
-                <img src="./assets/images/icon-eating.svg" alt="">
+                <img src="./assets/images/icon-sleep.svg" alt="Adequate sleep icon">
                 <div class="space-y-6">
                     <h1 class="text-2xl font-semibold">
                         Adequate sleep
@@ -156,8 +161,8 @@
                 </div>
             </div>
         </section>
-        <section class="space-y-14 px-6 pb-20">
-            <div class="w-full space-y-8 text-center">
+        <section class="space-y-14 px-6 pb-20 w-full grid-rows-3 relative">
+            <div class="w-full space-y-8 text-center laptop:max-w-[520px] laptop:text-left">
                 <h1 class="text-[32px] leading-[150%] w-full font-semibold">
                     Limitations of BMI
                 </h1>
@@ -166,46 +171,48 @@
                 </p>
             </div>
 
-            <div class="space-y-4 tablet:space-y-0 tablet:grid grid-cols-4 gap-6">
-                <section class="shadow-xl space-y-4 p-6 col-span-2">
+            <img src="./assets/images/pattern-curved-line-right.svg" alt="right curved line" class="hidden laptop:block absolute left-60">
+
+            <div class="space-y-4 tablet:space-y-0 tablet:grid grid-cols-4 gap-6 laptop:absolute laptop:grid laptop:grid-cols-12 laptop:-mt-64 top-0 right-2">
+                <section class="shadow-xl space-y-4 p-6 laptop:col-start-9 laptop:col-span-3 rounded-2xl laptop:shadow-2xl">
                     <div class="flex gap-4 items-center text-xl font-semibold">
-                        <img src="./assets/images/icon-gender.svg" alt="">
+                        <img src="./assets/images/icon-gender.svg" alt="gender icon">
                         Gender
                     </div>
                     <p class="text-custom-electric-blue">
                         The development and body fat composition of girls and boys vary with age. Consequently, a child's age and gender are considered when evaluating their BMI.
                     </p>
                 </section>
-                <section class="shadow-xl space-y-4 p-6 col-span-2">
+                <section class="shadow-xl space-y-4 p-6 laptop:col-start-7 laptop:col-span-3 rounded-2xl laptop:shadow-2xl">
                     <div class="flex gap-4 items-center text-xl font-semibold">
-                        <img src="./assets/images/icon-age.svg" alt="">
+                        <img src="./assets/images/icon-age.svg" alt="age icon">
                         Age
                     </div>
                     <p class="text-custom-electric-blue">
                         In aging individuals, increased body fat and muscle loss may cause BMI to underestimate body fat content.
                     </p>
                 </section>
-                <section class="shadow-xl space-y-4 p-6 col-span-2">
+                <section class="shadow-xl space-y-4 p-6 laptop:col-span-3 rounded-2xl laptop:shadow-2xl">
                     <div class="flex gap-4 items-center text-xl font-semibold">
-                        <img src="./assets/images/icon-muscle.svg" alt="">
+                        <img src="./assets/images/icon-muscle.svg" alt="muscle icon">
                         Muscle
                     </div>
                     <p class="text-custom-electric-blue">
                         BMI may misclassify muscular individuals as overweight or obese, as it doesn't differentiate muscle from fat.
                     </p>
                 </section>
-                <section class="shadow-xl space-y-4 p-6 col-span-2">
+                <section class="shadow-xl space-y-4 p-6 laptop:row-start-3 laptop:col-start-6 laptop:col-span-3 rounded-2xl laptop:shadow-2xl">
                     <div class="flex gap-4 items-center text-xl font-semibold">
-                        <img src="./assets/images/icon-pregnancy.svg" alt="">
+                        <img src="./assets/images/icon-pregnancy.svg" alt="Pregnancy icon">
                         Pregnancy
                     </div>
                     <p class="text-custom-electric-blue">
                         Expectant mothers experience weight gain due to their growing baby. Maintaining a healthy pre-pregnancy BMI is advisable to minimise health risks for both mother and child.
                     </p>
                 </section>
-                <section class="shadow-xl space-y-4 p-6 col-span-2 col-start-2">
+                <section class="shadow-xl space-y-4 p-6 laptop:col-start-9 laptop:col-span-3 rounded-2xl laptop:shadow-2xl">
                     <div class="flex gap-4 items-center text-xl font-semibold">
-                        <img src="./assets/images/icon-race.svg" alt="">
+                        <img src="./assets/images/icon-race.svg" alt="race icon">
                         Race
                     </div>
                     <p class="text-custom-electric-blue">
