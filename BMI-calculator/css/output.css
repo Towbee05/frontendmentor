@@ -693,8 +693,8 @@ video {
   inset-inline-end: 0.25rem;
 }
 
-.left-10{
-  left: 2.5rem;
+.left-60{
+  left: 15rem;
 }
 
 .right-0{
@@ -705,8 +705,8 @@ video {
   right: 0.5rem;
 }
 
-.right-20{
-  right: 5rem;
+.right-32{
+  right: 8rem;
 }
 
 .right-6{
@@ -717,16 +717,20 @@ video {
   top: 0px;
 }
 
-.left-60{
-  left: 15rem;
-}
-
 .isolate{
   isolation: isolate;
 }
 
 .isolation-auto{
   isolation: auto;
+}
+
+.col-span-2{
+  grid-column: span 2 / span 2;
+}
+
+.col-start-2{
+  grid-column-start: 2;
 }
 
 .float-start{
@@ -1258,6 +1262,10 @@ video {
 
 .grid-flow-col-dense{
   grid-auto-flow: column dense;
+}
+
+.grid-cols-1{
+  grid-template-columns: repeat(1, minmax(0, 1fr));
 }
 
 .grid-cols-2{
@@ -2902,6 +2910,10 @@ input[type="number"]::-webkit-inner-spin-button
 }
 
 @media (min-width: 700px) and (max-width: 1150px){
+  .tablet\:col-span-2{
+    grid-column: span 2 / span 2;
+  }
+
   .tablet\:-ml-20{
     margin-left: -5rem;
   }
@@ -3017,10 +3029,6 @@ input[type="number"]::-webkit-inner-spin-button
 
   .laptop\:gap-\[130px\]{
     gap: 130px;
-  }
-
-  .laptop\:gap-6{
-    gap: 1.5rem;
   }
 
   .laptop\:space-y-0 > :not([hidden]) ~ :not([hidden]){

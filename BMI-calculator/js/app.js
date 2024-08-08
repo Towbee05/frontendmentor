@@ -151,6 +151,7 @@ const checkForWeightclass = (bmi) => {
 }
 
 document.querySelector('form').addEventListener("keyup", () => {
+    bmiContainer.classList.replace("grid-cols-1", "grid-cols-2");
     bmiContainer.innerHTML = `
         <div class="space-y-2">
             <p>
