@@ -25,7 +25,7 @@
                 <h1 class="text-2xl font-semibold">
                     Enter your details below
                 </h1>
-                <div class="flex justify-between">
+                <div class="flex justify-between laptop:grid grid-cols-2 place-items-start">
                     <div class="flex justify-between items-center space-x-7 gap-[18px]">
                         <input type="radio" name="metric" id="metric" checked="checked">
                         <label for="metric" class="capitalize font-semibold"> metric </label>
@@ -35,10 +35,10 @@
                         <label for="imperial" class="capitalize font-semibold"> imperial </label>
                     </div>
                 </div>
-                <form class="space-y-4 gap-6">
+                <form class="space-y-4 laptop:grid laptop:space-y-0 grid-cols-2  gap-6">
                     <div class="">
                         <h2 class="capitalize text-sm text-custom-electric-blue">height</h2>
-                        <div class="relative inline-block w-full height-cm">
+                        <div class="relative inline-block w-full height-cm mt-2">
                             <input type="number" name="height-cm" id="height-cm" class="border-2 border-custom-electric-blue p-5 rounded-xl w-full">
                             <span class="absolute right-6 my-5 font-semibold text-2xl leading-[24px] text-custom-blue">
                                 cm
@@ -64,7 +64,7 @@
                     </div>
                     <div>
                         <h2 class="capitalize text-sm text-custom-electric-blue">weight</h2>
-                        <div class="relative inline-block w-full weight-kg">
+                        <div class="relative inline-block w-full weight-kg mt-2">
                             <input type="number" name="weight-kg" id="weight-kg" class="border-2 border-custom-electric-blue p-5 rounded-xl w-full">
                             <span class="absolute right-6 my-5 font-semibold text-2xl leading-[24px] text-custom-blue">
                                 kg
@@ -90,24 +90,10 @@
                     </div>
                 </form>
 
-                <div class="bg-custom-blue w-full rounded-2xl p-8 text-white font-semibold space-y-6 tablet:rounded-r-[999px] laptop:rounded-r-[999px] tablet:grid grid-cols-2">
-                    <div class="space-y-2">
-                        <p>
-                            Your BMI is...
-                        </p>
-                        <span class="text-[48px] bmi">
-                            0.00
-                        </span>
-                    </div>
-                    <p class="text-sm font-normal"> 
-                        Your BMI suggests you’re 
-                        <span class="weight-class">
-                            nothing yet
-                        </span>
-                        . Your ideal weight is between 
-                        <span class="font-bold">
-                            9st 6lbs - 12st 10lbs.
-                        </span>
+                <div class="bg-custom-blue w-full rounded-2xl p-8 text-white font-semibold space-y-6 tablet:rounded-r-[999px] laptop:rounded-r-[999px] tablet:grid grid-cols-2 bmi-container">
+                    <h1 class="text-2xl font-semibold"> Welcome </h1>
+                    <p class="font-normal">
+                        Enter your height and weight and you’ll see your BMI result here
                     </p>
                 </div>
             </section>

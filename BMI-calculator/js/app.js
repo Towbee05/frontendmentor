@@ -13,8 +13,7 @@ const weightLBS = getElement('#weight-lbs');
 const heightCM = getElement('#height-cm');
 const heightFT = getElement('#height-ft');
 const heightIN = getElement('#height-in');
-const bmiContainer = getElement('.bmi');
-const bmiWeight = getElement('.weight-class');
+const bmiContainer = getElement('.bmi-container');
         
 const imperial = "imperial";
 const metric = "metric";
@@ -34,8 +33,10 @@ radioBTNS.forEach((btn) => {
         const imperialContainer = e.currentTarget.parentElement.parentElement.nextElementSibling;
         if (id === imperial){
                 imperialContainer.classList.add('imperial');
-        }
-        else{
+                document.querySelector('form').classList.replace("grid-cols-2", "grid-cols-1");
+            }
+            else{
+            document.querySelector('form').classList.replace("grid-cols-1", "grid-cols-2");
             imperialContainer.classList.remove('imperial');
         };
     });
@@ -150,6 +151,24 @@ const checkForWeightclass = (bmi) => {
 }
 
 document.querySelector('form').addEventListener("keyup", () => {
-    bmiContainer.textContent = calculateBMI(heightCM.value, weightKG.value);
-    bmiWeight.textContent = checkForWeightclass(calculateBMI(heightCM.value, weightKG.value));
+    bmiContainer.innerHTML = `
+        <div class="space-y-2">
+            <p>
+                Your BMI is...
+            </p>
+            <span class="text-[48px] bmi">
+                ${calculateBMI(heightCM.value, weightKG.value)}
+            </span>
+        </div>
+        <p class="text-sm font-normal"> 
+            Your BMI suggests you’re 
+            <span class="weight-class">
+                ${checkForWeightclass(calculateBMI(heightCM.value, weightKG.value))}
+            </span>
+            . Your ideal weight is between 
+            <span class="font-bold">
+                9st 6lbs - 12st 10lbs.
+            </span>
+        </p>
+    `;
 });
