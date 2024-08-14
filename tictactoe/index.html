@@ -1,0 +1,213 @@
+ <!DOCTYPE html>
+ <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Tic Tac Toe Game</title>
+        <link rel="stylesheet" href="./css/output.css">
+        <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+    </head>
+    <body class="bg-custom-dark-navy">
+        <main class="min-h-screen w-full grid place-items-center font-outfit">
+            <section class="space-y-8 tablet:space-y-10 laptop:space-y-10 welcome-section">
+                <div class="flex justify-center items-center gap-2 w-full ">
+                    <img src="./assets/icon-x.svg" alt="X player image" class="size-8">
+                    <img src="./assets/icon-o.svg" alt="O player image" class="size-8">
+                </div>
+                <article class="bg-custom-semidark-navy w-full p-6 text-custom-silver flex justify-center items-center flex-col gap-6 tablet:gap-8 laptop:gap-8 rounded-2xl shadow-shadow">
+                    <h1 class="font-bold text-base uppercase">
+                        pick player 1's mark
+                    </h1>
+                    <div class="space-y-4 w-full tablet:w-[412px]">
+                        <div class="bg-custom-dark-navy w-full p-2 grid grid-cols-2 rounded-xl">
+                            <button class="w-full grid place-items-center group hover:bg-custom-silver hover:bg-opacity-20 py-3 rounded-xl mark-btn" data-mark="x">
+                                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" class="fill-custom-silver">
+                                    <path d="M7.501 0.573 16 9.072 24.499 0.573a1.5 1.5 0 0 1 2.122 0l4.806 4.806a1.5 1.5 0 0 1 0 2.122L22.928 16l8.499 8.499a1.5 1.5 0 0 1 0 2.122l-4.806 4.806a1.5 1.5 0 0 1-2.122 0L16 22.928 7.501 31.427a1.5 1.5 0 0 1-2.122 0L0.573 26.62a1.5 1.5 0 0 1 0-2.122L9.072 16 0.573 7.501a1.5 1.5 0 0 1 0-2.122l4.806-4.806a1.5 1.5 0 0 1 2.122 0Z" fill-rule="evenodd"/>
+                                </svg>
+                            </button>
+                            <button class="w-full grid place-items-center group hover:bg-custom-silver hover:bg-opacity-20 py-3 rounded-xl mark-btn" data-mark="o">
+                                <svg width="32" height="32" xmlns="http://www.w3.org/2000/svg" class="fill-custom-silver">
+                                    <path d="M16 0c8.836 0 16 7.164 16 16 0 8.836-7.164 16-16 16S0 24.836 0 16C0 7.164 7.164 0 16 0Zm0 9.482c-3.6 0-6.518 2.918-6.518 6.518 0 3.6 2.918 6.518 6.518 6.518 3.6 0 6.518-2.918 6.518-6.518 0-3.6-2.918-6.518-6.518-6.518Z"/>
+                                </svg>
+                            </button>
+                        </div>
+                        <p class="uppercase tracking-sm w-full text-center">
+                            remember: X goes first
+                        </p>
+                    </div>
+                </article>
+                <div class="space-y-4 tablet:space-y-5 tablet:text-xl laptop:text-xl laptop:space-y-5">
+                    <button class="w-full bg-custom-light-yellow py-4 rounded-2xl shadow-yellow-btn-shadow hover:bg-custom-light-yellow-hover game-btn" data-against="cpu">
+                        <p class="uppercase font-bold text-custom-dark-navy">
+                            new game &nbsp; &nbsp;(vs cpu)
+                        </p>
+                    </button>
+                    <button class="w-full bg-custom-light-blue py-4 rounded-2xl shadow-blue-btn-shadow hover:bg-custom-light-blue-hover game-btn" data-against="player">
+                        <p class="uppercase font-bold text-custom-dark-navy">
+                            new game &nbsp; &nbsp;(vs player)
+                        </p>
+                    </button>
+                </div>
+            </section>
+
+            <section class="space-y-16 tablet:space-y-5 laptop:space-y-5 hidden game-section">
+                <div class="grid grid-cols-3 place-items-center">
+                    <div class="flex justify-center items-center gap-2 tablet:place-self-start">
+                        <img src="./assets/icon-x.svg" alt="X player image" class="size-8">
+                        <img src="./assets/icon-o.svg" alt="O player image" class="size-8">
+                    </div>
+                    <div class="flex gap-2 justify-center items-center text-sm uppercase text-custom-silver font-bold w-24 h-10 tablet:w-36 bg-custom-semidark-navy rounded-[6px] shadow-shadow player-turn">
+                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="fill-custom-silver">
+                            <path d="M3.751 0.573 8 4.536 12.249 0.573a0.75 0.75 0 0 1 1.061 0l2.403 2.403a0.75 0.75 0 0 1 0 1.061L11.464 8l4.536 4.536a0.75 0.75 0 0 1 0 1.061l-2.403 2.403a0.75 0.75 0 0 1-1.061 0L8 11.464 3.751 15.715a0.75 0.75 0 0 1-1.061 0L0.573 13.03a0.75 0.75 0 0 1 0-1.061L4.536 8 0.573 3.751a0.75 0.75 0 0 1 0-1.061l2.403-2.403a0.75 0.75 0 0 1 1.061 0Z" fill-rule="evenodd"/>
+                        </svg>
+                        <svg width="16" height="16" xmlns="http://www.w3.org/2000/svg" class="fill-custom-silver hidden">
+                            <path d="M8 0c4.418 0 8 3.582 8 8 0 4.418-3.582 8-8 8S0 12.418 0 8C0 3.582 3.582 0 8 0Zm0 4.741c-1.8 0-3.259 1.459-3.259 3.259 0 1.8 1.459 3.259 3.259 3.259 1.8 0 3.259-1.459 3.259-3.259 0-1.8-1.459-3.259-3.259-3.259Z"/>
+                        </svg>
+
+                        <span>turn</span>
+                    </div>
+                    <button class="bg-custom-silver size-10 tablet:size-[52px] grid place-items-center rounded-[5px] shadow-silver-btn-shadow place-self-end ">
+                        <svg width="20" height="20" xmlns="http://www.w3.org/2000/svg"><path d="M19.524 0h-1.88a.476.476 0 0 0-.476.499l.159 3.284A9.81 9.81 0 0 0 9.835.317C4.415.317-.004 4.743 0 10.167.004 15.597 4.406 20 9.835 20a9.796 9.796 0 0 0 6.59-2.536.476.476 0 0 0 .019-.692l-1.348-1.349a.476.476 0 0 0-.65-.022 6.976 6.976 0 0 1-9.85-.63 6.987 6.987 0 0 1 .63-9.857 6.976 6.976 0 0 1 10.403 1.348l-4.027-.193a.476.476 0 0 0-.498.476v1.881c0 .263.213.476.476.476h7.944A.476.476 0 0 0 20 8.426V.476A.476.476 0 0 0 19.524 0Z" fill="#1F3641"/></svg>
+                    </button>
+                </div>
+                <div class="space-y-5">
+                    <section class="grid grid-cols-3 gap-5 w-auto">
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="1">
+
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="2">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="3">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="4">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="5">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="6">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="7">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="8">
+                            <!-- mobile x and o  -->
+                        </div>
+                        <div class="bg-custom-semidark-navy size-24 tablet:size-36 laptop:size-36 shadow-shadow rounded-2xl grid place-items-center group cursor-pointer card" data-id="9">
+                            <!-- mobile x and o  -->
+                        </div>
+                    </section>
+                    <div class="grid grid-cols-3 gap-5">
+                        <div class="bg-custom-light-blue w-24 tablet:w-36 laptop:w-36 h-16 rounded-2xl grid place-items-center">
+                            <p>
+                                <span class="uppercase text-sm font-medium tracking-sm p1-mark"> 
+                                    x (you)
+                                </span>
+                                <span class="text-xl font-bold tracking-md block w-full text-center p1-score">
+                                    0
+                                </span>
+                            </p>
+                        </div>
+                        <div class="bg-custom-silver w-24 tablet:w-36 laptop:w-36 h-16 rounded-2xl grid place-items-center">
+                            <p>
+                                <span class="uppercase text-sm font-medium tracking-sm">
+                                    ties
+                                </span>
+                                <span class="text-xl font-bold tracking-md block w-full text-center ties-score">
+                                    0
+                                </span>
+                            </p>
+                        </div>
+                        <div class="bg-custom-light-yellow w-24 tablet:w-36 laptop:w-36 h-16 rounded-2xl grid place-items-center">
+                            <p>
+                                <span class="uppercase text-sm font-medium tracking-sm p2-mark">
+                                    o (cpu)
+                                </span>
+                                <span class="text-xl font-bold tracking-md block w-full text-center p2-score">
+                                    0
+                                </span>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            <section class="w-full grid place-items-center fixed min-h-screen bg-black bg-opacity-60 hidden game-win-section">
+                <div class="bg-custom-semidark-navy w-full p-12 grid place-items-center">
+                    <div class="game-win-and-lost">
+                        <p class="uppercase text-sm text-custom-silver tracking-sm w-full text-center">
+                            oh no, you lost ...
+                        </p>
+                        <p class="mt-4 uppercase text-2xl tablet:text-[40px] laptop:text-[40px] tablet:tracking-xl laptop:tracking-xl text-custom-light-blue tracking-lg w-full flex items-center justify-center gap-4 font-bold">
+                            <span>
+                                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" viewBox="0 0 64 64" class="hidden tablet:hidden laptop:hidden">
+                                    <path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/>
+                                </svg>    
+                                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="#31C3BD" viewBox="0 0 64 64" class="hidden tablet:hidden laptop:">
+                                    <path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z"/>
+                                </svg>
+                                <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class="hidden tablet:hidden laptop:hidden"><path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/></svg>
+    
+                                <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:block laptop:block"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/></svg>
+                            </span>
+                            takes the round
+                        </p>
+                    </div>
+                    <div class="mt-6 w-full flex justify-center items-center gap-4">
+                        <button class="bg-custom-silver shadow-silver-btn-shadow p-4 rounded-10 uppercase font-bold text-custom-dark-navy hover:bg-custom-silver-hover quit">
+                            quit
+                        </button>
+                        <button class="bg-custom-light-yellow shadow-yellow-btn-shadow p-4 rounded-10 uppercase font-bold text-custom-dark-navy hover:bg-custom-light-yellow-hover next-round">
+                            next round
+                        </button>
+                    </div>
+                </div>
+            </section>
+            
+            <section class="w-full grid place-items-center fixed min-h-screen bg-black bg-opacity-60 hidden">
+            <div class="bg-custom-semidark-navy w-full py-16 space-y-6 tablet:space-y-8 laptop:space-y-8">
+                    <p class="uppercase text-custom-silver text-2xl font-bold w-full text-center tablet:text-[40px] tablet:tracking-xl laptop:text-[40px] laptop:tracking-xl "> restart game? </p>
+                    <div class="gap-4 w-full flex justify-center items-center">
+                        <button class="uppercase font-bold text-custom-dark-navy bg-custom-light-blue shadow-blue-btn-shadow h-14 w-40 rounded-10 hover:bg-custom-light-blue-hover">
+                            no, cancel
+                        </button>
+                        <button class="uppercase font-bold text-custom-dark-navy bg-custom-light-yellow shadow-yellow-btn-shadow h-14 w-40 rounded-10 hover:bg-custom-light-yellow-hover">
+                            yes, restart
+                        </button>
+                    </div>
+            </div>
+            </section>
+            <section class="w-full grid place-items-center fixed min-h-screen bg-black bg-opacity-60 hidden">
+            <div class="bg-custom-semidark-navy w-full py-16 space-y-6 tablet:space-y-8 laptop:space-y-10">
+                    <p class="uppercase text-custom-silver text-2xl tablet:text-[40px] tablet:tracking-xl laptop:text-[40px] laptop:tracking-xl font-bold w-full text-center"> round tied </p>
+                    <div class="gap-4 w-full flex justify-center items-center">
+                        <button class="uppercase font-bold text-custom-dark-navy bg-custom-light-blue shadow-blue-btn-shadow p-4 rounded-10 hover:bg-custom-light-blue-hover">
+                            quit
+                        </button>
+                        <button class="uppercase font-bold text-custom-dark-navy bg-custom-light-yellow shadow-yellow-btn-shadow p-4 rounded-10 hover:bg-custom-light-yellow-hover">
+                            next round
+                        </button>
+                    </div>
+            </div>
+            </section>
+        </main>
+        <script src="./js/app.js"></script>
+    </body>
+ </html>
+
+ <!-- <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -1 37 35" class="grid place-items-center hidden tablet:hidden laptop:hidden">
+    <path d="M7.501 0.573 16 9.072 24.499 0.573a1.5 1.5 0 0 1 2.122 0l4.806 4.806a1.5 1.5 0 0 1 0 2.122L22.928 16l8.499 8.499a1.5 1.5 0 0 1 0 2.122l-4.806 4.806a1.5 1.5 0 0 1-2.122 0L16 22.928 7.501 31.427a1.5 1.5 0 0 1-2.122 0L0.573 26.62a1.5 1.5 0 0 1 0-2.122L9.072 16 0.573 7.501a1.5 1.5 0 0 1 0-2.122l4.806-4.806a1.5 1.5 0 0 1 2.122 0Z" fill-rule="evenodd" fill="#31C3BD"/>
+</svg>
+<svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class="hidden tablet:hidden laptop:hidden group-hover:hidden">
+    <path d="M20 0c11.2 0 20 9.2 20 20s-8.8 20-20 20S0 30.8 0 20 8.8 0 20 0Zm0 11.1c-4 0-7.5 3.5-7.5 7.5s3.5 7.5 7.5 7.5 7.5-3.5 7.5-7.5-3.5-7.5-7.5-7.5Z"/>
+</svg>
+
+ tablet and laptops x and o's
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:hidden laptop:hidden hover:stroke-custom-light-blue hover:fill-none group-hover:hidden"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/></svg>
+
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class="hidden tablet:hidden laptop:hidden group-hover:hidden"><path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/></svg>
+ tablet and laptops x and o hovers
+<svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:group-hover:hidden laptop:group-hover:hidden"><path d="M51.12 1.269c.511 0 1.023.195 1.414.586l9.611 9.611c.391.391.586.903.586 1.415s-.195 1.023-.586 1.414L44.441 32l17.704 17.705c.391.39.586.902.586 1.414 0 .512-.195 1.024-.586 1.415l-9.611 9.611c-.391.391-.903.586-1.415.586a1.994 1.994 0 0 1-1.414-.586L32 44.441 14.295 62.145c-.39.391-.902.586-1.414.586a1.994 1.994 0 0 1-1.415-.586l-9.611-9.611a1.994 1.994 0 0 1-.586-1.415c0-.512.195-1.023.586-1.414L19.559 32 1.855 14.295a1.994 1.994 0 0 1-.586-1.414c0-.512.195-1.024.586-1.415l9.611-9.611c.391-.391.903-.586 1.415-.586s1.023.195 1.414.586L32 19.559 49.705 1.855c.39-.391.902-.586 1.414-.586Z" stroke="#31C3BD" stroke-width="2" fill="none"/></svg>
+<svg width="66" height="66" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:group-hover:hidden laptop:group-hover:hidden"><path d="M33 1c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C15.327 65 1 50.673 1 33 1 15.327 15.327 1 33 1Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" stroke ="#F2B137" stroke-width="2" fill="none"/></svg> -->

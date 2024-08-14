@@ -1,0 +1,12 @@
+@import url('https://fonts.googleapis.com/css2?family=Outfit:wght@100..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.selected-mark{
+    @apply bg-custom-silver
+}
+.selected-mark svg{
+    @apply fill-custom-dark-navy
+}
