@@ -16,10 +16,11 @@ const turns = getElement(".player-turn");
 const gameWin = getElement(".game-win-and-lost");
 const gameWinSection = getElement(".game-win-section");
 const quitBtn = getElement(".quit");
-const nextRoundBtn = getElement(".next-round");
+const nextRoundBtn = [...document.querySelectorAll(".next-round")];
 const p1ScoreDOM = getElement(".p1-score");
 const tieScoreDOM = getElement(".ties-score");
 const p2ScoreDOM = getElement(".p2-score");
+const drawSection = getElement('.draw-round');
 let gameIsDone = false;
 // const p1Mark = getElement("p1-mark");
 
@@ -27,8 +28,8 @@ const gameDetails = {};
 player1Details = {};
 player2Details = {};
 
-const player1Move = [];
-const player2Move = [];
+let player1Move = [];
+let player2Move = [];
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -45,6 +46,7 @@ let x_turn;
 let p1score = 0;
 let p2score = 0;
 let tiescore = 0;
+const sturdyArr = [];
 
 gameBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -91,6 +93,7 @@ const start = () => {
         changeTurn(currentPlayer);
         cards.forEach((card) => {
             card.addEventListener("click", () => {
+                sturdyArr.push(card)
                 playCard(card);
             }, 
             {
@@ -100,21 +103,26 @@ const start = () => {
     };
 };
 
-nextRoundBtn.addEventListener("click", () => {
-    currentPlayer = "x";
-    cards.forEach((card) => {
-        if (card.classList.contains("clicked")) {
-            card.removeChild(document.querySelector(".to-be-removed"));
-            card.classList.remove("clicked");
-            card.removeAttribute("data-player");    
-            card.removeEventListener("click", ()=>{
-                playCard(card)
-            });
-        };
+nextRoundBtn.forEach((btn) => {
+    btn.addEventListener("click", () => {
+        cards.forEach((card) => {
+            if (card.classList.contains("clicked")) {
+                card.removeChild(document.querySelector(".to-be-removed"));
+                card.classList.remove("clicked");
+                card.removeAttribute("data-player");    
+                card.removeEventListener("click", ()=>{
+                    playCard(card);
+                });
+            };
+        });
+        gameWinSection.classList.add("hidden");
+        drawSection.classList.add("hidden");
+        gameIsDone = false;
+        player1Move = [];
+        player2Move = [];
+        currentPlayer = "x";
+        start();
     });
-    gameWinSection.classList.add("hidden");
-    gameIsDone = false;
-    start();
 });
 
 
@@ -148,10 +156,6 @@ const showp2Marks = (data) => {
     return p2Mark.textContent = `${data.playerMark}  (${data.player})`;
 };
 
-
-
-
-
 start();
 
 // What to do
@@ -162,6 +166,7 @@ const playCard = (card) => {
     
     card.setAttribute("data-player", currentPlayer);
     card.classList.add("clicked");
+
     if (!gameIsDone){
         for (let i = 0; i < winConditions.length; i++){
             const [a, b, c] = winConditions[i];
@@ -205,23 +210,12 @@ const playCard = (card) => {
                     bigoWins.classList.replace("laptop:hidden", "laptop:block");
                     takesTheRound.classList.replace("text-custom-light-blue", "text-custom-light-yellow");
                 };
-
-                // const btnContainer = getElement(".actions-btn-container");
-                // btnContainer.addEventListener("click", (e) => {
-                //     if (e.target.classList.contains("quit-btn")){
-                //         return;
-                //     };
-                //     if (e.target.classList.contains("next-round")){
-                //         start();
-                //     };
-                // });
             
                 gameIsDone = true;
                 currentPlayer === "x" ? p1score++ : p2score++;
                 p1ScoreDOM.innerHTML = p1score;
                 p2ScoreDOM.innerHTML = p2score;
             };
-            
         }
     }
     if (currentPlayer === "x") {
@@ -249,6 +243,14 @@ const playCard = (card) => {
     const data2 = JSON.parse(localStorage.getItem("player 2-details"));
     data2.moves = player2Move;
     localStorage.setItem("player 2-details", JSON.stringify(data2));
+    const toBeSet = cards.every(el => el.classList.contains('clicked'));
+    if (toBeSet && !gameIsDone){
+        drawSection.classList.remove('hidden');
+        tiescore++;
+        tieScoreDOM.innerHTML = tiescore;
+        gameIsDone = true;
+    }
+    
 }
 
 
@@ -288,22 +290,22 @@ addEventListener("DOMContentLoaded", () => {
         
         const {moves:move1} = p1Data;
         const {moves:move2} = p2Data;
-        if (move1){
-            move1.map((move) => {
-                const currentCard = cards.filter((card) => card.dataset.id === move)[0];
-                currentCard.classList.add("clicked");
-                currentCard.setAttribute("data-player", "x");
-                xHTML(currentCard);
-            });
-        }else return;
-        if (move2){
-            move2.map((move) => {
-                const currentCard = cards.filter((card) => card.dataset.id === move)[0];
-                currentCard.classList.add("clicked");
-                currentCard.setAttribute("data-player", "o");
-                oHTML(currentCard);                
-            });
-        }else return;
+            // if (move1){
+            //     move1.map((move) => {
+            //         const currentCard = cards.filter((card) => card.dataset.id === move)[0];
+            //         currentCard.classList.add("clicked");
+            //         currentCard.setAttribute("data-player", "x");
+            //         xHTML(currentCard);
+            //     });
+            // }else return;
+            // if (move2){
+            //     move2.map((move) => {
+            //         const currentCard = cards.filter((card) => card.dataset.id === move)[0];
+            //         currentCard.classList.add("clicked");
+            //         currentCard.setAttribute("data-player", "o");
+            //         oHTML(currentCard);                
+            //     });
+            // }else return;
     } catch (err){
         return;
     };
@@ -343,3 +345,9 @@ const oHTML = (card) => card.innerHTML = `
         </svg>
     </span>
 `;
+
+const restartBtn = getElement('.restart-btn');
+restartBtn.addEventListener('click', () => {
+    localStorage.clear();
+    location.reload();
+});
