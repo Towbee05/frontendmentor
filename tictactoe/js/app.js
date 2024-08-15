@@ -15,12 +15,13 @@ const p2Mark = getElement(".p2-mark");
 const turns = getElement(".player-turn");
 const gameWin = getElement(".game-win-and-lost");
 const gameWinSection = getElement(".game-win-section");
-const quitBtn = getElement(".quit");
+const quitBtn = document.querySelectorAll('.quit');
 const nextRoundBtn = [...document.querySelectorAll(".next-round")];
 const p1ScoreDOM = getElement(".p1-score");
 const tieScoreDOM = getElement(".ties-score");
 const p2ScoreDOM = getElement(".p2-score");
 const drawSection = getElement('.draw-round');
+const restartSection = getElement('.restart-section');
 let gameIsDone = false;
 // const p1Mark = getElement("p1-mark");
 
@@ -59,7 +60,6 @@ gameBtns.forEach((btn) => {
             gameSection.classList.remove("hidden");
             const gameData = JSON.parse(localStorage.getItem("game details"));
             if (gameData.playingAgainst === "cpu"){
-                console.log("yeahhhh");
                 player2Details["player"] = "cpu";
             }
             else{
@@ -172,7 +172,6 @@ const playCard = (card) => {
             const [a, b, c] = winConditions[i];
             if (cards[a].dataset.player === currentPlayer && cards[b].dataset.player === currentPlayer && cards[c].dataset.player === currentPlayer){
                 const player = currentPlayer === "x" ? "player 1" : "player 2";
-                console.log(player);
                 gameWinSection.classList.remove("hidden");
                 gameWin.innerHTML = `
                         <p class="uppercase text-sm text-custom-silver tracking-sm w-full text-center">
@@ -229,11 +228,8 @@ const playCard = (card) => {
         currentPlayer = "x";
     };
 
-    console.log(player1Move);
-
     player1Details["moves"] = player1Move;
     player2Details["moves"] = player2Move;
-    console.log(player1Move, player2Move);
     changeTurn(currentPlayer);
 
     const data1 = JSON.parse(localStorage.getItem("player 1-details"));
@@ -346,8 +342,23 @@ const oHTML = (card) => card.innerHTML = `
     </span>
 `;
 
+const confirmRestart = getElement('.confirm-restart');
+const cancelRestart = getElement('.cancel-restart');
 const restartBtn = getElement('.restart-btn');
 restartBtn.addEventListener('click', () => {
+    restartSection.classList.remove('hidden');
+});
+
+cancelRestart.addEventListener("click", () => {
+    restartSection.classList.add('hidden');
+});
+
+const quitGame = () => {
     localStorage.clear();
     location.reload();
+};
+confirmRestart.addEventListener('click', quitGame);
+
+quitBtn.forEach((btn) => {
+    btn.addEventListener('click', quitGame)
 });
