@@ -26,8 +26,8 @@ let gameIsDone = false;
 // const p1Mark = getElement("p1-mark");
 
 const gameDetails = {};
-player1Details = {};
-player2Details = {};
+const player1Details = {};
+const player2Details = {};
 
 let player1Move = [];
 let player2Move = [];
@@ -48,6 +48,19 @@ let p1score = 0;
 let p2score = 0;
 let tiescore = 0;
 const sturdyArr = [];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+let counter = 0;
+
+const shuffle = (array) => {
+    for (let i = array.length - 1; i >= 0; i--) {
+           const randomIndex = Math.floor(Math.random() * (i + 1));
+           array.push(array[randomIndex]);
+           array.splice(randomIndex, 1);
+       }
+       return array;
+};
+
+const shuffledNumber = shuffle(numbers);
 
 gameBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -58,6 +71,7 @@ gameBtns.forEach((btn) => {
             localStorage.setItem("game details", JSON.stringify(gameDetails));
             welcomeSection.classList.add('hidden');
             gameSection.classList.remove("hidden");
+            start()
             const gameData = JSON.parse(localStorage.getItem("game details"));
             if (gameData.playingAgainst === "cpu"){
                 player2Details["player"] = "cpu";
@@ -102,6 +116,7 @@ const start = () => {
         });
     };
 };
+
 
 nextRoundBtn.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -156,99 +171,105 @@ const showp2Marks = (data) => {
     return p2Mark.textContent = `${data.playerMark}  (${data.player})`;
 };
 
-start();
+
 
 // What to do
 // Check for user mark
 
 const playCard = (card) => {
+    const game = JSON.parse(localStorage.getItem("game details"));
+    const opponent = game["playingAgainst"]
     const cardID = card.dataset.id;
-    
-    card.setAttribute("data-player", currentPlayer);
-    card.classList.add("clicked");
 
-    if (!gameIsDone){
-        for (let i = 0; i < winConditions.length; i++){
-            const [a, b, c] = winConditions[i];
-            if (cards[a].dataset.player === currentPlayer && cards[b].dataset.player === currentPlayer && cards[c].dataset.player === currentPlayer){
-                const player = currentPlayer === "x" ? "player 1" : "player 2";
-                gameWinSection.classList.remove("hidden");
-                gameWin.innerHTML = `
-                        <p class="uppercase text-sm text-custom-silver tracking-sm w-full text-center">
-                            ${player} wins!!
-                        </p>
-                        <p class="mt-4 uppercase text-2xl tablet:text-[40px] laptop:text-[40px] tablet:tracking-xl laptop:tracking-xl text-custom-light-blue tracking-lg w-full flex items-center justify-center gap-4 font-bold">
-                            <span>
-                                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" viewBox="0 0 64 64" class="hidden tablet:hidden laptop:hidden o-wins">
-                                    <path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/>
-                                </svg>    
-                                <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="#31C3BD" viewBox="0 0 64 64" class="hidden tablet:hidden laptop:hidden x-wins">
-                                    <path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z"/>
-                                </svg>
-                                <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class="hidden tablet:hidden laptop:hidden big-o-wins"><path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/></svg>
+    if (opponent === "player"){
+        card.setAttribute("data-player", currentPlayer);
+        card.classList.add("clicked");
+        if (!gameIsDone){
+            for (let i = 0; i < winConditions.length; i++){
+                const [a, b, c] = winConditions[i];
+                if (cards[a].dataset.player === currentPlayer && cards[b].dataset.player === currentPlayer && cards[c].dataset.player === currentPlayer){
+                    const player = currentPlayer === "x" ? "player 1" : "player 2";
+                    gameWinSection.classList.remove("hidden");
+                    gameWin.innerHTML = `
+                            <p class="uppercase text-sm text-custom-silver tracking-sm w-full text-center">
+                                ${player} wins!!
+                            </p>
+                            <p class="mt-4 uppercase text-2xl tablet:text-[40px] laptop:text-[40px] tablet:tracking-xl laptop:tracking-xl text-custom-light-blue tracking-lg w-full flex items-center justify-center gap-4 font-bold">
+                                <span>
+                                    <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" viewBox="0 0 64 64" class="hidden tablet:hidden laptop:hidden o-wins">
+                                        <path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/>
+                                    </svg>    
+                                    <svg width="30" height="30" xmlns="http://www.w3.org/2000/svg" fill="#31C3BD" viewBox="0 0 64 64" class="hidden tablet:hidden laptop:hidden x-wins">
+                                        <path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z"/>
+                                    </svg>
+                                    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class="hidden tablet:hidden laptop:hidden big-o-wins"><path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/></svg>
 
-                                <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:hidden laptop:hidden big-x-wins"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/></svg>
-                            </span>
-                            takes the round
-                        </p>
-                `
-                const xWins = getElement('.x-wins');
-                const oWins = getElement('.o-wins');
-                const bigxWins = getElement('.big-x-wins');
-                const bigoWins = getElement('.big-o-wins');
-                const takesTheRound = [...document.querySelectorAll('.game-win-and-lost p')][1];
+                                    <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:hidden laptop:hidden big-x-wins"><path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/></svg>
+                                </span>
+                                takes the round
+                            </p>
+                    `
+                    const xWins = getElement('.x-wins');
+                    const oWins = getElement('.o-wins');
+                    const bigxWins = getElement('.big-x-wins');
+                    const bigoWins = getElement('.big-o-wins');
+                    const takesTheRound = [...document.querySelectorAll('.game-win-and-lost p')][1];
+                    
+                    if (player === "player 1"){
+                        xWins.classList.remove('hidden');
+                        bigxWins.classList.replace("tablet:hidden", "tablet:block");
+                        bigxWins.classList.replace("laptop:hidden", "laptop:block");
+                    }
+                    else{
+                        oWins.classList.remove('hidden');
+                        bigoWins.classList.replace("tablet:hidden", "tablet:block");    
+                        bigoWins.classList.replace("laptop:hidden", "laptop:block");
+                        takesTheRound.classList.replace("text-custom-light-blue", "text-custom-light-yellow");
+                    };
                 
-                if (player === "player 1"){
-                    xWins.classList.remove('hidden');
-                    bigxWins.classList.replace("tablet:hidden", "tablet:block");
-                    bigxWins.classList.replace("laptop:hidden", "laptop:block");
-                }
-                else{
-                    oWins.classList.remove('hidden');
-                    bigoWins.classList.replace("tablet:hidden", "tablet:block");    
-                    bigoWins.classList.replace("laptop:hidden", "laptop:block");
-                    takesTheRound.classList.replace("text-custom-light-blue", "text-custom-light-yellow");
+                    gameIsDone = true;
+                    currentPlayer === "x" ? p1score++ : p2score++;
+                    p1ScoreDOM.innerHTML = p1score;
+                    p2ScoreDOM.innerHTML = p2score;
                 };
-            
-                gameIsDone = true;
-                currentPlayer === "x" ? p1score++ : p2score++;
-                p1ScoreDOM.innerHTML = p1score;
-                p2ScoreDOM.innerHTML = p2score;
-            };
+            }
         }
-    }
-    if (currentPlayer === "x") {
-        !player1Move.includes(cardID) ? player1Move.push(cardID) : console.log("");
-        xHTML(card);
-        currentPlayer = "o"
-    }
-    else {
-        !player2Move.includes(cardID) ? player2Move.push(cardID) : console.log("");
-        oHTML(card);
-        currentPlayer = "x";
-    };
+        console.log(currentPlayer);
+        if (currentPlayer === "x") {
+            !player1Move.includes(cardID) ? player1Move.push(cardID) : console.log("");
+            xHTML(card);
+            currentPlayer = "o"
+        }
+        else {
+            !player2Move.includes(cardID) ? player2Move.push(cardID) : console.log("");
+            oHTML(card);
+            currentPlayer = "x";
+        };
 
-    player1Details["moves"] = player1Move;
-    player2Details["moves"] = player2Move;
-    changeTurn(currentPlayer);
+        player1Details["moves"] = player1Move;
+        player2Details["moves"] = player2Move;
+        changeTurn(currentPlayer);
 
-    const data1 = JSON.parse(localStorage.getItem("player 1-details"));
-    data1.moves = player1Move;
-    localStorage.setItem("player 1-details", JSON.stringify(data1));
-    
-    const data2 = JSON.parse(localStorage.getItem("player 2-details"));
-    data2.moves = player2Move;
-    localStorage.setItem("player 2-details", JSON.stringify(data2));
-    const toBeSet = cards.every(el => el.classList.contains('clicked'));
-    if (toBeSet && !gameIsDone){
-        drawSection.classList.remove('hidden');
-        tiescore++;
-        tieScoreDOM.innerHTML = tiescore;
-        gameIsDone = true;
+        const data1 = JSON.parse(localStorage.getItem("player 1-details"));
+        data1.moves = player1Move;
+        localStorage.setItem("player 1-details", JSON.stringify(data1));
+        
+        const data2 = JSON.parse(localStorage.getItem("player 2-details"));
+        data2.moves = player2Move;
+        localStorage.setItem("player 2-details", JSON.stringify(data2));
+        const toBeSet = cards.every(el => el.classList.contains('clicked'));
+        if (toBeSet && !gameIsDone){
+            drawSection.classList.remove('hidden');
+            tiescore++;
+            tieScoreDOM.innerHTML = tiescore;
+            gameIsDone = true;
+        }
+    }else{ 
+        alert("Cpu functionalities not added yet");
     }
-    
-}
+};
 
+const getRandomNumber = () => Math.floor(Math.random() * cards.length);
 
 
 const removeAddHoverEffect = (btn, index) => { 
