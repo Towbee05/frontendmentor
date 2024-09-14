@@ -1,0 +1,17 @@
+{
+  "devDependencies": {
+    "tailwindcss": "^3.4.11"
+  },
+  "name": "nft",
+  "version": "1.0.0",
+  "main": "index.js",
+
+  "scripts": {
+    "build" : "npx tailwindcss -i ./css/styles.css -o ./css/output.css --watch",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "description": ""
+}

@@ -1,8 +1,9 @@
-import cpuFunctions from "./cpu-functions.js";
-import shuffle from "./shuffleNumber.js";
-import { xHTML, oHTML } from "./xAndoHTML.js";
-import { gameDone } from "./done-game.js";
-import getElement from "./getElement.js";
+const getElement = (selection) => {
+    const element = document.querySelector(selection);
+
+    if (!element) throw new Error(`${element} not found`);
+    return element;
+};
 
 const markBtns = [...document.querySelectorAll('.mark-btn')];
 const gameBtns = [...document.querySelectorAll('.game-btn')];
@@ -16,11 +17,20 @@ const gameWin = getElement(".game-win-and-lost");
 const gameWinSection = getElement(".game-win-section");
 const quitBtn = document.querySelectorAll('.quit');
 const nextRoundBtn = [...document.querySelectorAll(".next-round")];
-
+const p1ScoreDOM = getElement(".p1-score");
+const tieScoreDOM = getElement(".ties-score");
+const p2ScoreDOM = getElement(".p2-score");
 const drawSection = getElement('.draw-round');
 const restartSection = getElement('.restart-section');
 let gameIsDone = false;
 // const p1Mark = getElement("p1-mark");
+
+const gameDetails = {};
+const player1Details = {};
+const player2Details = {};
+
+let player1Move = [];
+let player2Move = [];
 const winConditions = [
     [0, 1, 2],
     [3, 4, 5],
@@ -30,18 +40,7 @@ const winConditions = [
     [2, 5, 8],
     [0, 4, 8],
     [2, 4, 6],
-];
-const p1ScoreDOM = getElement(".p1-score");
-const tieScoreDOM = getElement(".ties-score");
-const p2ScoreDOM = getElement(".p2-score");
-
-const gameDetails = {};
-const player1Details = {};
-const player2Details = {};
-
-let player1Move = [];
-let player2Move = [];
-
+]
 // const currentPlayer = ["x", "o"];
 let currentPlayer = "x";
 let x_turn;
@@ -49,9 +48,19 @@ let p1score = 0;
 let p2score = 0;
 let tiescore = 0;
 const sturdyArr = [];
-let numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
+const numbers = [1, 2, 3, 4, 5, 6, 7, 8, 9];
 let counter = 0;
-let shuffledNumber = shuffle(numbers);
+
+const shuffle = (array) => {
+    for (let i = array.length - 1; i >= 0; i--) {
+           const randomIndex = Math.floor(Math.random() * (i + 1));
+           array.push(array[randomIndex]);
+           array.splice(randomIndex, 1);
+       }
+       return array;
+};
+
+const shuffledNumber = shuffle(numbers);
 
 gameBtns.forEach((btn) => {
     btn.addEventListener("click", () => {
@@ -64,7 +73,7 @@ gameBtns.forEach((btn) => {
             gameSection.classList.remove("hidden");
             start()
             const gameData = JSON.parse(localStorage.getItem("game details"));
-          if (gameData.playingAgainst === "cpu"){
+            if (gameData.playingAgainst === "cpu"){
                 player2Details["player"] = "cpu";
             }
             else{
@@ -95,18 +104,6 @@ markBtns.forEach((btn,index) => {
 
 const start = () => {
     if (!gameIsDone){
-        if (gameDetails["playingAgainst"] === "cpu"){
-            if (gameDetails["playerMark"] === "x") {
-                console.log("Player starts first!!!");
-            } else{
-                const cpuFirstCard = cards[shuffledNumber[counter]];
-                cpuFirstCard.setAttribute('data-player', 'x');
-                cpuFirstCard.classList.add('clicked');
-                xHTML(cpuFirstCard);
-                currentPlayer = 'o '
-                counter++;
-            };
-        };
         changeTurn(currentPlayer);
         cards.forEach((card) => {
             card.addEventListener("click", () => {
@@ -267,16 +264,8 @@ const playCard = (card) => {
             tieScoreDOM.innerHTML = tiescore;
             gameIsDone = true;
         }
-    }else{
-        if (gameDetails['playerMark'] === 'o'){
-            cpuFunctions('o', card, cards);
-            gameDone(gameIsDone, cards, card, opponent, currentPlayer);
-        } else{
-            // card.removeEventListener('click', () => playCard()); 
-            currentPlayer = 'x'
-            // cpuFunctions('x', card, cards);
-            gameDone(gameIsDone);
-        }
+    }else{ 
+        alert("Cpu functionalities not added yet");
     }
 };
 
@@ -340,6 +329,39 @@ addEventListener("DOMContentLoaded", () => {
 
 });
 
+const xHTML = (card) => card.innerHTML = `
+    <span class="to-be-removed">
+        <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" viewBox="-2 -1 37 35" class="grid place-items-center tablet:hidden laptop:hidden">
+            <path d="M7.501 0.573 16 9.072 24.499 0.573a1.5 1.5 0 0 1 2.122 0l4.806 4.806a1.5 1.5 0 0 1 0 2.122L22.928 16l8.499 8.499a1.5 1.5 0 0 1 0 2.122l-4.806 4.806a1.5 1.5 0 0 1-2.122 0L16 22.928 7.501 31.427a1.5 1.5 0 0 1-2.122 0L0.573 26.62a1.5 1.5 0 0 1 0-2.122L9.072 16 0.573 7.501a1.5 1.5 0 0 1 0-2.122l4.806-4.806a1.5 1.5 0 0 1 2.122 0Z" fill-rule="evenodd" fill="#31C3BD"/>
+        </svg>
+        <!-- tablet and laptops x and o's  -->
+        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:block laptop:block hover:stroke-custom-light-blue hover:fill-none group-hover:hidden">
+            <path d="M15.002 1.147 32 18.145 48.998 1.147a3 3 0 0 1 4.243 0l9.612 9.612a3 3 0 0 1 0 4.243L45.855 32l16.998 16.998a3 3 0 0 1 0 4.243l-9.612 9.612a3 3 0 0 1-4.243 0L32 45.855 15.002 62.853a3 3 0 0 1-4.243 0L1.147 53.24a3 3 0 0 1 0-4.243L18.145 32 1.147 15.002a3 3 0 0 1 0-4.243l9.612-9.612a3 3 0 0 1 4.243 0Z" fill="#31C3BD" fill-rule="evenodd"/>
+        </svg>
+        <!-- tablet and laptops x and o hovers -->
+        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:group-hover:block laptop:group-hover:block">
+            <path d="M51.12 1.269c.511 0 1.023.195 1.414.586l9.611 9.611c.391.391.586.903.586 1.415s-.195 1.023-.586 1.414L44.441 32l17.704 17.705c.391.39.586.902.586 1.414 0 .512-.195 1.024-.586 1.415l-9.611 9.611c-.391.391-.903.586-1.415.586a1.994 1.994 0 0 1-1.414-.586L32 44.441 14.295 62.145c-.39.391-.902.586-1.414.586a1.994 1.994 0 0 1-1.415-.586l-9.611-9.611a1.994 1.994 0 0 1-.586-1.415c0-.512.195-1.023.586-1.414L19.559 32 1.855 14.295a1.994 1.994 0 0 1-.586-1.414c0-.512.195-1.024.586-1.415l9.611-9.611c.391-.391.903-.586 1.415-.586s1.023.195 1.414.586L32 19.559 49.705 1.855c.39-.391.902-.586 1.414-.586Z" stroke="#31C3BD" stroke-width="2" fill="none"/>
+        </svg>
+    </span>
+`;
+
+const oHTML = (card) => card.innerHTML = `
+    <!-- mobile x and o  -->
+    <span class="to-be-removed">
+        <svg width="40" height="40" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class=" tablet:hidden laptop:hidden group-hover:hidden">
+            <path d="M20 0c11.2 0 20 9.2 20 20s-8.8 20-20 20S0 30.8 0 20 8.8 0 20 0Zm0 11.1c-4 0-7.5 3.5-7.5 7.5s3.5 7.5 7.5 7.5 7.5-3.5 7.5-7.5-3.5-7.5-7.5-7.5Z"/>
+        </svg>
+
+    <!-- tablet and laptops x and o's  -->
+        <svg width="64" height="64" xmlns="http://www.w3.org/2000/svg" fill="#F2B137" class="hidden tablet:block laptop:block group-hover:hidden">
+            <path d="M32 0c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C14.327 64 0 49.673 0 32 0 14.327 14.327 0 32 0Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z"/>
+        </svg>
+        <!-- tablet and laptops x and o hovers -->
+        <svg width="66" height="66" xmlns="http://www.w3.org/2000/svg" class="hidden tablet:group-hover:block laptop:group-hover:block">
+            <path d="M33 1c17.673 0 32 14.327 32 32 0 17.673-14.327 32-32 32C15.327 65 1 50.673 1 33 1 15.327 15.327 1 33 1Zm0 18.963c-7.2 0-13.037 5.837-13.037 13.037 0 7.2 5.837 13.037 13.037 13.037 7.2 0 13.037-5.837 13.037-13.037 0-7.2-5.837-13.037-13.037-13.037Z" stroke ="#F2B137" stroke-width="2" fill="none"/>
+        </svg>
+    </span>
+`;
 
 const confirmRestart = getElement('.confirm-restart');
 const cancelRestart = getElement('.cancel-restart');
