@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LoopStudio</title>
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="./styles/dist/output.css">
+</head>
+<body class="grid place-items-center">
+    <div class="min-h-screen w-full grid place-items-center font-custom-josefyn gap-24 max-w-[350px] desktop:max-w-[1440px]">
+        <header class="bg-custom-hero-mobile desktop:bg-custom-hero-desktop desktop:bg-center bg-no-repeat bg-cover pt-10 px-6 w-full h-screen desktop:px-[165px]">
+            <nav class="flex justify-between items-center">
+                <div>
+                    <img src="./assets/images/logo.svg" alt="Loop studio logo">
+                </div>
+                <ul class="hidden desktop:block font-custom-alata space-x-8">
+                    <li class="inline-block capitalize text-white text-15px pb-3 hover:border-b-2 border-white"><a href="#"> about</a></li>
+                    <li class="inline-block capitalize text-white text-15px pb-3 hover:border-b-2 border-white"><a href="#"> careers </a></li>
+                    <li class="inline-block capitalize text-white text-15px pb-3 hover:border-b-2 border-white"><a href="#"> events </a></li>
+                    <li class="inline-block capitalize text-white text-15px pb-3 hover:border-b-2 border-white"><a href="#"> products </a></li>
+                    <li class="inline-block capitalize text-white text-15px pb-3 hover:border-b-2 border-white"><a href="#"> support </a></li>
+                </ul>
+                <button class="open-sidebar desktop:hidden">
+                    <img src="./assets/images/icon-hamburger.svg" alt="open sidebar">
+                </button>
+            </nav>
+
+            <div class="w-full flex items-center h-full"> 
+                <p class="uppercase text-white p-6 desktop:p-10 text-40px font-light border-2 border-white desktop:max-w-[450px]"> Immersive experiences that deliver </p>   
+            </div>
+        </header>
+        <main class="w-full space-y-24">
+            <aside class="bg-black fixed w-full top-0 text-white py-10 px-6 h-screen max-w-[350px] z-10 -translate-x-[100vw] sidebar">
+                <div class="w-full flex justify-between items-center">
+                    <img src="./assets/images/logo.svg" alt="Loop studio logo">
+                    <button class="close-sidebar">
+                        <img src="./assets/images/icon-close.svg" alt="close button">
+                    </button>
+                </div>
+                <ul class="w-full h-full flex justify-center flex-col gap-6">
+                    <li class="text-24px uppercase font-light"><a href="#"> about</a></li>
+                    <li class="text-24px uppercase font-light"><a href="#"> careers </a></li>
+                    <li class="text-24px uppercase font-light"><a href="#"> events </a></li>
+                    <li class="text-24px uppercase font-light"><a href="#"> products </a></li>
+                    <li class="text-24px uppercase font-light"><a href="#"> support </a></li>
+                </ul>
+            </aside>
+            <section class="space-y-12 px-6 desktop:grid grid-cols-2 desktop:grid-cols-8 desktop:grid-row-3 desktop:px-40">
+                <img src="./assets/images/mobile/image-interactive.jpg" alt=" Interactive image jpg" class="desktop:hidden">
+                <img src="./assets/images/desktop/image-interactive.jpg" alt=" Interactive image jpg" class="hidden desktop:block desktop:col-span-5 desktop:w-full desktop:row-span-3">
+                <article class="text-center px-6 space-y-4 desktop:px-16 desktop:pt-16 desktop:place-self-end desktop:bg-white desktop:col-span-3 desktop:col-start-6 desktop:-ml-36 desktop:text-left desktop:row-span-2 desktop:row-start-2"> 
+                    <h1 class="text-32px font-light uppercase">
+                        The leader in interactive VR
+                    </h1>
+                    <p class="text-15px font-custom-alata opacity-50"> 
+                        Founded in 2011, Loopstudios has been producing world-class virtual reality projects for some of the best companies around the globe. Our award-winning creations have transformed businesses through digital experiences that bind to their brand.
+
+                    </p>
+                </article>
+            </section>
+            <section class="space-y-12 px-6 desktop:grid grid-cols-2 desktop:space-y-0 desktop:gap-y-20">
+                <h1 class="uppercase text-32px text-center font-light desktop:place-self-start desktop:text-42px">our creations</h1>
+                <section class="space-y-6 desktop:space-y-0 desktop:grid grid-cols-4 col-span-2 gap-8">
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-deep-earth.jpg" alt="An image of the earth" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-deep-earth.jpg" alt="An image of the earth" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-20 desktop:text-32px group-hover:text-black">Deep earth</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-night-arcade.jpg" alt="Night arcade" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-night-arcade.jpg" alt="Night arcade" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-20 desktop:text-32px group-hover:text-black">night arcade</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-soccer-team.jpg" alt="Soccer team" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-soccer-team.jpg" alt="Soccer team" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-36 desktop:text-32px group-hover:text-black"> soccer team vr</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-grid.jpg" alt="Grid" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-grid.jpg" alt="Grid" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-20 desktop:text-32px group-hover:text-black">the grid</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-from-above.jpg" alt="Image from above" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-from-above.jpg" alt="Image from above" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-36 desktop:text-32px group-hover:text-black">from up above vr</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-pocket-borealis.jpg" alt="Pocket Borealis" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-pocket-borealis.jpg" alt="Pocket Borealis" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-20 desktop:text-32px group-hover:text-black">pocket borealis</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-curiosity.jpg" alt="Curiosity" class="desktop:hidden">
+                        <img src="./assets/images/desktop/image-curiosity.jpg" alt="Curiosity" class="hidden desktop:block group-hover:opacity-40">
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-20 desktop:text-32px group-hover:text-black">the curiosity</p>
+                    </button>
+                    <button class="relative group">
+                        <img src="./assets/images/mobile/image-fisheye.jpg" alt="Fish View" class="desktop:hidden"> 
+                        <img src="./assets/images/desktop/image-fisheye.jpg" alt="Fish View" class="hidden desktop:block group-hover:opacity-40"> 
+                        <p class="absolute uppercase text-24px2.0 font-light text-white left-5 bottom-5 max-w-36 desktop:text-32px group-hover:text-black">make it fisheye</p>
+                    </button>
+                </section>
+                <div class="w-full grid place-items-center desktop:place-items-end pt-2.5 desktop:col-start-2 row-start-1 desktop:pt-0 desktop:items-end">
+                    <button class="uppercase font-custom-alata text-14px tracking-[5px] py-3 px-10 border border-black hover:bg-black hover:text-white">
+                        see all
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer class="bg-black text-white w-full grid place-items-center grid-cols-1 desktop:grid-cols-2 py-14 gap-12 flex-col font-custom-alata desktop:gap-4 desktop:px-[160px]">
+            <img src="./assets/images/logo.svg" alt="Loop Studio logo" class="desktop:place-self-start">
+            <ul class="w-full h-full text-center space-y-4 desktop:space-y-0 desktop:col-start-1 row-start-2 desktop:place-self-start desktop:w-auto desktop:space-x-8">
+                <li class="text-15px capitalize font-light desktop:inline-block desktop:hover:border-b-2 hover:border-white pb-3"><a href="#"> about</a></li>
+                <li class="text-15px capitalize font-light desktop:inline-block desktop:hover:border-b-2 hover:border-white pb-3"><a href="#"> careers </a></li>
+                <li class="text-15px capitalize font-light desktop:inline-block desktop:hover:border-b-2 hover:border-white pb-3"><a href="#"> events </a></li>
+                <li class="text-15px capitalize font-light desktop:inline-block desktop:hover:border-b-2 hover:border-white pb-3"><a href="#"> products </a></li>
+                <li class="text-15px capitalize font-light desktop:inline-block desktop:hover:border-b-2 hover:border-white pb-3"><a href="#"> support </a></li>
+            </ul>
+            <ul class="flex justify-center items-center gap-4 desktop:place-self-end">
+                <li class="inline-block desktop:hover:border-b-2 hover:border-white p-3">
+                    <a href="#">
+                        <img src="./assets/images/icon-facebook.svg" alt="facebook logo">
+                    </a>
+                </li>
+                <li class="inline-block desktop:hover:border-b-2 hover:border-white p-3">
+                    <a href="#">
+                        <img src="./assets/images/icon-twitter.svg" alt="twitter logo">
+                    </a>
+                </li>
+                <li class="inline-block desktop:hover:border-b-2 hover:border-white p-3">
+                    <a href="#">
+                        <img src="./assets/images/icon-pinterest.svg" alt="pinterest logo">
+                    </a>
+                </li>
+                <li class="inline-block desktop:hover:border-b-2 hover:border-white p-3">
+                    <a href="#">
+                        <img src="./assets/images/icon-instagram.svg" alt="instagram logo">
+                    </a>
+                </li>
+            </ul>
+            <p class="text-15px opacity-50 desktop:place-self-end desktop:pb-3">
+                &copy  2021 Loopstudios. All rights reserved.
+            </p>
+        </footer>
+    </div>
+    <script type="module" src="./scripts/app.js"></script>
+</body>
+</html>
