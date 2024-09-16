@@ -28,7 +28,7 @@ module.exports = {
       },
       screens: {
         desktop : {
-          min: "1000px"
+          min: "1100px"
         }
       }
     },
