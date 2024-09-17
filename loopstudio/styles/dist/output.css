@@ -614,6 +614,10 @@ video {
   display: none;
 }
 
+.h-\[80vh\]{
+  height: 80vh;
+}
+
 .h-full{
   height: 100%;
 }
@@ -638,32 +642,16 @@ video {
   max-width: 9rem;
 }
 
+.max-w-\[300px\]{
+  max-width: 300px;
+}
+
 .max-w-\[350px\]{
   max-width: 350px;
 }
 
-.max-w-\[400px\]{
-  max-width: 400px;
-}
-
-.max-w-\[500px\]{
-  max-width: 500px;
-}
-
-.max-w-\[600px\]{
-  max-width: 600px;
-}
-
 .max-w-\[700px\]{
   max-width: 700px;
-}
-
-.max-w-\[450px\]{
-  max-width: 450px;
-}
-
-.max-w-\[300px\]{
-  max-width: 300px;
 }
 
 .-translate-x-\[100vw\]{
@@ -761,6 +749,10 @@ video {
   border-width: 2px;
 }
 
+.border-b-2{
+  border-bottom-width: 2px;
+}
+
 .border-black{
   --tw-border-opacity: 1;
   border-color: rgb(0 0 0 / var(--tw-border-opacity));
@@ -769,6 +761,10 @@ video {
 .border-white{
   --tw-border-opacity: 1;
   border-color: rgb(255 255 255 / var(--tw-border-opacity));
+}
+
+.border-transparent{
+  border-color: transparent;
 }
 
 .bg-black{
@@ -993,10 +989,6 @@ video {
     width: 100%;
   }
 
-  .desktop\:max-w-\[1000px\]{
-    max-width: 1000px;
-  }
-
   .desktop\:max-w-\[1440px\]{
     max-width: 1440px;
   }
@@ -1058,10 +1050,6 @@ video {
     background-image: url('/assets/images/desktop/image-hero.jpg');
   }
 
-  .desktop\:bg-center{
-    background-position: center;
-  }
-
   .desktop\:p-10{
     padding: 2.5rem;
   }
@@ -1109,6 +1097,11 @@ video {
 
   .desktop\:hover\:border-b-2:hover{
     border-bottom-width: 2px;
+  }
+
+  .desktop\:hover\:border-white:hover{
+    --tw-border-opacity: 1;
+    border-color: rgb(255 255 255 / var(--tw-border-opacity));
   }
 }
 
