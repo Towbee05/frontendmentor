@@ -30,9 +30,9 @@ let counter = 1;
 nextBtn.map((btn) => {
     btn.addEventListener('click', (e) => {
         if (e.currentTarget.classList.contains('desktop')) {
-            changeImage('desktop');
+            changeImage(1, 'desktop');
         } else{
-            changeImage('mobile');
+            changeImage(0, 'mobile');
         };
     });
 });
