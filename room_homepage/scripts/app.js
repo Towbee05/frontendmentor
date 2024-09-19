@@ -2,12 +2,14 @@ import getElements from "./getElements.js";
 
 const openbtn = getElements('.open-btn');
 const closebtn = getElements('.close-nav');
-const mobileHeader = getElements('.mobile-header-section');
 const desktopHeader = getElements('.desktop-header-section');
 const mobileNav = getElements('.mobile-nav');
 const currentNav = getElements('.current-nav');
 const nextBtn = [...document.querySelectorAll('.next-btn')];
 const prevBtn = [...document.querySelectorAll('.prev-btn')];
+const imgContainer = [...document.querySelectorAll('.carousel-img')];
+
+console.log(imgContainer);
 
 const addClass = (element, className) => element.classList.add(className);
 const removeClass = (element, className) => element.classList.remove(className);
@@ -16,27 +18,21 @@ const replaceClass = (element, oldClassName, newClassName) => element.classList.
 openbtn.addEventListener('click', () => {
     addClass(currentNav, 'hidden');
     removeClass(mobileNav, 'hidden');
-    document.body.style.zIndex = `-$(100)`;
-    document.body.style.backgroundColor = `rgba(0,0,0,0.5)`;
 });
 
 closebtn.addEventListener('click', () => {
     addClass(mobileNav, 'hidden');
     removeClass(currentNav, 'hidden');
-    document.body.style.backgroundColor = ``;
-    document.body.style.zIndex = 100;
 });
 
-const mobileImages = ['background-1', 'background-3', 'background-5'];
-const desktopImages = ['background-2', 'background-4', 'background-6'];
-let counter = 0;
+let counter = 1;
 
 nextBtn.map((btn) => {
     btn.addEventListener('click', (e) => {
         if (e.currentTarget.classList.contains('desktop')) {
-            changeImage(desktopImages, desktopHeader);
+            changeImage('desktop');
         } else{
-            changeImage(mobileImages, mobileHeader);
+            changeImage('mobile');
         };
     });
 });
@@ -44,29 +40,23 @@ nextBtn.map((btn) => {
 prevBtn.map((btn) => {
     btn.addEventListener('click', (e) => {
         if (e.currentTarget.classList.contains('desktop')) {
-            changeImageBackward(desktopImages, desktopHeader);
+            changeImageBackward(1, 'desktop');
         } else{
-            changeImageBackward(mobileImages, mobileHeader);
+            changeImageBackward(0, 'mobile');
         };
     });
 });
-
-const changeImage = (arr, section) => {
-    counter++;
-    if (counter > arr.length - 1) {
+const changeImage = (index, screen) => {
+    if (counter >= 3) {
         counter = 0;
-        replaceClass(section,`bg-${arr[arr.length - 1]}`, `bg-${arr[counter]}`);  
     };
-    replaceClass(section,`bg-${arr[counter-1]}`, `bg-${arr[counter]}`);
+    counter ++;
+    return imgContainer[index].src = `/assets/images/${screen}-image-hero-${counter}.jpg`
 };
-const changeImageBackward = (arr, section) => {
-    counter--;
-    if (counter < 0 ) {
-        replaceClass(section,`bg-${arr[counter + 1]}`, `bg-${arr[arr.length - 1]}`); 
-        counter = arr.length - 1;
+const changeImageBackward = (index,screen) => {
+    counter --;
+    if (counter < 1) {
+        counter = 3;
     };
-    replaceClass(section,`bg-${arr[counter+1]}`, `bg-${arr[counter]}`);
+    return imgContainer[index].src = `/assets/images/${screen}-image-hero-${counter}.jpg`
 };
-    
-
-// setInterval(() => changeImage(mobileImages), 3000);
