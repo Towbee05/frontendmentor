@@ -2,9 +2,9 @@ import getElements from "./getElements.js";
 
 const openbtn = getElements('.open-btn');
 const closebtn = getElements('.close-nav');
-const desktopHeader = getElements('.desktop-header-section');
 const mobileNav = getElements('.mobile-nav');
 const currentNav = getElements('.current-nav');
+const mainBody = getElements('.main-body');
 const nextBtn = [...document.querySelectorAll('.next-btn')];
 const prevBtn = [...document.querySelectorAll('.prev-btn')];
 const imgContainer = [...document.querySelectorAll('.carousel-img')];
@@ -13,16 +13,19 @@ console.log(imgContainer);
 
 const addClass = (element, className) => element.classList.add(className);
 const removeClass = (element, className) => element.classList.remove(className);
-const replaceClass = (element, oldClassName, newClassName) => element.classList.replace(oldClassName, newClassName);
 
 openbtn.addEventListener('click', () => {
     addClass(currentNav, 'hidden');
     removeClass(mobileNav, 'hidden');
+    mobileNav.style.zIndex = 100;
+    mainBody.style.backgroundColor = 'rgba(0,0,0,0.5)';
 });
 
 closebtn.addEventListener('click', () => {
     addClass(mobileNav, 'hidden');
     removeClass(currentNav, 'hidden');
+    mobileNav.style.zIndex = 0;
+    mainBody.style.backgroundColor = '';
 });
 
 let counter = 1;
@@ -32,7 +35,7 @@ nextBtn.map((btn) => {
         if (e.currentTarget.classList.contains('desktop')) {
             changeImage(1, 'desktop');
         } else{
-            changeImage(0, 'mobile');
+            changeImage(0,  'mobile');
         };
     });
 });

@@ -8,7 +8,7 @@
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body class="grid place-items-center">
-    <div class="min-h-screen w-full font-custom-league space-y-16 laptop:space-y-0 max-w-[445px] laptop:max-w-[1440px]">
+    <div class="min-h-screen w-full font-custom-league space-y-16 laptop:space-y-0 max-w-[445px] laptop:max-w-[1440px] main-body">
         <header class="laptop:hidden bg-no-repeat bg-cover bg-center relative mobile-header-section">
             <!-- !Check if to add min width -->
             <img src="./assets/images/mobile-image-hero-1.jpg" alt="" class="w-full carousel-img duration-400">
@@ -20,7 +20,7 @@
                     <img src="./assets/images/logo.svg" alt="Room logo" class="">
                 </div>
             </nav>
-            <nav class="bg-white flex justify-between items-center py-12 px-6 absolute top-0 w-full hidden mobile-nav">
+            <nav class="bg-white flex justify-between items-center py-12 px-6 fixed top-0 w-full max-w-[445px] mobile-nav hidden">
                 <button class="close-nav">
                     <img src="./assets/images/icon-close.svg" alt="Close navigation menu">
                 </button>
@@ -83,7 +83,7 @@
             </div>
             <div class="laptop:grid grid-cols-grid-2">
                 <section class="mt-[72px] laptop:mt-0">
-                    <img src="./assets/images/image-about-dark.jpg" alt="dark room with furnitures" class="h-full">
+                    <img src="./assets/images/image-about-dark.jpg" alt="dark room with furnitures" class="w-full laptop:w-auto h-full">
                 </section>
                 <section class="mt-12 laptop:mt-0 px-8 space-y-4 laptop:place-self-center laptop:px-12 laptop:py-10">
                     <h1 class="text-sm font-bold tracking-004 uppercase">
@@ -94,7 +94,7 @@
                     </p>
                 </section>
                 <section class="mt-[42px] laptop:mt-0">
-                    <img src="./assets/images/image-about-light.jpg" alt="Light room with chair" class="h-full">
+                    <img src="./assets/images/image-about-light.jpg" alt="Light room with chair" class="w-full laptop:w-auto h-full">
                 </section>
             </div>
         </main>

@@ -556,6 +556,10 @@ video {
   display: none;
 }
 
+.fixed{
+  position: fixed;
+}
+
 .absolute{
   position: absolute;
 }
@@ -582,6 +586,10 @@ video {
 
 .z-10{
   z-index: 10;
+}
+
+.-z-10{
+  z-index: -10;
 }
 
 .ml-8{
@@ -667,6 +675,10 @@ video {
 
 .gap-8{
   gap: 2rem;
+}
+
+.gap-16{
+  gap: 4rem;
 }
 
 .space-y-10 > :not([hidden]) ~ :not([hidden]){
@@ -837,6 +849,10 @@ video {
 
   .laptop\:hidden{
     display: none;
+  }
+
+  .laptop\:w-auto{
+    width: auto;
   }
 
   .laptop\:max-w-\[1440px\]{
