@@ -20,17 +20,19 @@
                     <img src="./assets/images/logo.svg" alt="Room logo" class="">
                 </div>
             </nav>
-            <nav class="bg-white flex justify-between items-center py-12 px-6 fixed top-0 w-full max-w-[445px] mobile-nav hidden">
-                <button class="close-nav">
-                    <img src="./assets/images/icon-close.svg" alt="Close navigation menu">
-                </button>
-                <ul class="flex gap-8">
-                    <li><a href="#" class="font-semibold"> home </a></li>
-                    <li><a href="#" class="font-semibold"> shop </a></li>
-                    <li><a href="#" class="font-semibold"> about </a></li>
-                    <li><a href="#" class="font-semibold"> contact </a></li>
-                </ul>
-            </nav>  
+            <div class="fixed min-h-screen mobile-nav hidden top-0 w-full max-w-[445px] bg-black bg-opacity-50">
+                <nav class="bg-white flex justify-between items-center py-12 px-6  ">
+                    <button class="close-nav">
+                        <img src="./assets/images/icon-close.svg" alt="Close navigation menu">
+                    </button>
+                    <ul class="flex gap-8">
+                        <li><a href="#" class="font-semibold"> home </a></li>
+                        <li><a href="#" class="font-semibold"> shop </a></li>
+                        <li><a href="#" class="font-semibold"> about </a></li>
+                        <li><a href="#" class="font-semibold"> contact </a></li>
+                    </ul>
+                </nav>  
+            </div>
             <div class="bg-black w-auto absolute bottom-0 right-0 flex">
                 <button class="size-14 grid place-items-center prev-btn">
                     <img src="./assets/images/icon-angle-left.svg" alt="previous image button">

@@ -4,7 +4,6 @@ const openbtn = getElements('.open-btn');
 const closebtn = getElements('.close-nav');
 const mobileNav = getElements('.mobile-nav');
 const currentNav = getElements('.current-nav');
-const mainBody = getElements('.main-body');
 const nextBtn = [...document.querySelectorAll('.next-btn')];
 const prevBtn = [...document.querySelectorAll('.prev-btn')];
 const imgContainer = [...document.querySelectorAll('.carousel-img')];
@@ -17,15 +16,11 @@ const removeClass = (element, className) => element.classList.remove(className);
 openbtn.addEventListener('click', () => {
     addClass(currentNav, 'hidden');
     removeClass(mobileNav, 'hidden');
-    mobileNav.style.zIndex = 100;
-    mainBody.style.backgroundColor = 'rgba(0,0,0,0.5)';
 });
 
 closebtn.addEventListener('click', () => {
     addClass(mobileNav, 'hidden');
     removeClass(currentNav, 'hidden');
-    mobileNav.style.zIndex = 0;
-    mainBody.style.backgroundColor = '';
 });
 
 let counter = 1;
