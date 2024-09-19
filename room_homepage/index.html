@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Room home page</title>
+    <link rel="stylesheet" href="./styles/dist/output.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body class="grid place-items-center">
+    <div class="min-h-screen w-full font-custom-league space-y-16 laptop:space-y-0 max-w-[445px] laptop:max-w-[1440px]">
+        <header class="bg-background-1 laptop:hidden h-[360px] bg-no-repeat bg-cover bg-center relative mobile-header-section">
+            <nav class="flex relative pt-12 current-nav">
+                <button class="open-btn ml-8 z-10">
+                    <img src="./assets/images/icon-hamburger.svg" alt="Open navigation menu">
+                </button>
+                <div class="absolute w-full grid place-items-center">
+                    <img src="./assets/images/logo.svg" alt="Room logo" class="">
+                </div>
+            </nav>
+            <nav class="bg-white flex justify-between items-center py-12 px-6 hidden mobile-nav">
+                <button class="close-nav">
+                    <img src="./assets/images/icon-close.svg" alt="Close navigation menu">
+                </button>
+                <ul class="flex gap-8">
+                    <li><a href="#" class="font-semibold"> home </a></li>
+                    <li><a href="#" class="font-semibold"> shop </a></li>
+                    <li><a href="#" class="font-semibold"> about </a></li>
+                    <li><a href="#" class="font-semibold"> contact </a></li>
+                </ul>
+            </nav>  
+            <div class="bg-black w-auto absolute bottom-0 right-0 flex">
+                <button class="size-14 grid place-items-center prev-btn">
+                    <img src="./assets/images/icon-angle-left.svg" alt="previous image button">
+                </button>
+                <button class="size-14 grid place-items-center next-btn">
+                    <img src="./assets/images/icon-angle-right.svg" alt="next image button">
+                </button>
+            </div>
+        </header>
+        <main class="">
+            <div class="laptop:grid grid-cols-grid-1 h-[535px]">
+                <section class="hidden laptop:block bg-background-2 bg-no-repeat bg-center bg-cover relative desktop-header-section"> 
+                    <nav class="p-16 flex items-center gap-14 ">
+                        <div class="">
+                            <img src="./assets/images/logo.svg" alt="Room logo" class="">
+                        </div>    
+                        <ul class="flex gap-8">
+                            <li class="border-transparent border-b-2 duration-400 ease-linear cursor-pointer hover:border-white"><a href="#" class="font-semibold text-white"> home </a></li>
+                            <li class="border-transparent border-b-2 duration-400 ease-linear cursor-pointer hover:border-white"><a href="#" class="font-semibold text-white"> shop </a></li>
+                            <li class="border-transparent border-b-2 duration-400 ease-linear cursor-pointer hover:border-white"><a href="#" class="font-semibold text-white"> about </a></li>
+                            <li class="border-transparent border-b-2 duration-400 ease-linear cursor-pointer hover:border-white"><a href="#" class="font-semibold text-white"> contact </a></li>
+                        </ul>
+                    </nav>
+                    <div class="w-auto absolute bottom-0 -right-[112px] flex">
+                        <button class="bg-black hover:bg-very-dark-gray duration-400 ease-linear size-14 grid  place-items-center prev-btn desktop ">
+                            <img src="./assets/images/icon-angle-left.svg" alt="previous image button">
+                        </button>
+                        <button class="bg-black hover:bg-very-dark-gray duration-400 ease-linear size-14 grid place-items-center next-btn desktop">
+                            <img src="./assets/images/icon-angle-right.svg" alt="next image button">
+                        </button>
+                    </div>
+                </section>
+                <section class="px-8 space-y-10 laptop:place-self-center laptop:max-w-[450px]">
+                    <div class="space-y-4">
+                        <h1 class="text-40px font-semibold tracking-001 laptop:text-5xl">
+                            Discover innovative ways to decorate
+                        </h1>
+                        <p class="tracking-002 font-medium opacity-50">
+                            We provide unmatched quality, comfort, and style for property owners across the country. Our experts combine form and function in bringing your vision to life. Create a room in your own style with our collection and make your property a reflection of you and what you love.
+                        </p>
+                    </div>
+                    <button class="text-15px uppercase tracking-003 flex items-center gap-8 hover:opacity-50 duration-400 ease-linear">
+                        shop now
+                        <span>
+                            <img src="./assets/images/icon-arrow.svg" alt="Thin arrow image">
+                        </span>
+                    </button>
+                </section>
+            </div>
+            <div class="laptop:grid grid-cols-grid-2">
+                <section class="mt-[72px] laptop:mt-0">
+                    <img src="./assets/images/image-about-dark.jpg" alt="dark room with furnitures" class="w-full">
+                </section>
+                <section class="px-8 space-y-4 laptop:place-self-center laptop:px-12 laptop:py-10">
+                    <h1 class="text-sm font-bold tracking-004 uppercase">
+                        about our furniture
+                    </h1>
+                    <p class="opacity-50 tracking-002 font-medium">
+                        Our multifunctional collection blends design and function to suit your individual taste. Make each room unique, or pick a cohesive theme that best express your interests and what inspires you. Find the furniture pieces you need, from traditional to contemporary styles or anything in between. Product specialists are available to help you create your dream space. 
+                    </p>
+                </section>
+                <section class="mt-[42px] laptop:mt-0">
+                    <img src="./assets/images/image-about-light.jpg" alt="Light room with chair" class="w-full">
+                </section>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="./scripts/app.js"></script>
+</body>
+</html>
