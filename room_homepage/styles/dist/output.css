@@ -588,10 +588,6 @@ video {
   z-index: 10;
 }
 
-.-z-10{
-  z-index: -10;
-}
-
 .ml-8{
   margin-left: 2rem;
 }
@@ -675,10 +671,6 @@ video {
 
 .gap-8{
   gap: 2rem;
-}
-
-.gap-16{
-  gap: 4rem;
 }
 
 .space-y-10 > :not([hidden]) ~ :not([hidden]){

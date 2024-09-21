@@ -1,1 +1,4 @@
 /node_modules
+*.xs
+*.fig
+.DS_store
