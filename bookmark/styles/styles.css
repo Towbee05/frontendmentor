@@ -12,12 +12,31 @@
     @apply hidden;
 }
 
+
 .hide-tab div .btn .svg{
     transform: rotate(0deg);
     @apply stroke-custom-soft-blue;
 }
 
+
 .svg{
     transform: rotate(180deg);
     @apply stroke-custom-soft-red
+}
+
+.btn{
+    @apply p-2
+}
+
+
+.error {
+    @apply p-2 bg-custom-soft-red text-left rounded-md
+}
+
+.error img {
+    display: block;
+}
+
+.error p{
+    display: block;
 }

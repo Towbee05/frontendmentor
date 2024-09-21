@@ -8,49 +8,49 @@
     <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
 </head>
 <body class="grid place-items-center">
-    <div class="min-h-screen w-full max-w-[500px] font-rubiks pb-32 relative laptop:max-w-[1440px]">
-        <header class="laptop:px-[165px] laptop:w-full laptop:flex justify-center items-center">
-            <nav class="flex items-center justify-between px-8 pt-10 laptop:w-full">
+    <div class="min-h-screen w-full max-w-[500px] font-rubiks pb-32 relative tablet:max-w-[900px] laptop:max-w-[1440px]">
+        <header class="tablet:px-16 laptop:px-[165px] laptop:w-full laptop:flex justify-center items-center">
+            <nav class="flex items-center justify-between px-8 pt-10 tablet:px-0 laptop:w-full">
                 <div>
                     <img src="./assets/images/logo-bookmark.svg" alt="Bookmark logo">
                 </div>
-                <div class="laptop:hidden">
+                <button class="tablet:hidden laptop:hidden p-2" id="open-nav">
                     <img src="./assets/images/icon-hamburger.svg" alt="open navigation menu">
-                </div>
-                <ul class="hidden laptop:block space-x-12">
+                </button>
+                <ul class="hidden tablet:block laptop:block space-x-12">
                     <li class="inline-block">
-                        <a href="" class="uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">features</a>
+                        <a href="" class="hover:text-custom-soft-red p-2 uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">features</a>
                     </li>
                     <li class="inline-block">
-                        <a href="" class="uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">pricing</a>
+                        <a href="" class="hover:text-custom-soft-red p-2 uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">pricing</a>
                     </li>
                     <li class="inline-block">
-                        <a href="" class="uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">contact</a>
+                        <a href="" class="hover:text-custom-soft-red p-2 uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">contact</a>
                     </li>
-                    <button class="bg-custom-soft-red px-8 py-10px rounded-md uppercase text-[13px] leading-[17px] tracking-[1.5px]  text-white">
+                    <button class="bg-custom-soft-red px-8 py-10px rounded-md uppercase text-[13px] leading-[17px] tracking-[1.5px] border-2 border-transparent hover:border-custom-soft-red text-white hover:text-custom-soft-red hover:bg-white">
                         login
                     </button>
                 </ul>
             </nav>
         </header>
-        <main class="mt-20 relative">
-            <aside class="min-h-screen w-full fixed top-0 z-10 opacity-80 p-8 bg-custom-dark-blue hidden">
+        <main class="mt-20 relative tablet:grid laptop:grid place-items-center">
+            <aside class="min-h-screen w-full fixed top-0 z-10 opacity-80 p-8 bg-custom-dark-blue hidden" id="aside-nav">
                 <div class="flex justify-between items-center">
                     <img src="./assets/images/logo-bookmark-light.svg" alt="Bookmark logo">
-                    <button>
-                        <img src="./assets/images/icon-close.svg" alt="Close navigation menu">
+                    <button class="p-2" id="close-nav">
+                        <img src="./assets/images/icon-close.svg" alt="Close navigation menu"> 
                     </button>
                 </div>
                 <div class="text-center">
                     <ul class="mt-10 space-y-8"> 
                         <li>
-                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">features</a>
+                            <a href="" class="p-2 uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">features</a>
                         </li>
                         <li>
-                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">pricing</a>
+                            <a href="" class="p-2 uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">pricing</a>
                         </li>
                         <li>
-                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">contact</a>
+                            <a href="" class="p-2 uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">contact</a>
                         </li>
                     </ul>
                     <button class="w-full border-2 border-white py-10px mt-6 uppercase text-[20px] leading-[17px] tracking-[2.31px]  text-white">
@@ -61,25 +61,25 @@
                     <ul class="mt-12 flex items-center gap-10">
                         <li>
                             <a href="">
-                                <img src="./assets/images/icon-facebook.svg" alt="Facebook logo">
+                                <img src="./assets/images/icon-facebook.svg" alt="Facebook logo" class="p-2">
                             </a>
                         </li>
                         <li>
                             <a href="">
-                                <img src="./assets/images/icon-twitter.svg" alt="Twitter icon">
+                                <img src="./assets/images/icon-twitter.svg" alt="Twitter icon" class="p-2">
                             </a>
                         </li>
                     </ul>
                 </div>
             </aside>
-            <section class="px-8 space-y-12 laptop:space-y-0 laptop:grid grid-cols-2 laptop:px-[165px]">
+            <section class="px-8 space-y-12 tablet:space-y-0 laptop:space-y-0 tablet:grid tablet:px-16 tablet:gap-10 laptop:grid grid-cols-2 laptop:px-[165px]">
                 <div class="relative overflow-x-hidden col-start-2">
                     <img src="./assets/images/illustration-hero.svg" alt="Hero section image" class="">
                     <div class="w-[200%] bg-custom-soft-blue h-[75%] absolute bottom-0 -z-10 rounded-[999px] ml-[72px]">
 
                     </div>
                 </div>
-                <div class="text-center space-y-8 col-start-1 row-start-1 place-self-center laptop:max-w-[540px] laptop:text-left">
+                <div class="text-center space-y-8 col-start-1 row-start-1 place-self-center laptop:max-w-[540px] laptop:text-left tablet:text-left">
                     <div class="space-y-4">
                         <h1 class="text-30px font-medium -tracking-[0.09px] laptop:text-48px laptop:-tracking-[0.15px]">
                             A Simple Bookmark Manager
@@ -88,43 +88,41 @@
                             A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
                         </p>
                     </div>
-                    <div class="flex items-center justify-between laptop:justify-normal gap-4">
-                        <button class="bg-custom-soft-blue text-white px-4 py-10px text-14px rounded-md font-medium">
+                    <div class="flex items-center justify-between laptop:justify-normal tablet:justify-normal gap-4">
+                        <button class="bg-custom-soft-blue text-white px-4 py-10px text-14px rounded-md font-medium border-2 border-transparent hover:border-custom-soft-blue hover:text-custom-soft-blue hover:bg-white shadow-lg">
                             Get it on chrome
                         </button>
-                        <button class="bg-custom-greyish-blue bg-opacity-50 px-4 py-10px text-14px rounded-md font-medium">
+                        <button class="bg-custom-greyish-blue bg-opacity-50 px-4 py-10px text-14px rounded-md font-medium border-2 border-transparent hover:border-custom-greyish-blue hover:text-custom-greyish-blue hover:bg-white shadow-lg">
                             Get it on firefox
                         </button>
                     </div>
                 </div>
             </section>
-            <section class="text-center px-8 mt-[140px] w-full laptop:grid place-items-center">
-                <div class="laptop:max-w-[450px]">
-                    <h1 class="font-medium text-24px -tracking-[0.08px] capitalize laptop:text-32px">features</h1>
-                    <p class="text-15px opacity-50 laptop:text-lg">
-                        Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.
-                    </p>
-                </div>
+            <section class="text-center px-8 mt-[140px] w-full laptop:grid tablet:grid place-items-center laptop:max-w-[600px] tablet:max-w-[440px]">
+                <h1 class="font-medium text-24px -tracking-[0.08px] capitalize laptop:text-32px">features</h1>
+                <p class="text-15px opacity-50 laptop:text-lg">
+                    Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.
+                </p>
             </section>
             <section class="mt-12">
                 <div class="text-center">
                     <hr class="laptop:hidden">
-                    <button class="border-b-transparent capitalize text-custom-dark-blue px-2 py-10 clicked">simple bookmarking</button>
+                    <button class="border-b-transparent capitalize hover:text-custom-soft-red text-custom-dark-blue px-4 py-10 tab-head clicked">simple bookmarking</button>
                     <hr class="laptop:hidden">
-                    <button class="border-b-transparent capitalize text-custom-dark-blue px-2 py-10">speedy searching</button>
+                    <button class="border-b-transparent capitalize hover:text-custom-soft-red text-custom-dark-blue px-4 py-10 tab-head">speedy searching</button>
                     <hr class="laptop:hidden">
-                    <button class="border-b-transparent capitalize text-custom-dark-blue px-2 py-10">easy sharing</button>
+                    <button class="border-b-transparent capitalize hover:text-custom-soft-red text-custom-dark-blue px-4 py-10 tab-head">easy sharing</button>
                     <hr>
                 </div>
-                <div class="mt-16 laptop:grid grid-cols-2 laptop:relative laptop:px-[165px] overflow-x-hidden gap-32">
-                    <section class="relative overflow-x-hidden">
+                <div class="mt-16 laptop:grid grid-cols-2 laptop:relative tablet:px-[100px] tablet:grid tablet:relative laptop:px-[165px] overflow-x-hidden laptop:gap-32 tablet:gap-10" id="tab-body">
+                    <section class="relative ">
                         <div class="w-full p-8 ">
                             <img src="./assets/images/illustration-features-tab-1.svg" alt="tab section 1 image">
                         </div>
+                        <div class="absolute w-[200%] h-[77%] bg-custom-soft-blue -bottom-0 right-9 laptop:right-[40%] rounded-[999px] -z-10">
+                        </div>
                     </section>
-                    <div class="absolute w-[200%] h-[77%] bg-custom-soft-blue -bottom-0 right-9 laptop:right-[60%] rounded-[999px] -z-10">
-                    </div>
-                    <section class="mt-8 text-center space-y-4 laptop:place-self-center laptop:text-left laptop:max-w-[450px]">
+                    <section class="mt-8 text-center space-y-4 laptop:place-self-center tablet:text-left laptop:text-left laptop:max-w-[450px]">
                         <div>
                             <h1 class="text-24px font-medium -tracking-[0.08px] laptop:text-32px">
                                 Bookmark in one click
@@ -139,8 +137,8 @@
                     </section>
                 </div>
             </section>
-            <section class="mt-[72px] px-8 w-full laptop:grid place-items-center">
-                <div class="text-center laptop:max-w-[540px]">
+            <section class="mt-[72px] px-8 w-full laptop:grid tablet:grid place-items-center">
+                <div class="text-center laptop:max-w-[540px] tablet:max-w-[450px]">
                     <h1 class="text-24px font-medium -tracking-[0.08px] laptop:text-32px">
                         Download the extension
                     </h1>
@@ -148,7 +146,7 @@
                         We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.
                     </p>
                 </div>
-                <div class="mt-10 px-4 laptop:grid grid-cols-3 grid-rows-9 gap-9 laptop:max-h-[500px] laptop:space-y-0"> 
+                <div class="mt-10 px-4 laptop:grid grid-cols-3 grid-rows-9 gap-9 laptop:max-h-[500px] laptop:space-y-0 space-y-10"> 
                     <div class="pt-12 pb-6 shadow-lg flex justify-center items-center flex-col rounded-2xl row-span-7 row-start-1 col-start-1 ">
                         <img src="./assets/images/logo-chrome.svg" alt="Chrome browser logo">
                         <div class="space-y-2 mt-8">
@@ -158,7 +156,7 @@
                             </p>
                         </div>
                         <img src="./assets/images/bg-dots.svg" alt="many dots image" class="mt-8 mb-6">
-                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white">
+                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white border-4 border-transparent hover:border-custom-soft-blue hover:bg-white hover:text-custom-soft-blue">
                             Add & Install Extension
                         </button>
                     </div>
@@ -171,7 +169,7 @@
                             </p>
                         </div>
                         <img src="./assets/images/bg-dots.svg" alt="many dots image" class="mt-8 mb-6">
-                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white">
+                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white border-4 border-transparent hover:border-custom-soft-blue hover:bg-white hover:text-custom-soft-blue">
                             Add & Install Extension
                         </button>
                     </div>
@@ -184,25 +182,26 @@
                             </p>
                         </div>
                         <img src="./assets/images/bg-dots.svg" alt="many dots image" class="mt-8 mb-6">
-                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white">
+                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white border-4 border-transparent hover:border-custom-soft-blue hover:bg-white hover:text-custom-soft-blue">
                             Add & Install Extension
                         </button>
                     </div>
                 </div>
             </section>
-            <section class="mt-[140px] px-8">
-                <div class="text-center space-y-4">
-                    <h1 class="capitalize text-24px font-medium tracking-[0.08px]">
+            <section class="mt-[140px] px-8 laptop:max-w-[550px] tablet:max-w-[450px]">
+            <div class="text-center space-y-4 laptop:grid place-items-center">
+                    <h1 class="capitalize text-24px font-medium tracking-[0.08px] laptop:text-32px">
                         frequently asked questions
                     </h1>
-                    <p class="text-15px opacity-50">
+                    <p class="text-15px opacity-50 laptop:text-lg">
                         Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.
                     </p>
                 </div>
                 <div class="mt-16 space-y-10">
-                    <section class="space-y-7 hide-tab">
-                        <div class="flex justify-between items-center">
-                            <h1 class="text-15px2.0">
+                    <section class="space-y-7 dropdown-container hide-tab">
+                        <hr>
+                        <div class="flex justify-between items-center group hover:cursor-pointer">
+                            <h1 class="text-15px2.0 tablet:text-18px laptop:text-18px group-hover:text-custom-soft-red">
                                 What is Bookmark?    
                             </h1>
                             <button class="btn">
@@ -215,9 +214,9 @@
                         </p>
                         <hr>
                     </section>
-                    <section class="space-y-7 hide-tab">
-                        <div class="flex justify-between items-center">
-                            <h1 class="text-15px2.0">
+                    <section class="space-y-7 dropdown-container hide-tab">
+                        <div class="flex justify-between items-center group hover:cursor-pointer">
+                            <h1 class="text-15px2.0 tablet:text-18px laptop:text-18px group-hover:text-custom-soft-red">
                                 How can I request a new browser?   
                             </h1>
                             <button class="btn">
@@ -232,9 +231,9 @@
                         </p>
                         <hr>
                     </section>
-                    <section class="space-y-7 hide-tab">
-                        <div class="flex justify-between items-center">
-                            <h1 class="text-15px2.0">
+                    <section class="space-y-7 dropdown-container hide-tab">
+                        <div class="flex justify-between items-center group hover:cursor-pointer">
+                            <h1 class="text-15px2.0 tablet:text-18px laptop:text-18px group-hover:text-custom-soft-red">
                                 Is there a mobile app?  
                             </h1>
                             <button class="btn">
@@ -248,9 +247,9 @@
                         </p>
                         <hr>
                     </section>
-                    <section class="space-y-7 hide-tab">
-                        <div class="flex justify-between items-center">
-                            <h1 class="text-15px2.0">
+                    <section class="space-y-7 dropdown-container hide-tab">
+                        <div class="flex justify-between items-center group hover:cursor-pointer">
+                            <h1 class="text-15px2.0 tablet:text-18px laptop:text-18px group-hover:text-custom-soft-red">
                                 What about other Chromium browsers?  
                             </h1>
                             <button class="btn">
@@ -273,45 +272,56 @@
         </main>
         <footer class="absolute top-full w-full">
             <section class="bg-custom-soft-blue pt-16 pb-10 px-8 text-white grid place-items-center text-center">
-                <p class ='uppercase text-12px tracking-[4.62px] font-medium'>
-                    35,000+ already joined
-                </p>
-                <p class="text-24px2.0 -tracking-[0.08px]">
-                    Stay up-to-date with what we’re doing
-                </p>
-                <form action="" class="mt-8 space-y-4">
+                <div class="laptop:max-w-[350px] laptop:space-y-6">
+                    <p class ='uppercase text-12px tracking-[4.62px] font-medium'>
+                        35,000+ already joined
+                    </p>
+                    <p class="text-24px2.0 -tracking-[0.08px]">
+                        Stay up-to-date with what we’re doing
+                    </p>
+                </div>
+                <form action="" class="mt-8 space-y-4 laptop:flex gap-4">
                     <label for="email" class="invisible">email </label>
-                    <input type="email" name="email" id="email" class=" w-full h-12 rounded-md px-5 text-black text-14px" placeholder="Enter your email address">
-                    <input type="submit" value="Contact us" class="bg-custom-soft-red rounded-md capitalize w-full py-10px">    
+                    <div class="relative w-full">
+                        <input type="email" name="email" id="email" class=" w-full h-12 rounded-md pl-5 pr-9 text-black text-14px laptop:w-[300px]" placeholder="Enter your email address">
+                        <img src="./assets/images/icon-error.svg" alt="form error image" class="absolute top-5 right-0 mx-4 hidden">
+                        <p class="pt-2 font-medium italic px-3 hidden">
+                            Whoops, make sure it’s an email
+                        </p>
+                    </div>
+                    <input type="submit" value="Contact us" class="bg-custom-soft-red h-12 px-6 rounded-md capitalize w-full py-10px border-transparent border-4 hover:border-custom-soft-red hover:bg-white hover:text-custom-soft-red cursor-pointer">    
                 </form>
             </section>
-            <section class="bg-custom-dark-blue py-10 grid place-items-center">
-                <img src="./assets/images/logo-bookmark-light.svg" alt="Bookmark logo">
-                <ul class="mt-10 text-center space-y-8"> 
+            <section class="bg-custom-dark-blue py-10 grid place-items-center laptop:flex laptop:justify-between laptop:items-center w-full laptop:px-[125px]">
+                <div class="laptop:flex items-center gap-16">
+                    <img src="./assets/images/logo-bookmark-light.svg" alt="Bookmark logo">
+                    <ul class="mt-10 text-center space-y-8 laptop:flex laptop:space-y-0 laptop:mt-0 gap-10 items-center"> 
+                        <li>
+                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px] p-2 hover:text-custom-soft-red focus:text-custom-soft-red">features</a>
+                        </li>
+                        <li>
+                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px] p-2 hover:text-custom-soft-red focus:text-custom-soft-red">pricing</a>
+                        </li>
+                        <li>
+                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px] p-2 hover:text-custom-soft-red focus:text-custom-soft-red">contact</a>
+                        </li>
+                    </ul>
+                </div>
+                <ul class="mt-12 flex items-center gap-10 laptop:mt-0">
                     <li>
-                        <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">features</a>
-                    </li>
-                    <li>
-                        <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">pricing</a>
-                    </li>
-                    <li>
-                        <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">contact</a>
-                    </li>
-                </ul>
-                <ul class="mt-12 flex items-center gap-10">
-                    <li>
-                        <a href="">
-                            <img src="./assets/images/icon-facebook.svg" alt="Facebook logo">
+                        <a href="" class="group">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" class="group-hover:fill-custom-soft-red fill-white" id="facebook"><path fill-rule="evenodd" d="M22.675 0H1.325C.593 0 0 .593 0 1.325v21.351C0 23.407.593 24 1.325 24H12.82v-9.294H9.692v-3.622h3.128V8.413c0-3.1 1.893-4.788 4.659-4.788 1.325 0 2.463.099 2.795.143v3.24l-1.918.001c-1.504 0-1.795.715-1.795 1.763v2.313h3.587l-.467 3.622h-3.12V24h6.116c.73 0 1.323-.593 1.323-1.325V1.325C24 .593 23.407 0 22.675 0z"/></svg>
                         </a>
                     </li>
                     <li>
-                        <a href="">
-                            <img src="./assets/images/icon-twitter.svg" alt="Twitter icon">
+                        <a href="" class="group">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="20" class="group-hover:fill-custom-soft-red fill-white" id="twitter"><path fill-rule="evenodd" d="M24 2.557a9.83 9.83 0 0 1-2.828.775A4.932 4.932 0 0 0 23.337.608a9.864 9.864 0 0 1-3.127 1.195A4.916 4.916 0 0 0 16.616.248c-3.179 0-5.515 2.966-4.797 6.045A13.978 13.978 0 0 1 1.671 1.149a4.93 4.93 0 0 0 1.523 6.574 4.903 4.903 0 0 1-2.229-.616c-.054 2.281 1.581 4.415 3.949 4.89a4.935 4.935 0 0 1-2.224.084 4.928 4.928 0 0 0 4.6 3.419A9.9 9.9 0 0 1 0 17.54a13.94 13.94 0 0 0 7.548 2.212c9.142 0 14.307-7.721 13.995-14.646A10.025 10.025 0 0 0 24 2.557z"/></svg>
                         </a>
                     </li>
                 </ul>
             </section>
         </footer>
     </div>
+    <script type="module" src="./scripts/app.js"></script>
 </body>
 </html>

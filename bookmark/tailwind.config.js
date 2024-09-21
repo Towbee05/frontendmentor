@@ -20,6 +20,8 @@ module.exports = {
         '15px' : ['15px', '25px'],
         '15px2.0' : ['15px', '32px'],
         '15px2.0' : ['15px', '30px'],
+        '16px' : ['16px', '36px'],
+        '18px' : ['18px', '32px'],
         '24px' : ['24px', '52px'],
         '24px2.0' : ['24px', '28px'],
         '30px' : ['30px', '40px'],
@@ -30,8 +32,12 @@ module.exports = {
         '10px' : '10px'
       },
       screens: {
+        tablet: {
+          min : '800px',
+          max : '1200px'
+        },
         laptop: {
-          min : '900px'
+          min : '1200px'
         }
       }
     },
