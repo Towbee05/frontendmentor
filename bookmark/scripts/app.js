@@ -52,7 +52,19 @@ const faqContainer = getElements('.dropdown-container');
 faqContainer.forEach((faq) => faq.addEventListener('click', () => toggleClass(faq, 'hide-tab')));
 
 // Get form elements
+const email = getElements('#email');
 const form = getElements('form');
+const inputContainer = getElements('.form-input');
+
 form.addEventListener('submit', (e) => {
     e.preventDefault();
+    const input = email.value;
+    const regex = /^[a-zA-Z0-9._%+-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,}$/
+    if (email.value.match(regex)){
+        return;
+    } else {
+        addClass(inputContainer, 'error');
+        setTimeout(() => removeClass(inputContainer, 'error'), 4000)
+    }
+    // if  ()
 });
