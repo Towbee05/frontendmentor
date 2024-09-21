@@ -1,0 +1,23 @@
+@import url('https://fonts.googleapis.com/css2?family=Rubik:ital,wght@0,300..900;1,300..900&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.clicked { 
+    @apply border-b-4 border-b-custom-soft-red;
+}
+
+.hide-tab p{
+    @apply hidden;
+}
+
+.hide-tab div .btn .svg{
+    transform: rotate(0deg);
+    @apply stroke-custom-soft-blue;
+}
+
+.svg{
+    transform: rotate(180deg);
+    @apply stroke-custom-soft-red
+}

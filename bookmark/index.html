@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bookmark landing page</title>
+    <link rel="stylesheet" href="./styles/dist/output.css">
+    <link rel="shortcut icon" href="./assets/images/favicon-32x32.png" type="image/x-icon">
+</head>
+<body class="grid place-items-center">
+    <div class="min-h-screen w-full max-w-[500px] font-rubiks pb-32 relative laptop:max-w-[1440px]">
+        <header class="laptop:px-[165px] laptop:w-full laptop:flex justify-center items-center">
+            <nav class="flex items-center justify-between px-8 pt-10 laptop:w-full">
+                <div>
+                    <img src="./assets/images/logo-bookmark.svg" alt="Bookmark logo">
+                </div>
+                <div class="laptop:hidden">
+                    <img src="./assets/images/icon-hamburger.svg" alt="open navigation menu">
+                </div>
+                <ul class="hidden laptop:block space-x-12">
+                    <li class="inline-block">
+                        <a href="" class="uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">features</a>
+                    </li>
+                    <li class="inline-block">
+                        <a href="" class="uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">pricing</a>
+                    </li>
+                    <li class="inline-block">
+                        <a href="" class="uppercase text-black text-[13px] leading-[17px] tracking-[1.5px]">contact</a>
+                    </li>
+                    <button class="bg-custom-soft-red px-8 py-10px rounded-md uppercase text-[13px] leading-[17px] tracking-[1.5px]  text-white">
+                        login
+                    </button>
+                </ul>
+            </nav>
+        </header>
+        <main class="mt-20 relative">
+            <aside class="min-h-screen w-full fixed top-0 z-10 opacity-80 p-8 bg-custom-dark-blue hidden">
+                <div class="flex justify-between items-center">
+                    <img src="./assets/images/logo-bookmark-light.svg" alt="Bookmark logo">
+                    <button>
+                        <img src="./assets/images/icon-close.svg" alt="Close navigation menu">
+                    </button>
+                </div>
+                <div class="text-center">
+                    <ul class="mt-10 space-y-8"> 
+                        <li>
+                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">features</a>
+                        </li>
+                        <li>
+                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">pricing</a>
+                        </li>
+                        <li>
+                            <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">contact</a>
+                        </li>
+                    </ul>
+                    <button class="w-full border-2 border-white py-10px mt-6 uppercase text-[20px] leading-[17px] tracking-[2.31px]  text-white">
+                        login
+                    </button>
+                </div>
+                <div class="absolute w-full right-0 bottom-0 mb-12 grid place-items-center">
+                    <ul class="mt-12 flex items-center gap-10">
+                        <li>
+                            <a href="">
+                                <img src="./assets/images/icon-facebook.svg" alt="Facebook logo">
+                            </a>
+                        </li>
+                        <li>
+                            <a href="">
+                                <img src="./assets/images/icon-twitter.svg" alt="Twitter icon">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </aside>
+            <section class="px-8 space-y-12 laptop:space-y-0 laptop:grid grid-cols-2 laptop:px-[165px]">
+                <div class="relative overflow-x-hidden col-start-2">
+                    <img src="./assets/images/illustration-hero.svg" alt="Hero section image" class="">
+                    <div class="w-[200%] bg-custom-soft-blue h-[75%] absolute bottom-0 -z-10 rounded-[999px] ml-[72px]">
+
+                    </div>
+                </div>
+                <div class="text-center space-y-8 col-start-1 row-start-1 place-self-center laptop:max-w-[540px] laptop:text-left">
+                    <div class="space-y-4">
+                        <h1 class="text-30px font-medium -tracking-[0.09px] laptop:text-48px laptop:-tracking-[0.15px]">
+                            A Simple Bookmark Manager
+                        </h1>
+                        <p class="text-15px opacity-50 laptop:text-lg">
+                            A clean and simple interface to organize your favourite websites. Open a new browser tab and see your sites load instantly. Try it for free.
+                        </p>
+                    </div>
+                    <div class="flex items-center justify-between laptop:justify-normal gap-4">
+                        <button class="bg-custom-soft-blue text-white px-4 py-10px text-14px rounded-md font-medium">
+                            Get it on chrome
+                        </button>
+                        <button class="bg-custom-greyish-blue bg-opacity-50 px-4 py-10px text-14px rounded-md font-medium">
+                            Get it on firefox
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="text-center px-8 mt-[140px] w-full laptop:grid place-items-center">
+                <div class="laptop:max-w-[450px]">
+                    <h1 class="font-medium text-24px -tracking-[0.08px] capitalize laptop:text-32px">features</h1>
+                    <p class="text-15px opacity-50 laptop:text-lg">
+                        Our aim is to make it quick and easy for you to access your favourite websites. Your bookmarks sync between your devices so you can access them on the go.
+                    </p>
+                </div>
+            </section>
+            <section class="mt-12">
+                <div class="text-center">
+                    <hr class="laptop:hidden">
+                    <button class="border-b-transparent capitalize text-custom-dark-blue px-2 py-10 clicked">simple bookmarking</button>
+                    <hr class="laptop:hidden">
+                    <button class="border-b-transparent capitalize text-custom-dark-blue px-2 py-10">speedy searching</button>
+                    <hr class="laptop:hidden">
+                    <button class="border-b-transparent capitalize text-custom-dark-blue px-2 py-10">easy sharing</button>
+                    <hr>
+                </div>
+                <div class="mt-16 laptop:grid grid-cols-2 laptop:relative laptop:px-[165px] overflow-x-hidden gap-32">
+                    <section class="relative overflow-x-hidden">
+                        <div class="w-full p-8 ">
+                            <img src="./assets/images/illustration-features-tab-1.svg" alt="tab section 1 image">
+                        </div>
+                    </section>
+                    <div class="absolute w-[200%] h-[77%] bg-custom-soft-blue -bottom-0 right-9 laptop:right-[60%] rounded-[999px] -z-10">
+                    </div>
+                    <section class="mt-8 text-center space-y-4 laptop:place-self-center laptop:text-left laptop:max-w-[450px]">
+                        <div>
+                            <h1 class="text-24px font-medium -tracking-[0.08px] laptop:text-32px">
+                                Bookmark in one click
+                            </h1>
+                            <p class="text-15px opacity-50 laptop:text-lg">
+                                Organize your bookmarks however you like. Our simple drag-and-drop interface gives you complete control over how you manage your favourite sites.
+                            </p>
+                        </div>
+                        <button class="bg-custom-soft-blue py-10px px-6 capitalize rounded-md text-white">
+                            more info
+                        </button>
+                    </section>
+                </div>
+            </section>
+            <section class="mt-[72px] px-8 w-full laptop:grid place-items-center">
+                <div class="text-center laptop:max-w-[540px]">
+                    <h1 class="text-24px font-medium -tracking-[0.08px] laptop:text-32px">
+                        Download the extension
+                    </h1>
+                    <p class="text-15px opacity-50 laptop:text-lg">
+                        We’ve got more browsers in the pipeline. Please do let us know if you’ve got a favourite you’d like us to prioritize.
+                    </p>
+                </div>
+                <div class="mt-10 px-4 laptop:grid grid-cols-3 grid-rows-9 gap-9 laptop:max-h-[500px] laptop:space-y-0"> 
+                    <div class="pt-12 pb-6 shadow-lg flex justify-center items-center flex-col rounded-2xl row-span-7 row-start-1 col-start-1 ">
+                        <img src="./assets/images/logo-chrome.svg" alt="Chrome browser logo">
+                        <div class="space-y-2 mt-8">
+                            <h1 class="text-xl font-medium tracking-[0.25px]">Add to chrome</h1>
+                            <p class="opacity-50">
+                                Minimum version 62
+                            </p>
+                        </div>
+                        <img src="./assets/images/bg-dots.svg" alt="many dots image" class="mt-8 mb-6">
+                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white">
+                            Add & Install Extension
+                        </button>
+                    </div>
+                    <div class="pt-12 pb-6 shadow-lg flex justify-center items-center flex-col rounded-2xl row-span-7 row-start-2">
+                        <img src="./assets/images/logo-firefox.svg" alt="firefox browser logo">
+                        <div class="space-y-2 mt-8">
+                            <h1 class="text-xl font-medium tracking-[0.25px]">Add to firefox</h1>
+                            <p class="opacity-50">
+                                Minimum version 55
+                            </p>
+                        </div>
+                        <img src="./assets/images/bg-dots.svg" alt="many dots image" class="mt-8 mb-6">
+                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white">
+                            Add & Install Extension
+                        </button>
+                    </div>
+                    <div class="pt-12 pb-6 shadow-lg flex justify-center items-center flex-col rounded-2xl row-start-3 row-span-7">
+                        <img src="./assets/images/logo-opera.svg" alt="opera browser logo">
+                        <div class="space-y-2 mt-8">
+                            <h1 class="text-xl font-medium tracking-[0.25px]">Add to opera</h1>
+                            <p class="opacity-50">
+                                Minimum version 46
+                            </p>
+                        </div>
+                        <img src="./assets/images/bg-dots.svg" alt="many dots image" class="mt-8 mb-6">
+                        <button class="bg-custom-soft-blue py-10px px-9 rounded-md text-white">
+                            Add & Install Extension
+                        </button>
+                    </div>
+                </div>
+            </section>
+            <section class="mt-[140px] px-8">
+                <div class="text-center space-y-4">
+                    <h1 class="capitalize text-24px font-medium tracking-[0.08px]">
+                        frequently asked questions
+                    </h1>
+                    <p class="text-15px opacity-50">
+                        Here are some of our FAQs. If you have any other questions you’d like answered please feel free to email us.
+                    </p>
+                </div>
+                <div class="mt-16 space-y-10">
+                    <section class="space-y-7 hide-tab">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-15px2.0">
+                                What is Bookmark?    
+                            </h1>
+                            <button class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="18" height="12"><path fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            </button>
+                        </div>
+                        <p class="text-15px3.0 opacity-50 tracking-[0.14px]">
+                            Lorem ipsum dolor sit amet, consectetur adipiscing elit. Fusce tincidunt 
+                            justo eget ultricies fringilla. Phasellus blandit ipsum quis quam ornare mattis.
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="space-y-7 hide-tab">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-15px2.0">
+                                How can I request a new browser?   
+                            </h1>
+                            <button class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="18" height="12"><path fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            </button>
+                        </div>
+                        <p class="text-15px3.0 opacity-50 tracking-[0.14px]">
+                            Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, ultricies non ligula. 
+                            Suspendisse imperdiet. Vivamus luctus eros aliquet convallis ultricies. Mauris augue massa, 
+                            ultricies non ligula. Suspendisse imperdie tVivamus luctus eros aliquet convallis ultricies. 
+                            Mauris augue massa, ultricies non ligula. Suspendisse imperdiet.
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="space-y-7 hide-tab">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-15px2.0">
+                                Is there a mobile app?  
+                            </h1>
+                            <button class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="18" height="12"><path fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            </button>
+                        </div>
+                        <p class="text-15px3.0 opacity-50 tracking-[0.14px]">
+                            Sed consectetur quam id neque fermentum accumsan. Praesent luctus vestibulum dolor, ut condimentum 
+                            urna vulputate eget. Cras in ligula quis est pharetra mattis sit amet pharetra purus. Sed 
+                            sollicitudin ex et ultricies bibendum.
+                        </p>
+                        <hr>
+                    </section>
+                    <section class="space-y-7 hide-tab">
+                        <div class="flex justify-between items-center">
+                            <h1 class="text-15px2.0">
+                                What about other Chromium browsers?  
+                            </h1>
+                            <button class="btn">
+                                <svg xmlns="http://www.w3.org/2000/svg" class="svg" width="18" height="12"><path fill="none" stroke-width="3" d="M1 1l8 8 8-8"/></svg>
+                            </button>
+                        </div>
+                        <p class="text-15px3.0 opacity-50 tracking-[0.14px]">
+                            Integer condimentum ipsum id imperdiet finibus. Vivamus in placerat mi, at euismod dui. Aliquam 
+                            vitae neque eget nisl gravida pellentesque non ut velit.
+                        </p>
+                        <hr>
+                    </section>
+                </div>
+                <div class="mt-12 text-center">
+                    <button class="bg-custom-soft-blue py-10px px-6 rounded-md capitalize text-white">
+                        more info
+                    </button>
+                </div>
+            </section>
+        </main>
+        <footer class="absolute top-full w-full">
+            <section class="bg-custom-soft-blue pt-16 pb-10 px-8 text-white grid place-items-center text-center">
+                <p class ='uppercase text-12px tracking-[4.62px] font-medium'>
+                    35,000+ already joined
+                </p>
+                <p class="text-24px2.0 -tracking-[0.08px]">
+                    Stay up-to-date with what we’re doing
+                </p>
+                <form action="" class="mt-8 space-y-4">
+                    <label for="email" class="invisible">email </label>
+                    <input type="email" name="email" id="email" class=" w-full h-12 rounded-md px-5 text-black text-14px" placeholder="Enter your email address">
+                    <input type="submit" value="Contact us" class="bg-custom-soft-red rounded-md capitalize w-full py-10px">    
+                </form>
+            </section>
+            <section class="bg-custom-dark-blue py-10 grid place-items-center">
+                <img src="./assets/images/logo-bookmark-light.svg" alt="Bookmark logo">
+                <ul class="mt-10 text-center space-y-8"> 
+                    <li>
+                        <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">features</a>
+                    </li>
+                    <li>
+                        <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">pricing</a>
+                    </li>
+                    <li>
+                        <a href="" class="uppercase text-white text-[15px] leading-[17px] tracking-[1.74px]">contact</a>
+                    </li>
+                </ul>
+                <ul class="mt-12 flex items-center gap-10">
+                    <li>
+                        <a href="">
+                            <img src="./assets/images/icon-facebook.svg" alt="Facebook logo">
+                        </a>
+                    </li>
+                    <li>
+                        <a href="">
+                            <img src="./assets/images/icon-twitter.svg" alt="Twitter icon">
+                        </a>
+                    </li>
+                </ul>
+            </section>
+        </footer>
+    </div>
+</body>
+</html>
