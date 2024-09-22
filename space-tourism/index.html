@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Tourism</title>
+    <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/dist/output.css">
+</head>
+<body class="grid place-items-center">
+    <div class="min-h-screen w-full bg-mobile bg-no-repeat bg-center bg-cover font-family1 tablet:bg-tablet laptop:bg-desktop max-w-[500px] tablet:max-w-[1100px] laptop:max-w-[1400px]">
+        <header>
+            <nav class="flex justify-between items-center p-6 tablet:px-10 laptop:p-16 relative">
+                <img src="assets/shared/logo.svg" alt="Company's logo">
+                <button aria-label="open navigation" class="btn open-btn p-2 tablet:hidden laptop:hidden">
+                    <img src="./assets/shared/icon-hamburger.svg" alt="open navigation menu" >
+                </button>
+                <div class="bg-color1 bg-opacity-75 backdrop-blur-md absolute right-0 top-0 h-screen w-[60%] flex flex-col gap-12 tablet:gap-8 side-nav-container pl-8 tablet:h-24 tablet:py-6 tablet:pr-10 tablet:w-custom-width tablet:items-end tablet:justify-center tablet:bg-white tablet:bg-opacity-5 hidden tablet:flex laptop:flex laptop:items-end laptop:justify-center laptop:bg-white laptop:bg-opacity-5 laptop:h-24 laptop:top-10 laptop:pr-10 laptop:w-[75%]">
+                    <button aria-label="Close navigation" class="btn close-btn my-8 mx-6 tablet:hidden laptop:hidden">
+                        <img src="./assets/shared/icon-close.svg" alt="close navigation menu" class="float-right ">
+                    </button>
+                    <ul class="text-white space-y-8 tablet:flex tablet:space-y-0 tablet:gap-12 laptop:flex laptop:space-y-0 laptop:gap-12">
+                        <li class="w-full tablet:w-auto border-r-4 border-white tablet:border-transparent laptop:border-transparent">
+                            <a href="#" class="uppercase tracking-[2px] tablet:pb-9 tablet:border-b-2 tablet:border-white laptop:pb-9 laptop:border-b-2 laptop:border-white">
+                                <span class="font-bold tracking-[2.7px]">00</span>
+                                home
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="" class="uppercase tracking-[2px] tablet:pb-10 laptop:pb-10">
+                                <span class="font-bold tracking-[2.7px]">01</span>
+                                destination
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="" class="uppercase tracking-[2px] tablet:pb-10">
+                                <span class="font-bold tracking-[2.7px]">02</span>
+                                crew
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="" class="uppercase tracking-[2px] tablet:pb-10">
+                                <span class="font-bold tracking-[2.7px]">03</span>
+                                technology
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="text-text-white-blue p-6 px-10  h-custom-height tablet:h-auto tablet:py-32 laptop:h-auto laptop:py-32 laptop:grid grid-cols-2 place-items-end laptop:px-40">
+            <section class="text-center w-full grid h-auto laptop:text-left laptop:max-w-[560px]"> 
+                <h1 class="tracking-[2.5px] uppercase tablet:text-3xl laptop:text-3xl h-auto tablet:tracking-[4px] laptop:tracking-[4px]">
+                    So, you want to travel to
+                </h1>
+                <p class="uppercase block text-[80px] text-white font-family2 tablet:text-[150px] laptop:text-[150px]">
+                    space
+                </p>
+                <p class='max-w-[330px] tablet:place-self-center tablet:text-[18px] laptop:text-[18px] tablet:leading-[180%] laptop:leading-[180%] tablet:max-w-[600px] laptop:max-w-[540px]'>
+                    Let’s face it; if you want to go to space, you might as well genuinely go to 
+                    outer space and not hover kind of on the edge of it. Well sit back, and relax 
+                    because we’ll give you a truly out of this world experience!
+                </p>
+            </section>
+            <section class="w-full h-1/2  grid place-items-center tablet:h-auto tablet:pt-16 laptop:place-items-end laptop:h-auto">
+                <div class="bg-white size-36 rounded-full grid place-items-center tablet:size-[272px] laptop:size-[272px]">
+                    <p class="text-text-black-blue uppercase font-family2 text-xl tablet:text-3xl laptop:text-3xl">
+                        explore
+                    </p>
+                </div> 
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./scripts/index.js"></script>
+</body>
+</html>
