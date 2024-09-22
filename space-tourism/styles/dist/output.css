@@ -865,6 +865,10 @@ video {
     place-self: center;
   }
 
+  .tablet\:border-0{
+    border-width: 0px;
+  }
+
   .tablet\:border-b-2{
     border-bottom-width: 2px;
   }
@@ -982,6 +986,10 @@ video {
     width: auto;
   }
 
+  .laptop\:w-\[50\%\]{
+    width: 50%;
+  }
+
   .laptop\:max-w-\[1400px\]{
     max-width: 1400px;
   }
@@ -1014,6 +1022,10 @@ video {
     --tw-space-y-reverse: 0;
     margin-top: calc(0px * calc(1 - var(--tw-space-y-reverse)));
     margin-bottom: calc(0px * var(--tw-space-y-reverse));
+  }
+
+  .laptop\:border-0{
+    border-width: 0px;
   }
 
   .laptop\:border-b-2{
