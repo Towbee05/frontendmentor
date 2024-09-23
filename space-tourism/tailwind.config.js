@@ -7,11 +7,11 @@ module.exports = {
     extend: {
       screens : {
         tablet : {
-          min : "700px",
-          max: "1100px"
+          min : "750px",
+          max: "1200px"
         }, 
         laptop : {
-          min : "1100px"
+          min : "1200px"
         }
       },
       backgroundImage : {
