@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Tourism</title>
+    <link rel="shortcut icon" href="./assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/dist/output.css">
+</head>
+<body class="grid place-items-center min-h-screen">
+    <div class="w-full bg-mobile-destination bg-no-repeat bg-center bg-cover font-family1 pb-10 tablet:bg-tablet-destination laptop:bg-desktop-destination max-w-[500px] tablet:max-w-[1100px] laptop:max-w-[1400px] tablet:pb-0 laptop:pb-0">
+        <header>
+            <nav class="flex justify-between items-center p-6 tablet:px-10 laptop:p-16 relative">
+                <img src="assets/shared/logo.svg" alt="Company's logo">
+                <button aria-label="open navigation" class="btn open-btn p-2 tablet:hidden laptop:hidden">
+                    <img src="./assets/shared/icon-hamburger.svg" alt="open navigation menu" >
+                </button>
+                <div class="bg-color1 bg-opacity-75 backdrop-blur-md absolute right-0 top-0 h-screen w-[60%] flex flex-col gap-12 tablet:gap-8 side-nav-container pl-8 tablet:h-24 tablet:py-6 tablet:pr-10 tablet:w-custom-width tablet:items-end tablet:justify-center tablet:bg-white tablet:bg-opacity-5 hidden tablet:flex laptop:flex laptop:items-end laptop:justify-center laptop:bg-white laptop:bg-opacity-5 laptop:h-24 laptop:top-10 laptop:pr-10 laptop:w-[50%]">
+                    <button aria-label="Close navigation" class="btn close-btn my-8 mx-6 tablet:hidden laptop:hidden">
+                        <img src="./assets/shared/icon-close.svg" alt="close navigation menu" class="float-right ">
+                    </button>
+                    <ul class="text-white space-y-8 tablet:flex tablet:space-y-0 tablet:gap-12 laptop:flex laptop:space-y-0 laptop:gap-12 ">
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="index.html" class="uppercase tracking-[2px] tablet:pb-10 laptop:pb-10">
+                                <span class="font-bold tracking-[2.7px]">00</span>
+                                home
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto border-r-4 border-white tablet:border-0 laptop:border-0 tablet:border-transparent laptop:border-transparent laptop:w-auto">
+                            <a href="#" class="uppercase tracking-[2px] tablet:pb-9 tablet:border-b-2 tablet:border-white laptop:pb-9 laptop:border-b-2 laptop:border-white">
+                                <span class="font-bold tracking-[2.7px]">01</span>
+                                destination
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="" class="uppercase tracking-[2px] tablet:pb-10">
+                                <span class="font-bold tracking-[2.7px]">02</span>
+                                crew
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="" class="uppercase tracking-[2px] tablet:pb-10">
+                                <span class="font-bold tracking-[2.7px]">03</span>
+                                technology
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="text-text-white-blue tablet:h-auto tablet:py-28 grid grid-cols-1 laptop:h-auto laptop:py-28 laptop:grid-cols-2 laptop:px-40 gap-8 px-6 relative ">
+            <p class="w-full absolute laptop:left-[165px] tablet:left-6 tablet:top-10 tablet:w-auto laptop:w-auto text-center uppercase laptop:text-[28px] tracking-[4px] laptop:space-x-6 text-white">
+                <span class="tracking-[4.72px] opacity-40">
+                    01 
+                </span>
+                Pick your destination
+            </p>
+            <section class="w-full grid place-items-center pt-14 tablet:pt-0 laptop:pt-0" id="image-section">
+                <img src="./assets/destination/image-moon.webp" alt="An image of the moon" class="size-[150px] tablet:size-[300px] laptop:size-[450px]" id="image">
+            </section>
+            <section class="tablet:place-self-center grid place-items-center space-y-6 laptop:space-y-10 tablet:max-w-[400px] laptop:max-w-[350px]">
+                <div class="flex gap-8">
+                    <button class="uppercase border-transparent border-b-2 tracking-[2px] select-btn selected-btn" data-id="moon">moon</button>
+                    <button class="uppercase border-transparent border-b-2 tracking-[2px] select-btn" data-id="mars">mars</button>
+                    <button class="uppercase border-transparent border-b-2 tracking-[2px] select-btn" data-id="europa">europa</button>
+                    <button class="uppercase border-transparent border-b-2 tracking-[2px] select-btn" data-id="titan">titan</button>
+                </div>
+                <div class="space-y-4 text-center laptop:text-left" id="title-paragragh-section">
+                    <h1 class="uppercase font-family2 text-[56px] laptop:text-[100px]">
+                        moon
+                    </h1>
+                    <p class="text-[15px] tablet:text-base laptop:text-lg">
+                        See our planet as you’ve never seen it before. A perfect relaxing trip away to help regain perspective and come back refreshed. While you’re there, take in some history by visiting the Luna 2 and Apollo 11 landing sites.
+                    </p>
+                </div>
+                <hr class="w-full">
+                <div class="tablet:w-full text-center laptop:text-left grid grid-cols-1 tablet:grid-cols-2 gap-6 laptop:grid-cols-2 laptop:gap-8" id="dis-time-section">
+                    <p class="flex flex-col uppercase">
+                        <span class="text-sm tracking-[2px]">
+                            Avg. distance
+                        </span>
+                        <span class="text-white text-[28px] font-family2">
+                            384,400 km
+                        </span>
+                    </p>
+                    <p class="flex flex-col uppercase">
+                        <span class="text-sm tracking-[2px]">
+                            Est. travel time
+                        </span>
+                        <span class="text-white text-[28px] font-family2">
+                            3 days 
+                        </span>
+                    </p>
+                </div>
+            </section>
+        </main>
+    </div>
+    <script type="module" src="./scripts/destination.js"></script>
+</body>
+</html>

@@ -1,7 +1,8 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './index.html'
+    './index.html',
+    './destination.html'
   ],
   theme: {
     extend: {
@@ -15,9 +16,12 @@ module.exports = {
         }
       },
       backgroundImage : {
-        'mobile' : "url('/assets/home/background-home-mobile.jpg')",
-        'tablet' : "url('/assets/home/background-home-tablet.jpg')",
-        'desktop' : "url('/assets/home/background-home-desktop.jpg')"
+        'mobile-home' : "url('/assets/home/background-home-mobile.jpg')",
+        'tablet-home' : "url('/assets/home/background-home-tablet.jpg')",
+        'desktop-home' : "url('/assets/home/background-home-desktop.jpg')",
+        'mobile-destination' : "url('/assets/destination/background-destination-mobile.jpg')",
+        'tablet-destination' : "url('/assets/destination/background-destination-tablet.jpg')",
+        'desktop-destination' : "url('/assets/destination/background-destination-desktop.jpg')",
       },
       colors: {
         'color1' : '#0B0D17',
