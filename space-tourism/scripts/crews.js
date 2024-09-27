@@ -21,10 +21,10 @@ const fetchData = async (url) => {
             crewSection.innerHTML = 
             `
                 <p class="uppercase font-family2 text-lg tablet:text-2xl laptop:text-[32px] opacity-50 text-white">
-                    ${name}
-                </p>
-                <p class="uppercase font-family2 text-2xl tablet:text-[40px] laptop:text-[56px] text-white mt-2 tablet:mt-2 laptop:mt-4">
                     ${role}
+                </p>
+                <p class="uppercase font-family2 text-2xl tablet:text-[40px] laptop:text-[56px] text-white mt-2 tablet:mt-2 laptop:mt-4 w-full text-wrap">
+                    ${name}
                 </p>
                 <p class="text-[15px] tablet:text-lg laptop:text-lg max-w-[250px] leading-[180%] tablet:max-w-[450px] laptop:max-w-[440px] mt-6 tablet:mt-6 laptop:mt-6">
                     ${bio}

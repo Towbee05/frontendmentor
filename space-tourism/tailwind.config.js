@@ -54,6 +54,9 @@ module.exports = {
       },
       gridTemplateColumns: {
         'tech-col' : '60% 40%'
+      },
+      boxShadow: {
+        'shadow' : '5px 5px 10px 70px rgba(255, 255, 255, 0.1)'
       }
     },
   },
