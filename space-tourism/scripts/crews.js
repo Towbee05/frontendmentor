@@ -23,7 +23,7 @@ const fetchData = async (url) => {
                 <p class="uppercase font-family2 text-lg tablet:text-2xl laptop:text-[32px] opacity-50 text-white">
                     ${role}
                 </p>
-                <p class="uppercase font-family2 text-2xl tablet:text-[40px] laptop:text-[56px] text-white mt-2 tablet:mt-2 laptop:mt-4 w-full text-wrap">
+                <p class="uppercase font-family2 text-2xl tablet:text-[40px] laptop:text-[50px] text-white mt-2 tablet:mt-2 laptop:mt-4 w-full leading-[64px]">
                     ${name}
                 </p>
                 <p class="text-[15px] tablet:text-lg laptop:text-lg max-w-[250px] leading-[180%] tablet:max-w-[450px] laptop:max-w-[440px] mt-6 tablet:mt-6 laptop:mt-6">

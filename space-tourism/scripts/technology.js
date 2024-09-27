@@ -21,12 +21,12 @@ const fetchData = async (url) => {
             const { name, images, description:desc} = data[index];
             techSection.innerHTML = 
             `
-                <h1 class="uppercase font-family2 space-y-4">
-                    <span class="opacity-50 text-lg laptop:text-[32px]">The terminology...</span>
-                    <span class="block text-2xl laptop:text-[56px]">
-                        ${name}
-                    </span>
+                <h1 class="uppercase font-family2 opacity-50 text-lg laptop:text-[30px]">
+                    The terminology...
                 </h1>
+                <h2 class="uppercase font-family2 text-2xl laptop:text-[50px]">
+                    ${name}
+                </h2>
                 <p class="leading-[180%] text-blue-300 opacity-75 tablet:max-w-[520px] laptop:max-w-[350px]">
                     ${desc}
                 </p>
