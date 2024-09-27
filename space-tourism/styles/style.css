@@ -8,3 +8,7 @@
 .selected-btn{
     @apply border-b-white;
 }
+
+.selected-crew {
+    @apply bg-white opacity-100
+}

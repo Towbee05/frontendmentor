@@ -1,8 +1,10 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    './index.html',
-    './destination.html'
+    './html/index.html',
+    './html/destination.html',
+    './html/crews.html',
+    './html/technology.html'
   ],
   theme: {
     extend: {
@@ -22,11 +24,15 @@ module.exports = {
         'mobile-destination' : "url('/assets/destination/background-destination-mobile.jpg')",
         'tablet-destination' : "url('/assets/destination/background-destination-tablet.jpg')",
         'desktop-destination' : "url('/assets/destination/background-destination-desktop.jpg')",
+        'mobile-crew' : "url('/assets/crew/background-crew-mobile.jpg')",
+        'tablet-crew' : "url('/assets/crew/background-crew-tablet.jpg')",
+        'desktop-crew' : "url('/assets/crew/background-crew-desktop.jpg')",
       },
       colors: {
         'color1' : '#0B0D17',
         'text-white-blue' : '#D0D6F9',
         'text-black-blue' : '#0B0D17',
+        'crew-btn' : '#979797'
       },
       fontFamily : {
         'family1' : '"Barlow Condensed", sans-serif',

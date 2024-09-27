@@ -23,7 +23,7 @@ const fetchData = async (url) => {
             const { name, images, description : desc, distance, travel } = data[index];
             if (dataID === name.toLowerCase()) {
                 imageSection.innerHTML = `
-                    <img src="${images['webp']}" alt="An image of the moon" class="size-[150px] tablet:size-[300px] laptop:size-[450px]" id="image">
+                    <img src="${images['webp']}" alt="An image of the ${name}" class="size-[150px] tablet:size-[300px] laptop:size-[450px]" id="image">
                 `;
                 titleParagraphSection.innerHTML = `
                     <h1 class="uppercase font-family2 text-[56px] laptop:text-[100px]">
