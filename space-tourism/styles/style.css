@@ -12,3 +12,7 @@
 .selected-crew {
     @apply bg-white opacity-100
 }
+
+.selected-number{
+    @apply bg-white text-blue-900
+}

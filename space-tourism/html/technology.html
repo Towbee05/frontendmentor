@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Space Crew</title>
+    <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/dist/output.css">
+</head>
+<body class="min-h-screen grid place-items-center">
+    <div class="w-full bg-mobile-technology bg-no-repeat bg-center bg-cover font-family1 pb-10 tablet:bg-tablet-technology laptop:bg-desktop-technology max-w-[500px] tablet:max-w-[1100px] laptop:max-w-[1400px] tablet:pb-0 laptop:pb-0">
+        <header>
+            <nav class="flex justify-between items-center p-6 tablet:px-10 laptop:p-16 relative">
+                <img src="/assets/shared/logo.svg" alt="Company's logo">
+                <button aria-label="open navigation" class="btn open-btn p-2 tablet:hidden laptop:hidden">
+                    <img src="/assets/shared/icon-hamburger.svg" alt="open navigation menu" >
+                </button>
+                <div class="bg-color1 bg-opacity-75 backdrop-blur-md absolute right-0 top-0 h-screen w-[60%] flex flex-col gap-12 tablet:gap-8 side-nav-container pl-8 tablet:h-24 tablet:py-6 tablet:pr-10 tablet:w-custom-width tablet:items-end tablet:justify-center tablet:bg-white tablet:bg-opacity-5 hidden tablet:flex laptop:flex laptop:items-end laptop:justify-center laptop:bg-white laptop:bg-opacity-5 laptop:h-24 laptop:top-10 laptop:pr-10 laptop:w-[50%] z-10">
+                    <button aria-label="Close navigation" class="btn close-btn my-8 mx-6 tablet:hidden laptop:hidden">
+                        <img src="/assets/shared/icon-close.svg" alt="close navigation menu" class="float-right ">
+                    </button>
+                    <ul class="text-white space-y-8 tablet:flex tablet:space-y-0 tablet:gap-12 laptop:flex laptop:space-y-0 laptop:gap-12 ">
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="index.html" class="uppercase tracking-[2px] tablet:pb-10 laptop:pb-10">
+                                <span class="font-bold tracking-[2.7px]">00</span>
+                                home
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="destination.html" class="uppercase tracking-[2px] tablet:pb-10">
+                                <span class="font-bold tracking-[2.7px]">01</span>
+                                destination
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto laptop:w-auto">
+                            <a href="crews.html" class="uppercase tracking-[2px] tablet:pb-10">
+                                <span class="font-bold tracking-[2.7px]">02</span>
+                                crew
+                            </a>
+                        </li>
+                        <li class="w-full tablet:w-auto border-r-4 border-white tablet:border-0 laptop:border-0 tablet:border-transparent laptop:border-transparent laptop:w-auto">
+                            <a href="" class="uppercase tracking-[2px] tablet:pb-9 tablet:border-b-2 tablet:border-white laptop:pb-9 laptop:border-b-2 laptop:border-white">
+                                <span class="font-bold tracking-[2.7px]">03</span>
+                                technology
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </header>
+        <main class="space-y-20 tablet:pt-10 laptop:laptop:px-[150px] py-12">
+            <h1 class="text-white text-lg uppercase tracking-[15%] text-center tablet:text-left laptop:text-left tablet:px-10 "> 
+                <span class="font-bold tracking-[15%] opacity-50 mr-6">
+                    03
+                </span>
+                space launcher 101
+            </h1>
+            <div class="grid grid-cols-1 gap-8 laptop:grid-cols-tech-col laptop:gap-6"> 
+                <section class="grid place-items-center laptop:col-start-2 laptop:place-items-end" id="image-container">
+                    <img src="/assets/technology/image-launch-vehicle-portrait.jpg" alt="A launching space shuttle" class="tablet:hidden laptop:hidden">
+                    <img src="/assets/technology/image-launch-vehicle-landscape.jpg" alt="A launching space shuttle" class="hidden tablet:block laptop:block h-full"> 
+                </section>
+                <section class="grid place-items-center gap-10 px-6 laptop:px-0 laptop:col-start-1 laptop:row-start-1">
+                    <div class="laptop:flex gap-16 space-y-10">
+                        <div class="space-x-4 flex laptop:flex-col laptop:space-x-0 gap-8 w-full laptop:w-auto items-center justify-center">
+                            <button class="font-family2 size-10 tablet:size-14 laptop:size-20 tablet:text-2xl laptop:text-[32px] border border-white text-white rounded-full selected-number btn-tech">
+                                1
+                            </button>
+                            <button class="font-family2 size-10 tablet:size-14 laptop:size-20 tablet:text-2xl laptop:text-[32px] border border-white text-white rounded-full btn-tech">
+                                2
+                            </button>
+                            <button class="font-family2 size-10 tablet:size-14 laptop:size-20 tablet:text-2xl laptop:text-[32px] border border-white text-white rounded-full btn-tech">
+                                3
+                            </button>
+                        </div>
+                        <div class="space-y-4 text-center text-white laptop:text-left laptop:space-y-6 laptop:place-self-center" id="text-section">
+                            <h1 class="uppercase font-family2 space-y-4">
+                                <span class="opacity-50 text-lg laptop:text-[32px]">The terminology...</span>
+                                <span class="block text-2xl laptop:text-[56px]">
+                                    launch vehicle
+                                </span>
+                            </h1>
+                            <p class="leading-[180%] text-blue-300 opacity-75 tablet:max-w-[520px] laptop:max-w-[350px]">
+                                A launch vehicle or carrier rocket is a rocket-propelled vehicle used to carry a payload from Earth's surface to space, usually to Earth orbit or beyond. Our WEB-X carrier rocket is the most powerful in operation. Standing 150 metres tall, it's quite an awe-inspiring sight on the launch pad!
+                            </p>
+                        </div>                 
+                    </div>
+                </section>
+            </div>
+        </main>
+    </div>
+    <script type="module" src="/scripts/technology.js"></script>
+</body>
+</html>

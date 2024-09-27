@@ -27,6 +27,9 @@ module.exports = {
         'mobile-crew' : "url('/assets/crew/background-crew-mobile.jpg')",
         'tablet-crew' : "url('/assets/crew/background-crew-tablet.jpg')",
         'desktop-crew' : "url('/assets/crew/background-crew-desktop.jpg')",
+        'mobile-technology' : "url('/assets/technology/background-technology-mobile.jpg')",
+        'tablet-technology' : "url('/assets/technology/background-technology-tablet.jpg')",
+        'desktop-technology' : "url('/assets/technology/background-technology-desktop.jpg')",
       },
       colors: {
         'color1' : '#0B0D17',
@@ -48,6 +51,9 @@ module.exports = {
       width: {
         'custom-width' : 'calc(100% - 128px)',
         'custom-width-2' : 'calc(100% + 12px)'
+      },
+      gridTemplateColumns: {
+        'tech-col' : '60% 40%'
       }
     },
   },
