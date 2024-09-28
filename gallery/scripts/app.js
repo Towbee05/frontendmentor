@@ -12,7 +12,7 @@ const footerSection = getElement('#footer-section');
 const startSlide = getElement('#start-slide');
 const prevBtn = getElement('#prev-slide');
 const nextBtn = getElement('#next-slide');
-
+const progressBar = getElement('.progress-bar');
 
 let counter = 0;
 
@@ -37,36 +37,47 @@ const fetchData = async (url) => {
             const { images, name, artist, year, description:desc , source} = currentCard;
             loadCardDetails(name, artist, images, year, desc, source);
             loadFooterDetails(name, artist);
+            prevBtn.disabled = true;
+            prevBtn.style.opacity = 0.5
+            
             //! come back to this::: 
             startSlide.innerHTML = 'stop slideshow';
+            progressBar.style.background = `linear-gradient(to right, #000 ${((counter + 1) / cards.length)*100}%, #E5E5E5 ${((counter + 1 )/cards.length) * 100}%)`;
         };
     });
     
     
     nextBtn.addEventListener('click', () => {
+        prevBtn.disabled = false;
+        prevBtn.style.opacity = 1;
+        counter++;
+        progressBar.style.background = `linear-gradient(to right, #000 ${((counter + 1) / cards.length)*100}%, #E5E5E5 ${((counter + 1)/cards.length) * 100}%)`;
+        let currentCard = data[counter];
+        const { images, name, artist, year, description:desc , source} = currentCard;
+        loadCardDetails(name, artist, images, year, desc, source);
+        loadFooterDetails(name, artist);
+    
         if (counter >= (cards.length - 1)) {
             nextBtn.disabled = true;
             nextBtn.style.opacity = 0.5
-        } else{
-            counter++;
-            let currentCard = data[counter];
-            const { images, name, artist, year, description:desc , source} = currentCard;
-            loadCardDetails(name, artist, images, year, desc, source);
-            loadFooterDetails(name, artist);
-        }
+        } 
+    
     });
 
     prevBtn.addEventListener('click', () => {
-        if (counter < 0) {
+        nextBtn.disabled = false;
+        nextBtn.style.opacity = 1;
+        progressBar.style.background = `linear-gradient(to right, #000 ${(counter / cards.length)*100}%, #E5E5E5 ${(counter/cards.length) * 100}%)`;
+        counter--;
+        let currentCard = data[counter];
+        const { images, name, artist, year, description:desc , source} = currentCard;
+        loadCardDetails(name, artist, images, year, desc, source);
+        loadFooterDetails(name, artist);
+        if (counter < 1) {
             prevBtn.disabled = true;
-            prevBtn.style.opacity = 0.5
-        } else{
-            counter--;
-            let currentCard = data[counter];
-            const { images, name, artist, year, description:desc , source} = currentCard;
-            loadCardDetails(name, artist, images, year, desc, source);
-            loadFooterDetails(name, artist);
-        }
+            prevBtn.style.opacity = 0.5;
+        };
+        
     });
 
     cards.forEach((card, index) => {
@@ -82,31 +93,9 @@ const fetchData = async (url) => {
                 <p class='text-sm opacity-75' > ${artist.name} </p>
             </div>
         `;
-        // card.addEventListener('click', () => {
-        //     addClass(cardSection, 'hidden');
-        //     removeClass(carddetails, 'hidden');
-        //     // !card detail page
-        //     loadCardDetails(name, artist, images, year, desc, source);
-        //     // ! footer page
-        //     loadFooterDetails(name, artist);
-        //     const viewBtn = getElement('#view-btn');
-        //     viewBtn.addEventListener('click', () => {
-        //         removeClass(imageSection, 'hidden');
-        //         imageSection.innerHTML = `
-        //             <div class="flex flex-col gap-8 text-white">
-        //                 <button class='text-right text-[14px] tracking-[2px] font-bold uppercase close-btn'> close </button>
-        //                 <img src="${images.thumbnail}" alt="${name} image thumbnail" />
-        //             </div>
-        //         `;
-
-        //         const closeImage = getElement('.close-btn');
-        //         closeImage.addEventListener('click', () => addClass(imageSection, 'hidden'));
-        //     });
-        // });
     });
 };
 
-console.log(loader);
 
 
 fetchData('/scripts/data.json');
