@@ -708,10 +708,6 @@ video {
   flex-direction: column;
 }
 
-.place-items-start{
-  place-items: start;
-}
-
 .place-items-end{
   place-items: end;
 }
@@ -1441,6 +1437,10 @@ video {
     max-width: 1400px;
   }
 
+  .laptop\:max-w-\[1600px\]{
+    max-width: 1600px;
+  }
+
   .laptop\:max-w-\[350px\]{
     max-width: 350px;
   }
@@ -1673,6 +1673,10 @@ video {
     font-size: 28px;
   }
 
+  .laptop\:text-\[30px\]{
+    font-size: 30px;
+  }
+
   .laptop\:text-\[32px\]{
     font-size: 32px;
   }
@@ -1681,17 +1685,9 @@ video {
     font-size: 50px;
   }
 
-  .laptop\:text-\[56px\]{
-    font-size: 56px;
-  }
-
   .laptop\:text-lg{
     font-size: 1.125rem;
     line-height: 1.75rem;
-  }
-
-  .laptop\:text-\[30px\]{
-    font-size: 30px;
   }
 
   .laptop\:leading-\[180\%\]{

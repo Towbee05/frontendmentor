@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Gallery slideshow</title>
+    <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/dist/output.css">
+</head>
+<body class="min-h-screen  w-full grid place-items-center">
+    <div class="w-full grid place-items-center font-libre gap-10 relative laptop:max-w-[1440px]">
+        <header class="w-full flex justify-between items-center pt-6 px-6"> 
+            <img src="/assets/shared/logo.svg" alt="Gallery slideshow image" class="h-8 laptop:h-12">
+            <button class="uppercase font-bold text-[10px] tracking-[2px] text-grey tablet:text-xs laptop:text-xs" id="start-slide">
+                start slideshow
+            </button>
+        </header>
+        <hr class="w-full">
+        <main class="w-full">
+            <div class="image-container grid mobile:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 w-full place-items-center gap-6 tablet:gap-10 card-section">
+                <div class="loader"></div> 
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+                <div class="card w-full relative"></div>
+            </div>
+            <!-- !card details -->
+            <section class="card-details space-y-12 px-6 tablet:px-10 tablet:space-y-16 laptop:px-10 grid laptop:grid-cols-2 laptop:gap-10 hidden pb-10">
+
+            </section>
+            <section id="view-image" class="fixed top-0 min-h-screen bg-black w-full bg-opacity-90 hidden grid place-items-center">
+
+            </section>
+        </main>
+        <!-- !footer section -->
+        <footer class="absolute top-full w-full pt-20 hidden" id="footer-section">
+            <hr class="w-full">
+            <div class="flex justify-between items-center py-4 px-6">
+                <div class="footer-text space-y-2.5">
+                </div>
+                <div class="space-x-6 tablet:space-x-10">
+                    <button>
+                        <img src="/assets/shared/icon-back-button.svg" alt="previous slide" id="prev-slide">
+                    </button>
+                    <button>
+                        <img src="/assets/shared/icon-next-button.svg" alt="next slide" id="next-slide">
+                    </button>
+                </div>
+            </div>
+        </footer>
+    </div>
+    <script type="module" src="/scripts/app.js"></script>
+</body>
+</html>
