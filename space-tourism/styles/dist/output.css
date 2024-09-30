@@ -668,6 +668,10 @@ video {
   min-height: 100vh;
 }
 
+.min-h-full{
+  min-height: 100%;
+}
+
 .w-\[150px\]{
   width: 150px;
 }
@@ -1441,8 +1445,8 @@ video {
     max-width: 1400px;
   }
 
-  .laptop\:max-w-\[1600px\]{
-    max-width: 1600px;
+  .laptop\:max-w-\[1800px\]{
+    max-width: 1800px;
   }
 
   .laptop\:max-w-\[350px\]{
