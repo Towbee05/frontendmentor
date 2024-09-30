@@ -9,11 +9,8 @@ This is a solution to the [Galleria slideshow site challenge on Frontend Mentor]
   - [Links](#links)
 - [My process](#my-process)
   - [Built with](#built-with)
-  - [What I learned](#what-i-learned)
-  - [Continued development](#continued-development)
-  - [Useful resources](#useful-resources)
 - [Author](#author)
-- [Acknowledgments](#acknowledgments)
+
 
 ## Overview
 
@@ -30,6 +27,8 @@ Users should be able to:
 - Solution URL: [Click here](https://candid-caramel-13aacd.netlify.app/)
 - Live Site URL: [click here](https://github.com/Towbee05/frontendmentor/tree/main/gallery)
 
+## My process
+
 ### Built with
 
 - Semantic HTML5 markup
@@ -38,3 +37,8 @@ Users should be able to:
 - CSS Grid
 - Mobile-first workflow
 - [Tailwindcss](https://tailwindcss.com/) - For styles
+
+## Author
+
+- Github - [Oluwatobiloba](https://github.com/Towbee05/)
+- Frontend Mentor - [@Towbee05](https://www.frontendmentor.io/profile/Towbee05)
