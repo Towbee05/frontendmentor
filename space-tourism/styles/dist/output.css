@@ -784,6 +784,10 @@ video {
   margin-bottom: calc(2rem * var(--tw-space-y-reverse));
 }
 
+.place-self-center{
+  place-self: center;
+}
+
 .rounded-full{
   border-radius: 9999px;
 }
