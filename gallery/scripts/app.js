@@ -83,16 +83,16 @@ const fetchData = async (url) => {
     cards.forEach((card, index) => {
         let currentCard = data[index];
         const { images, name, artist, year, description:desc , source} = currentCard;
-        const { gallery } = images;
+        const { gallery, thumbnail } = images;
 
-        // !cards setup
         card.innerHTML = `
-            <img src= ".${gallery}" alt="${name} image"/>
-            <div class='capitalize absolute text-white bottom-0 left-0 right-0 text-left px-8 pb-8 pt-14 space-y-2'>
-                <p class='text-2xl font-bold'> ${name} </p>
-                <p class='text-sm opacity-75' > ${artist.name} </p>
-            </div>
+        <img src= ".${gallery}" alt="${name} image" class="h-auto max-w-full" >
         `;
+        // <div class='capitalize absolute text-white bottom-0 left-0 right-0 text-left px-8 pb-8 pt-14 space-y-2'>
+        //     <p class='text-2xl font-bold'> ${name} </p>
+        //     <p class='text-sm opacity-75' > ${artist.name} </p>
+        // </div>
+
     });
 };
 

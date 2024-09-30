@@ -6,6 +6,7 @@
     <title>Gallery slideshow</title>
     <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/x-icon">
     <link rel="stylesheet" href="/styles/dist/output.css">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
 </head>
 <body class="min-h-screen  w-full grid place-items-center">
     <div class="w-full grid place-items-center font-libre gap-10 relative laptop:max-w-[1440px]">
@@ -17,24 +18,33 @@
         </header>
         <hr class="w-full">
         <main class="w-full">
-            <div class="image-container grid mobile:grid-cols-1 tablet:grid-cols-2 laptop:grid-cols-4 w-full place-items-center gap-6 tablet:gap-10 card-section">
-                <div class="loader"></div> 
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
-                <div class="card w-full relative"></div>
+            <div class="loader absolute top-1/2 right-1/2"></div>
+            <div class="card-section image-container grid tablet:grid-cols-2 laptop:grid-cols-4">
+                <div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                </div>
+                <div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                </div>
+                <div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                </div>
+                <div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                    <div class="card relative"></div>
+                </div>
             </div>
+
             <!-- !card details -->
             <section class="card-details space-y-12 px-6 tablet:px-10 tablet:space-y-16 laptop:px-10 grid laptop:grid-cols-2 laptop:gap-10 hidden pb-10">
 
@@ -60,6 +70,8 @@
             </div>
         </footer>
     </div>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js" integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js" integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF" crossorigin="anonymous"></script>
     <script type="module" src="/scripts/app.js"></script>
 </body>
 </html>

@@ -34,7 +34,7 @@ module.exports = {
         'custom-column2' : '70% 30%'
       },
       gridTemplateRows: {
-        'custom-row' : 'repeat(4, auto)'
+        'custom-row' : 'repeat(16, 1fr)'
       }
     },
   },
