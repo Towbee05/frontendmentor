@@ -17,34 +17,35 @@
             </button>
         </header>
         <hr class="w-full">
-        <main class="w-full">
+        <main class="w-full mobile:grid place-items-center">
             <div class="loader absolute top-1/2 right-1/2"></div>
-            <div class="card-section image-container grid tablet:grid-cols-2 laptop:grid-cols-4">
-                <div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
+            <div class="card-section image-container grid tablet:grid-cols-2 laptop:grid-cols-4 gap-6 px-6 tablet:gap-10 tablet:px-10 laptop:px-10 mobile:max-w-[500px]">
+                <!-- Mobile -->
+                <div class="grid gap-6 tablet:gap-10 laptop:gap-10">
+                    <div class="card relative h-[250px]"></div>
+                    <div class="card relative h-[340px]"></div>
+                    <div class="card relative h-[420px]"></div>
+                    <div class="card relative h-[260px]"></div>
                 </div>
-                <div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
+                <div class="grid gap-6 tablet:gap-10 laptop:gap-10">
+                    <div class="card relative h-[400px]"></div>
+                    <div class="card relative h-[280px]"></div>
+                    <div class="card relative h-[260px]"></div>
+                    <div class="card relative h-[340px]"></div>
                 </div>
-                <div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
+                <div class="grid gap-6 tablet:gap-10 laptop:gap-10">
+                    <div class="card relative h-[285px]"></div>
+                    <div class="card relative h-[500px]"></div>
+                    <div class="card relative h-[525px]"></div>
                 </div>
-                <div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
-                    <div class="card relative"></div>
+                <div class="grid gap-6 tablet:gap-10 laptop:gap-10">
+                    <div class="card relative h-[250px]"></div>
+                    <div class="card relative h-[250px]"></div>
+                    <div class="card relative h-[430px]"></div>
+                    <div class="card relative h-[340px]"></div>
                 </div>
             </div>
-
+            
             <!-- !card details -->
             <section class="card-details space-y-12 px-6 tablet:px-10 tablet:space-y-16 laptop:px-10 grid laptop:grid-cols-2 laptop:gap-10 hidden pb-10">
 

@@ -86,12 +86,12 @@ const fetchData = async (url) => {
         const { gallery, thumbnail } = images;
 
         card.innerHTML = `
-        <img src= ".${gallery}" alt="${name} image" class="h-auto max-w-full" >
+        <img src= ".${gallery}" alt="${name} image" class="h-full" >
+        <div class='capitalize absolute text-white bottom-0 left-0 right-0 text-left px-8 pb-8 pt-14 space-y-2'>
+            <p class='text-2xl font-bold'> ${name} </p>
+            <p class='text-sm opacity-75' > ${artist.name} </p>
+        </div>
         `;
-        // <div class='capitalize absolute text-white bottom-0 left-0 right-0 text-left px-8 pb-8 pt-14 space-y-2'>
-        //     <p class='text-2xl font-bold'> ${name} </p>
-        //     <p class='text-sm opacity-75' > ${artist.name} </p>
-        // </div>
 
     });
 };

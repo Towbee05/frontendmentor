@@ -9,10 +9,10 @@ module.exports = {
       screens: {
         'mobile' : {
           min : '0px',
-          max : '600px'
+          max : '700px'
         },
         'tablet' : {
-          min : '600px',
+          min : '700px',
           max : '1000px'
         },
         'laptop' : {
@@ -34,7 +34,7 @@ module.exports = {
         'custom-column2' : '70% 30%'
       },
       gridTemplateRows: {
-        'custom-row' : 'repeat(16, 1fr)'
+        'custom-row' : 'repeat(auto, 1fr)'
       }
     },
   },

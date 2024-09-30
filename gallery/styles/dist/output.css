@@ -608,6 +608,10 @@ video {
   z-index: 10;
 }
 
+.mb-0{
+  margin-bottom: 0px;
+}
+
 .flex{
   display: flex;
 }
@@ -628,8 +632,44 @@ video {
   height: 2rem;
 }
 
-.h-auto{
-  height: auto;
+.h-\[250px\]{
+  height: 250px;
+}
+
+.h-\[260px\]{
+  height: 260px;
+}
+
+.h-\[280px\]{
+  height: 280px;
+}
+
+.h-\[285px\]{
+  height: 285px;
+}
+
+.h-\[340px\]{
+  height: 340px;
+}
+
+.h-\[400px\]{
+  height: 400px;
+}
+
+.h-\[420px\]{
+  height: 420px;
+}
+
+.h-\[430px\]{
+  height: 430px;
+}
+
+.h-\[500px\]{
+  height: 500px;
+}
+
+.h-\[525px\]{
+  height: 525px;
 }
 
 .h-full{
@@ -644,8 +684,8 @@ video {
   width: 100%;
 }
 
-.max-w-full{
-  max-width: 100%;
+.max-w-\[500px\]{
+  max-width: 500px;
 }
 
 .flex-col{
@@ -660,6 +700,10 @@ video {
   align-items: center;
 }
 
+.justify-center{
+  justify-content: center;
+}
+
 .justify-between{
   justify-content: space-between;
 }
@@ -672,8 +716,8 @@ video {
   gap: 0.75rem;
 }
 
-.gap-4{
-  gap: 1rem;
+.gap-6{
+  gap: 1.5rem;
 }
 
 .gap-8{
@@ -929,7 +973,12 @@ video {
   fill: #000;
 }
 
-@media (min-width: 0px) and (max-width: 600px){
+.group:hover .group-hover\:text-black{
+  --tw-text-opacity: 1;
+  color: rgb(0 0 0 / var(--tw-text-opacity));
+}
+
+@media (min-width: 0px) and (max-width: 700px){
   .mobile\:-bottom-5{
     bottom: -1.25rem;
   }
@@ -946,8 +995,16 @@ video {
     top: 1rem;
   }
 
+  .mobile\:grid{
+    display: grid;
+  }
+
   .mobile\:hidden{
     display: none;
+  }
+
+  .mobile\:max-w-\[500px\]{
+    max-width: 500px;
   }
 
   .mobile\:pt-10{
@@ -963,7 +1020,7 @@ video {
   }
 }
 
-@media (min-width: 600px) and (max-width: 1000px){
+@media (min-width: 700px) and (max-width: 1000px){
   .tablet\:-right-7{
     right: -1.75rem;
   }
@@ -978,6 +1035,30 @@ video {
 
   .tablet\:top-0{
     top: 0px;
+  }
+
+  .tablet\:left-1\/2{
+    left: 50%;
+  }
+
+  .tablet\:-right-1\/2{
+    right: -50%;
+  }
+
+  .tablet\:right-1\/2{
+    right: 50%;
+  }
+
+  .tablet\:right-1\/4{
+    right: 25%;
+  }
+
+  .tablet\:-right-\[20\%\]{
+    right: -20%;
+  }
+
+  .tablet\:mt-4{
+    margin-top: 1rem;
   }
 
   .tablet\:grid{
@@ -996,12 +1077,20 @@ video {
     max-width: 600px;
   }
 
+  .tablet\:max-w-\[440px\]{
+    max-width: 440px;
+  }
+
   .tablet\:grid-cols-2{
     grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .tablet\:grid-cols-custom-column{
     grid-template-columns: 75% 25%;
+  }
+
+  .tablet\:gap-10{
+    gap: 2.5rem;
   }
 
   .tablet\:space-x-10 > :not([hidden]) ~ :not([hidden]){
