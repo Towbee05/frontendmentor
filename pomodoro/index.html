@@ -1,0 +1,185 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pomodoro app</title>
+    <link rel="shortcut icon" href="/assets/favicon-32x32.png" type="image/x-icon">
+    <link rel="stylesheet" href="/styles/output.css">
+</head>
+<body class="bg-custom-blueish-black min-h-screen grid place-items-center font-kumbh text-custom-blueish-black2 ">
+    <div class="w-full space-y-12 relative">
+        <header class="space-y-12 tablet:space-y-14 laptop:space-y-12 tablet:pt-20 laptop:pt-12 grid place-items-center w-full">
+            <div>
+                <img src="/assets/logo.svg" alt="Pomodoro logo">
+            </div>
+            <div class="bg-custom-blueish-black2 px-2 py-2 rounded-[999px]">
+                <button class="w-[100px] h-12 tablet:w-[120px] laptop:w-[120px] rounded-[999px] text-xs tablet:text-sm laptop:text-sm font-bold text-custom-grey text-opacity-50 hover:text-opacity-100 type-btn selected-type" data-type="pomodoro">
+                    pomodoro
+                </button>
+                <button class="w-[100px] h-12 tablet:w-[120px] laptop:w-[120px] rounded-[999px] text-xs tablet:text-sm laptop:text-sm font-bold text-custom-grey text-opacity-50 hover:text-opacity-100 type-btn" data-type="short">
+                    short break
+                </button>
+                <button class="w-[100px] h-12 tablet:w-[120px] laptop:w-[120px] rounded-[999px] text-xs tablet:text-sm laptop:text-sm font-bold text-custom-grey text-opacity-50 hover:text-opacity-100 type-btn" data-type="long">
+                    long break
+                </button>
+            </div>
+        </header>
+        <main class="p-6">
+            <!-- ! Settings page -->
+            <div class="fixed top-0 right-6 left-6 min-h-screen grid place-items-center z-[100] hidden settings-container">
+                <div class="bg-white w-full rounded-2xl pb-14 relative tablet:max-w-[600px] laptop:w-auto ">
+                    <section class="p-6 tablet:px-10 laptop:px-10 flex justify-between items-center">
+                        <h1 class="font-bold text-xl tablet:text-[28px] laptop:text-[28px] capitalize">settings</h1>
+                        <button class="group" aria-label="close settings button" id="close-settings">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" class="opacity-50 group-hover:opacity-100"><path fill="#1E213F" fill-rule="evenodd" d="M11.95.636l1.414 1.414L8.414 7l4.95 4.95-1.414 1.414L7 8.414l-4.95 4.95L.636 11.95 5.586 7 .636 2.05 2.05.636 7 5.586l4.95-4.95z"/></svg>
+                        </button>
+                    </section>
+                    <hr class="laptop:mt-2">
+                    <section class="p-6 tablet:px-10 space-y-4 laptop:space-y-5 laptop:px-10">
+                        <h1 class="uppercase font-bold text-[11px] tablet:text-sm tracking-[4.23px] tablet:tracking-[5px] text-center tablet:text-left laptop:text-sm laptop:tracking-[5px] laptop:text-left">
+                            time (minutes)
+                        </h1>
+                        <div class="space-y-2 text-custom-blueish-black text-opacity-70 tablet:flex tablet:gap-5 tablet:space-y-0 laptop:flex laptop:gap-5 laptop:space-y-0">
+                            <div class="flex justify-between items-center tablet:flex-col tablet:items-start tablet:gap-2.5 laptop:flex-col laptop:items-start laptop:gap-2.5">
+                                <label for="pomodoro" class="font-bold text-xs">
+                                    pomodoro
+                                </label>
+                                <div class="relative flex items-center input-container">
+                                    <input type="number" id="pomodoro" name="pomodoro" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <div class="absolute right-4 flex flex-col gap-2">
+                                        <button class="group increase-btn" aria-label="increase number">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+                                        </button>
+                                        <button class="group decrease-btn" aria-label="decrease number">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center tablet:flex-col tablet:items-start tablet:gap-2.5 laptop:flex-col laptop:items-start laptop:gap-2.5">
+                                <label for="shortBreak" class="font-bold text-xs">
+                                    short break
+                                </label>
+                                <div class="relative flex items-center input-container">
+                                    <input type="number" id="shortBreak" name="shortBreak" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <div class="absolute right-4 flex flex-col gap-2">
+                                        <button class="group increase-btn" aria-label="increase number">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+                                        </button>
+                                        <button class="group decrease-btn" aria-label="decrease number">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="flex justify-between items-center tablet:flex-col tablet:items-start tablet:gap-2.5 laptop:flex-col laptop:items-start laptop:gap-2.5">
+                                <label for="longBreak" class="font-bold text-xs">
+                                    long break
+                                </label>
+                                <div class="relative flex items-center input-container">
+                                    <input type="number" id="longBreak" name="longBreak" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <div class="absolute right-4 flex flex-col gap-2">
+                                        <button class="group increase-btn" aria-label="increase number">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
+                                        </button>
+                                        <button class="group decrease-btn" aria-label="decrease number">
+                                            <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 1l6 4 6-4"/></svg>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <hr>
+                    </section>
+                    <div class="px-6 tablet:px-10 space-y-6 laptop:px-10">
+                        <section class="w-full grid place-items-center gap-5 tablet:flex tablet:justify-between tablet:items-center laptop:flex laptop:justify-between laptop:items-center">
+                            <h1 class="font-bold uppercase text-xs tracking-[4.23px] text-center">fonts</h1>
+                            <div class="flex gap-4 laptop:gap-2.5">
+                                <button class="font-kumbh text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey" data-font="kumbh" aria-label="kumbh san font">
+                                    <p class="size-10 bg-custom-grey  selected-font rounded-full grid place-items-center">
+                                        Aa
+                                    </p>
+                                </button>
+                                <button class="font-roboto text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey" data-font="roboto" aria-label="roboto slab font">
+                                    <p class="size-10 bg-custom-grey rounded-full grid place-items-center">
+                                        Aa
+                                    </p>
+                                </button>
+                                <button class="font-space text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey" data-font="space" aria-label="space mono font">
+                                    <p class="size-10 bg-custom-grey rounded-full grid place-items-center">
+                                        Aa
+                                    </p>
+                                </button>
+                            </div>
+                        </section>
+                        <hr class="w-full">
+                    </div>
+                    <section class="w-full grid place-items-center gap-5 pt-4 tablet:flex tablet:justify-between tablet:items-center laptop:flex laptop:justify-between laptop:items-center tablet:px-10 laptop:px-10">
+                        <h1 class="font-bold uppercase text-xs tracking-[4.23px] text-center">color</h1>  
+                        <div class="flex gap-4 laptop:gap-2.5">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group selected-color" data-color="red" aria-label="red text">
+                                <span class="size-10 bg-custom-red rounded-full grid place-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                                </span>
+                            </button>
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group" data-color="red" aria-label="red text">
+                                <span class="size-10 bg-custom-blue rounded-full grid place-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                                </span>
+                            </button>
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group" data-color="red" aria-label="red text">
+                                <span class="size-10 bg-custom-purple rounded-full grid place-items-center">
+                                    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
+                                </span>
+                            </button>
+                         </div>
+                    </section>
+                    <div class="w-full grid place-items-center absolute -bottom-[6%]">
+                        <button class="rounded-[999px] laptop:bg-white group submit-btn">
+                            <p class="bg-custom-red px-12 py-5 font-bold capitalize text-white rounded-[999px] group-hover:bg-opacity-50">
+                                apply
+                            </p>
+                        </button>
+                    </div>
+                </div>
+            </div>
+            <!-- ! End of seetings section -->
+            <div class="w-full flex justify-center items-center">
+                <div class="size-[300px] tablet:size-[420px] laptop:size-[420px] rounded-full p-4 bg-gradient-to-br from-custom-gradient2 to-custom-gradient1 relative grid place-items-center shadow-shadow">
+                    <!-- <div class="relative size-full bg-custom-blueish-black2 rounded-full"> -->
+                    <svg width="100%" height="100%" viewBox='0 0 100 100' class="circular-progress">
+                        <circle class="fill-none stroke-custom-red small">
+                        </circle>
+                        <circle class="fill-none stroke-custom-blueish-black big">
+                        </circle>
+                    </svg>    
+    
+                    <section class="absolute z-10 w-full text-center inner-text">
+                        <h1 class="text-[80px] tablet:text-[100px] -tracking-[4px] tablet:-tracking-[5px] text-custom-grey font-bold">
+                            00:00
+                        </h1>
+                        <button class="text-sm tracking-[13.13px] tablet:text-base tablet:tracking-[16px] uppercase text-custom-grey font-bold hover:text-custom-red">
+                            pause
+                        </button>
+                    </section>
+            </div>
+                        <!-- <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> -->
+                            <!-- Background Circle -->
+                            <!-- <circle cx="50" cy="50" r="45" stroke="#e0e0e0" stroke-width="5" fill="none" /> -->
+                            
+                            <!-- Progress Circle -->
+                            <!-- <circle cx="50" cy="50" r="45" stroke="#76c7c0" stroke-width="5" fill="none" stroke-dasharray="283" stroke-dashoffset="75" />
+                          </svg> -->
+                            
+            </div>
+        </main>
+        <footer class="mt-20 w-full grid place-items-center tablet:pb-16 laptop:pb-16">
+            <button class="group" aria-label="open pomodoro settings" id="open-settings">
+                <svg xmlns="http://www.w3.org/2000/svg" width="28" height="28"><path fill="#D7E0FF" class="group-hover:opacity-100 opacity-50" d="M26.965 17.682l-2.927-2.317c.055-.448.097-.903.097-1.365 0-.462-.042-.917-.097-1.365l2.934-2.317a.702.702 0 00.167-.896l-2.775-4.851a.683.683 0 00-.847-.301l-3.454 1.407a10.506 10.506 0 00-2.345-1.379l-.52-3.71A.716.716 0 0016.503 0h-5.55a.703.703 0 00-.687.588l-.52 3.71c-.847.357-1.63.819-2.345 1.379L3.947 4.27a.691.691 0 00-.847.301L.325 9.422a.705.705 0 00.167.896l2.927 2.317c-.055.448-.097.903-.097 1.365 0 .462.042.917.097 1.365L.492 17.682a.702.702 0 00-.167.896L3.1 23.429a.683.683 0 00.847.301L7.4 22.323a10.506 10.506 0 002.345 1.379l.52 3.71c.056.329.34.588.687.588h5.55a.703.703 0 00.687-.588l.52-3.71c.847-.357 1.631-.819 2.346-1.379l3.454 1.407c.313.119.673 0 .847-.301l2.775-4.851a.705.705 0 00-.167-.896zM13.73 18.9c-2.685 0-4.857-2.191-4.857-4.9 0-2.709 2.172-4.9 4.857-4.9 2.684 0 4.856 2.191 4.856 4.9 0 2.71-2.172 4.9-4.856 4.9z"/></svg>
+            </button>
+        </footer>
+    </div>
+    <script type="module" src="/scripts/app.js"></script>
+</body>
+</html>

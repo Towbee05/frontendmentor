@@ -1,0 +1,70 @@
+@import url('https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Slab:wght@100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+input[type="number"]::-webkit-inner-spin-button,
+input[type="number"]::-webkit-outer-spin-button {
+    appearance: none;
+}
+
+.selected-font{
+    @apply bg-custom-blueish-black text-white
+}
+
+.selected-color svg{
+    display: block;
+}
+
+.selected-type{
+    @apply bg-custom-red text-custom-blueish-black
+}
+
+/* cx="125" cy="125" r="115" stroke-width="20" */
+.circular-progress{
+    --size: 100%;
+    --half-size : calc(var(--size) / 2);
+    --stroke-width: 4px;
+    --radius: calc((100% - 4px) / 2)
+}
+
+.circular-progress {
+    circle {
+        cx: var(--half-size); 
+        cy: var(--half-size);
+        r: var(--radius);
+        stroke-width: var(--stroke-width); 
+        stroke-linecap: round;
+    }
+
+    circle.small{
+        @apply fill-none stroke-custom-red
+    }
+    
+    circle.big{
+        transform : rotate(-90deg);
+        transform-origin: 50% 50%;
+        stroke-dasharray: 100 100;
+        @apply fill-none stroke-none 
+    }
+}
+
+
+/* 
+.animate{
+    animation: animator 5s linear infinite;
+} */
+
+@keyframes animator{
+    0% {
+        transform: rotate(0deg);
+        @apply bg-custom-red
+    }
+    100% {
+        transform: rotate(360deg);
+        @apply bg-custom-blueish-black
+    }
+}
