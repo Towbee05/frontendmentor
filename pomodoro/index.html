@@ -46,7 +46,7 @@
                                     pomodoro
                                 </label>
                                 <div class="relative flex items-center input-container">
-                                    <input type="number" id="pomodoro" name="pomodoro" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <input type="number" id="pomodoro" name="pomodoro" min="1" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
                                     <div class="absolute right-4 flex flex-col gap-2">
                                         <button class="group increase-btn" aria-label="increase number">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
@@ -62,7 +62,7 @@
                                     short break
                                 </label>
                                 <div class="relative flex items-center input-container">
-                                    <input type="number" id="shortBreak" name="shortBreak" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <input type="number" id="shortBreak" name="shortBreak" min="1" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
                                     <div class="absolute right-4 flex flex-col gap-2">
                                         <button class="group increase-btn" aria-label="increase number">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
@@ -78,7 +78,7 @@
                                     long break
                                 </label>
                                 <div class="relative flex items-center input-container">
-                                    <input type="number" id="longBreak" name="longBreak" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <input type="number" id="longBreak" name="longBreak" min="1" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
                                     <div class="absolute right-4 flex flex-col gap-2">
                                         <button class="group increase-btn" aria-label="increase number">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
@@ -96,18 +96,18 @@
                         <section class="w-full grid place-items-center gap-5 tablet:flex tablet:justify-between tablet:items-center laptop:flex laptop:justify-between laptop:items-center">
                             <h1 class="font-bold uppercase text-xs tracking-[4.23px] text-center">fonts</h1>
                             <div class="flex gap-4 laptop:gap-2.5">
-                                <button class="font-kumbh text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey" data-font="kumbh" aria-label="kumbh san font">
-                                    <p class="size-10 bg-custom-grey  selected-font rounded-full grid place-items-center">
+                                <button class="font-kumbh text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey fonts" data-font="kumbh" aria-label="kumbh san font">
+                                    <p class="size-10 bg-custom-grey fonts-paragraph selected-font rounded-full grid place-items-center">
                                         Aa
                                     </p>
                                 </button>
-                                <button class="font-roboto text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey" data-font="roboto" aria-label="roboto slab font">
-                                    <p class="size-10 bg-custom-grey rounded-full grid place-items-center">
+                                <button class="font-roboto text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey fonts" data-font="roboto" aria-label="roboto slab font">
+                                    <p class="size-10 bg-custom-grey fonts-paragraph rounded-full grid place-items-center">
                                         Aa
                                     </p>
                                 </button>
-                                <button class="font-space text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey" data-font="space" aria-label="space mono font">
-                                    <p class="size-10 bg-custom-grey rounded-full grid place-items-center">
+                                <button class="font-space text-[15px] font-bold rounded-full border group laptop:p-[5px] border-transparent bg-white hover:border-custom-grey fonts" data-font="space" aria-label="space mono font">
+                                    <p class="size-10 bg-custom-grey fonts-paragraph rounded-full grid place-items-center">
                                         Aa
                                     </p>
                                 </button>
@@ -118,18 +118,18 @@
                     <section class="w-full grid place-items-center gap-5 pt-4 tablet:flex tablet:justify-between tablet:items-center laptop:flex laptop:justify-between laptop:items-center tablet:px-10 laptop:px-10">
                         <h1 class="font-bold uppercase text-xs tracking-[4.23px] text-center">color</h1>  
                         <div class="flex gap-4 laptop:gap-2.5">
-                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group selected-color" data-color="red" aria-label="red text">
-                                <span class="size-10 bg-custom-red rounded-full grid place-items-center">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="red" aria-label="red text">
+                                <span class="colors-inner size-10 bg-custom-red rounded-full grid place-items-center selected-color">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                                 </span>
                             </button>
-                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group" data-color="red" aria-label="red text">
-                                <span class="size-10 bg-custom-blue rounded-full grid place-items-center">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="red" aria-label="red text">
+                                <span class="colors-inner size-10 bg-custom-blue rounded-full grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                                 </span>
                             </button>
-                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group" data-color="red" aria-label="red text">
-                                <span class="size-10 bg-custom-purple rounded-full grid place-items-center">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="red" aria-label="red text">
+                                <span class="colors-inner size-10 bg-custom-purple rounded-full grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                                 </span>
                             </button>
