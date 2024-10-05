@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "main": "index.js",
   "scripts": {
-    "build" : "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch",
+    "build": "npx tailwindcss -i ./styles/input.css -o ./styles/output.css --watch",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -12,5 +12,8 @@
   "description": "",
   "devDependencies": {
     "tailwindcss": "^3.4.13"
+  },
+  "dependencies": {
+    "react-circular-progressbar": "^2.1.0"
   }
 }

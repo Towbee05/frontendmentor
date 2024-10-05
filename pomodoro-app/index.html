@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="/styles/output.css">
 </head>
 <body class="bg-custom-blueish-black min-h-screen grid place-items-center font-kumbh text-custom-blueish-black2 ">
-    <div class="w-full space-y-12 relative">
+    <div class="w-full space-y-12 relative" id="overall-container">
         <header class="space-y-12 tablet:space-y-14 laptop:space-y-12 tablet:pt-20 laptop:pt-12 grid place-items-center w-full">
             <div>
                 <img src="/assets/logo.svg" alt="Pomodoro logo">
@@ -46,7 +46,7 @@
                                     pomodoro
                                 </label>
                                 <div class="relative flex items-center input-container">
-                                    <input type="number" id="pomodoro" name="pomodoro" min="1" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <input type="number" id="pomodoro" name="pomodoro" min="1" value="25" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
                                     <div class="absolute right-4 flex flex-col gap-2">
                                         <button class="group increase-btn" aria-label="increase number">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
@@ -62,7 +62,7 @@
                                     short break
                                 </label>
                                 <div class="relative flex items-center input-container">
-                                    <input type="number" id="shortBreak" name="shortBreak" min="1" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <input type="number" id="short" name="shortBreak" min="1" value="5" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
                                     <div class="absolute right-4 flex flex-col gap-2">
                                         <button class="group increase-btn" aria-label="increase number">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
@@ -78,7 +78,7 @@
                                     long break
                                 </label>
                                 <div class="relative flex items-center input-container">
-                                    <input type="number" id="longBreak" name="longBreak" min="1" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
+                                    <input type="number" id="long" name="longBreak" min="1" value="15" class="w-[140px] h-10 tablet:h-12 px-4 bg-custom-light-grey text-custom-blueish-black outline-none font-bold text-[14px] rounded-[10px]"/>
                                     <div class="absolute right-4 flex flex-col gap-2">
                                         <button class="group increase-btn" aria-label="increase number">
                                             <svg xmlns="http://www.w3.org/2000/svg" width="14" height="7"><path class="opacity-25 group-hover:opacity-100" fill="none" stroke="#1E213F" stroke-width="2" d="M1 6l6-4 6 4"/></svg>
@@ -118,17 +118,17 @@
                     <section class="w-full grid place-items-center gap-5 pt-4 tablet:flex tablet:justify-between tablet:items-center laptop:flex laptop:justify-between laptop:items-center tablet:px-10 laptop:px-10">
                         <h1 class="font-bold uppercase text-xs tracking-[4.23px] text-center">color</h1>  
                         <div class="flex gap-4 laptop:gap-2.5">
-                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="red" aria-label="red text">
-                                <span class="colors-inner size-10 bg-custom-red rounded-full grid place-items-center selected-color">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color selected-color" data-color="red" aria-label="red text">
+                                <span class="colors-inner size-10 bg-custom-red rounded-full grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                                 </span>
                             </button>
-                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="red" aria-label="red text">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="blue" aria-label="red text">
                                 <span class="colors-inner size-10 bg-custom-blue rounded-full grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                                 </span>
                             </button>
-                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="red" aria-label="red text">
+                            <button class="rounded-full grid place-items-center laptop:p-[5px] bg-white border border-transparent hover:border-custom-grey group color" data-color="purple" aria-label="red text">
                                 <span class="colors-inner size-10 bg-custom-purple rounded-full grid place-items-center">
                                     <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512" class="size-4 hidden"><path d="M438.6 105.4c12.5 12.5 12.5 32.8 0 45.3l-256 256c-12.5 12.5-32.8 12.5-45.3 0l-128-128c-12.5-12.5-12.5-32.8 0-45.3s32.8-12.5 45.3 0L160 338.7 393.4 105.4c12.5-12.5 32.8-12.5 45.3 0z"/></svg>
                                 </span>
@@ -148,20 +148,23 @@
             <div class="w-full flex justify-center items-center">
                 <div class="size-[300px] tablet:size-[420px] laptop:size-[420px] rounded-full p-4 bg-gradient-to-br from-custom-gradient2 to-custom-gradient1 relative grid place-items-center shadow-shadow">
                     <!-- <div class="relative size-full bg-custom-blueish-black2 rounded-full"> -->
-                    <svg width="100%" height="100%" viewBox='0 0 100 100' class="circular-progress">
-                        <circle class="fill-none stroke-custom-red small">
-                        </circle>
-                        <circle class="fill-none stroke-custom-blueish-black big">
-                        </circle>
-                    </svg>    
-    
+                    <div class="progress-container w-full bg-custom-blueish-black2 rounded-full">
+                        <svg width="100%" height="100%" viewBox='0 0 36 36' class="circular-progress">
+                                <!-- Background Circle -->
+                            <circle cx="18" cy="18" r="16" fill="none" class="small" stroke-width="2"></circle>
+                            <!-- Progress Circle -->
+                            <circle cx="18" cy="18" r="16" fill="none" class=" stroke-custom-red -rotate-90 origin-custom big" stroke-width="2" stroke-dasharray="100 100" stroke-linecap="round"></circle>
+                        
+                            <!-- <circle class="fill-none small" cx="50" cy="50" r="45" stroke-width="4" />
+                                <!-- stroke-dashoffset="75" stroke-linecap="round" -->
+                            <!-- <circle class="fill-none stroke-custom-red big" cx="50" cy="50" r="45" stroke-width="4" stroke-dasharray="100" stroke-dashoffset="65" stroke-linecap = "round" /> -->
+                        </svg>    
+                    </div>
                     <section class="absolute z-10 w-full text-center inner-text">
-                        <h1 class="text-[80px] tablet:text-[100px] -tracking-[4px] tablet:-tracking-[5px] text-custom-grey font-bold">
-                            00:00
+                        <h1 class="text-[80px] tablet:text-[100px] -tracking-[4px] tablet:-tracking-[5px] text-custom-grey font-bold timer">
+                            25:00
                         </h1>
-                        <button class="text-sm tracking-[13.13px] tablet:text-base tablet:tracking-[16px] uppercase text-custom-grey font-bold hover:text-custom-red">
-                            pause
-                        </button>
+                        <button class="text-sm tracking-[13.13px] tablet:text-base tablet:tracking-[16px] laptop:text-base laptop:tracking-[16px] uppercase text-custom-grey font-bold hover:text-custom-red" id="start-btn">start</button>
                     </section>
             </div>
                         <!-- <svg width="100" height="100" viewBox="0 0 100 100" xmlns="http://www.w3.org/2000/svg"> -->

@@ -33,6 +33,9 @@ module.exports = {
       },
       boxShadow: {
         'shadow' : '-50px -50px 100px 0px #272C5A'
+      },
+      transformOrigin: {
+        'custom' : '50% 50%'
       }
     },
   },
