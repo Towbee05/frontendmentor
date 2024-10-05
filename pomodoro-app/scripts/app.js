@@ -19,12 +19,8 @@ const loadHTML = () => {
         const applyBtn = getSingleElement('.submit-btn');
         const startBtn = getSingleElement('#start-btn');
         const progress = getSingleElement('circle.big');
-
-        const current = getSingleElement('#pomodoro').value
-        let fixedMinute = current * 60;
-        let totalTime = fixedMinute;
-        let remainingTime = totalTime;
-
+        let running = false;
+        let countdown;
         
         const fontDict = {
             'kumbh' : '"Kumbh Sans", sans-serif',
@@ -47,11 +43,13 @@ const loadHTML = () => {
                 });
 
                 addClass(btn, 'selected-type');
+                progress.setAttribute('stroke-dasharray', `100,100`);
 
                 const selectedColor = getSingleElement('.selected-color').dataset.color;
                 
                 getSingleElement('.selected-type').style.backgroundColor = colorsDict[selectedColor];
                 
+                clearInterval(countdown);
                 const btnType = btn.dataset.type;
                 const inputType = getSingleElement(`#${btnType}`);
 
@@ -59,9 +57,7 @@ const loadHTML = () => {
                 timerText.innerHTML = `${inputTypeValue}:00`;
                 
                 startBtn.innerHTML = 'start';
-                remainingTime = totalTime;
-    
-                progress.setAttribute('stroke-dasharray', `100,100`);
+                timerText.innerHTML = `${inputTypeValue}:00`;
             });
         });
 
@@ -160,9 +156,18 @@ const loadHTML = () => {
         
 
         const start = () => {
+            const btnType = getSingleElement('.selected-type').dataset.type;
+            
+            const current = Number(getSingleElement(`#${btnType}`).value);
+            
+            let fixedMinute = current * 60;
+            let totalTime = fixedMinute;
+            let remainingTime = totalTime;
+            
             
             if ((startBtn.innerHTML === "start") || (startBtn.innerHTML === "restart")){
-                const myInterval = setInterval(() => {
+                running = true;
+                countdown = setInterval(() => {
                     let [minute, seconds] = timerText.innerText.split(':');     
                     minute = Number(minute);
                     seconds = Number(seconds)
@@ -186,16 +191,19 @@ const loadHTML = () => {
             
     
                     if (timerText.innerText === "00:00") {
-                        clearInterval(myInterval)
+                        clearInterval(countdown)
                         startBtn.innerHTML = "restart";
                     };
-                    if (startBtn.innerHTML === "start") clearInterval(myInterval);
-                }, 100);
+                    if (startBtn.innerHTML === "start") clearInterval(countdown);
+                }, 1000);
                 startBtn.innerHTML = 'pause';
             } else{
+                clearInterval(countdown);
+                running = false;
                 startBtn.innerHTML = 'start';
-            }
+            };
+            console.log(running);
         }
-        
-};
+    };
 loadHTML();
+    
