@@ -133,9 +133,9 @@ const loadHTML = () => {
             applyBtn.firstElementChild.style.backgroundColor = colorsDict[selectedColor]; 
             addClass(settingContainer, 'hidden');
 
+            clearInterval(countdown);
             startBtn.innerHTML = 'start';
             progress.setAttribute('stroke-dasharray', `100,100`);
-            remainingTime = totalTime;
         });    
 
         //! Add selected color to the start button
