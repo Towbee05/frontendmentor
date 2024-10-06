@@ -92,7 +92,7 @@ arrowDownBtns.forEach((btn) => {
 fonts.forEach((btn) => {
     btn.addEventListener('click', () => {
         fontsParagraph.forEach((para) => removeClass(para, 'selected-font'));
-        const paragraph = btn.querySelector('p');
+        const paragraph = btn.querySelector('span');
         addClass(paragraph, 'selected-font');    
     }); 
 });
@@ -182,6 +182,6 @@ const startCountdown = () => {
             isRunning = true;
         };
         if (startBtn.innerHTML === "start") clearInterval(countdown);
-    }, 1000);
+    }, 10);
     startBtn.innerHTML = 'pause';
 }

@@ -803,10 +803,6 @@ video {
   --tw-gradient-to: #2E325A var(--tw-gradient-to-position);
 }
 
-.fill-none{
-  fill: none;
-}
-
 .stroke-custom-red{
   stroke: #F87070;
 }
@@ -1237,5 +1233,3 @@ input[type="number"]::-webkit-outer-spin-button {
     letter-spacing: 5px;
   }
 }
-
-
