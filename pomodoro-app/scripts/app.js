@@ -182,6 +182,6 @@ const startCountdown = () => {
             isRunning = true;
         };
         if (startBtn.innerHTML === "start") clearInterval(countdown);
-    }, 10);
+    }, 1000);
     startBtn.innerHTML = 'pause';
 }
