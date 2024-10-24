@@ -92,7 +92,7 @@ arrowDownBtns.forEach((btn) => {
 fonts.forEach((btn) => {
     btn.addEventListener('click', () => {
         fontsParagraph.forEach((para) => removeClass(para, 'selected-font'));
-        const paragraph = btn.querySelector('span');
+        const paragraph = btn.querySelector('p');
         addClass(paragraph, 'selected-font');    
     }); 
 });
@@ -154,6 +154,7 @@ const start = () => {
         currentTypeValue = currentTypeValue < 10 ? `0${currentTypeValue}` : currentTypeValue;
         timerText.innerHTML = `${currentTypeValue}:00`;
         remainingTime = totalTime;
+        progress.setAttribute('stroke-dasharray', `100,100`);
         startCountdown();
     };
 };
